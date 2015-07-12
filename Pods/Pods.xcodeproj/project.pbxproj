@@ -1,0 +1,738 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		020C62C2654EE68D1F0DCD8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92797233DCB308EA4B5BC24 /* Foundation.framework */; };
+		06FCEA5783AD0215BAEF11B1 /* DRColorPickerStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D8895781C1A8B93B9A3A0 /* DRColorPickerStore.m */; };
+		0A656B308CA16CFD5A57B4C3 /* DRColorPickerHorizontalCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F17C931FD36F6EC3271D85FE /* DRColorPickerHorizontalCollectionViewLayout.m */; };
+		0D98F0E1E0AB8D713C6EDA9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92797233DCB308EA4B5BC24 /* Foundation.framework */; };
+		1701F29D77BC3D5D36E293B5 /* DRColorPickerColorView.h in Headers */ = {isa = PBXBuildFile; fileRef = CAD2BBBE09FC614EB05515B3 /* DRColorPickerColorView.h */; };
+		17E6E11B401E6D9DF9D4B9DA /* DRColorPickerWheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C89460983D2638BF336EC81 /* DRColorPickerWheelView.m */; };
+		20DC7E96A1B7A7A096684377 /* DRColorPickerHomeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D53196E8339A7428A7C98C90 /* DRColorPickerHomeViewController.h */; };
+		2F282C8AB034639B4A8EDFC6 /* DRColorPickerBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D767022D67846C6D3F8BDB9C /* DRColorPickerBaseViewController.h */; };
+		3877BD633EE2355E5DC6431C /* DRColorPickerColor.h in Headers */ = {isa = PBXBuildFile; fileRef = D204B7BEA503004DC0ADAC70 /* DRColorPickerColor.h */; };
+		3AE739B0B0EC1ABDAA971003 /* DRColorPickerHueView.h in Headers */ = {isa = PBXBuildFile; fileRef = 95A13D794151F64E22D47FDA /* DRColorPickerHueView.h */; };
+		3AEE7F803943A9A4C13FE420 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E64BA30C2347C7AB6D02A141 /* ImageIO.framework */; };
+		3E14B6E3B2A6E65EB5FCEFC9 /* DRColorPickerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDE1049E39FC5762DE60D63 /* DRColorPickerBaseViewController.m */; };
+		3FBC3CA782B876E2B5474B5C /* DRColorPickerGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C12A10E403376904D5FC72 /* DRColorPickerGridView.m */; };
+		4151AC3F28DA1CC2E041073B /* DRColorPickerWheelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A7E5998E16FFD868F11D31 /* DRColorPickerWheelViewController.m */; };
+		528958FF9AEBD6F19BA7C924 /* DRColorPickerHueView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EA20CCE8DED6FE9BAEC333 /* DRColorPickerHueView.m */; };
+		56B89819ADADD70D30701EA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7201609F58F505D23B5E2922 /* UIKit.framework */; };
+		57E8FACD105AB17119CB07D0 /* DRColorPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = A97A109CA384D943EC310DB0 /* DRColorPicker.h */; };
+		5F3DF8E5D63F925169AA5EC8 /* DRColorPickerHueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994D0585109ECBD7AF8898DE /* DRColorPickerHueViewController.m */; };
+		6C63A8A7E0205B3DF9ECE87D /* DRColorPickerStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDD0C97023D0B92458D6793 /* DRColorPickerStore.h */; };
+		6FED225CFC7B9E5F5AF92395 /* DRColorPickerWheelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 084DDF03E0A0C49147B7D4D1 /* DRColorPickerWheelViewController.h */; };
+		7AD62F6BBF0921BFEAE436FF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A64F63F70046D819C8BF6E /* Security.framework */; };
+		7CA5892B8CA9A9B05315257F /* DRColorPickerHorizontalCollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = E8C08D0A7ACF88A62D6512AB /* DRColorPickerHorizontalCollectionViewLayout.h */; };
+		7D03BA82825398A6BB38B987 /* DRColorPickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA324021D637235BF756AEB /* DRColorPickerViewController.h */; };
+		7E72891946B7F210F3B39502 /* DRColorPickerGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3EF7F2EA8E75C33D6B94EA /* DRColorPickerGridViewCell.m */; };
+		82F6D3CCF783B05FEFF3100A /* DRColorPickerWheelView.h in Headers */ = {isa = PBXBuildFile; fileRef = 384856C3CDA573BD140E432F /* DRColorPickerWheelView.h */; };
+		874617B00F764C11CEB14ACF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABBF034AA1EC73BD5098555 /* QuartzCore.framework */; };
+		8ABE59E778E6D1329EFD28CD /* Pods-Lignite-DRColorPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE432D367C34B20D5F2753B3 /* Pods-Lignite-DRColorPicker-dummy.m */; };
+		8FB414D11A9F507959C69C26 /* DRColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98129D08C470214A2FE9709 /* DRColorPickerViewController.m */; };
+		96E49C068F9133C12E677B28 /* DRColorPickerHomeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 85803B2D25CBB893A7C307DD /* DRColorPickerHomeView.h */; };
+		9BDCDD1041A3CDECF4D1489A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92797233DCB308EA4B5BC24 /* Foundation.framework */; };
+		9ECCBBA38C4AA98D969DC79E /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 196157BFBCE8A34BBEA0F805 /* UICKeyChainStore.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A1B0A65F2A293496B0DE948B /* DRColorPicker+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0C2D71EA28549AC61D2ECD /* DRColorPicker+UIColor.m */; };
+		A73AA47DB7134729F2EBBB31 /* DRColorPickerColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8445BD6E02FF3BBD4F415F19 /* DRColorPickerColor.m */; };
+		A8245AA3B820EB46CD3B9868 /* DRColorPickerGridViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 359FE5C8E92D97AA04A437B2 /* DRColorPickerGridViewCell.h */; };
+		ABD4F191D8FD6BBD7D71AE90 /* UICKeyChainStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AD3926FC5C1DFA6CD1A9C8 /* UICKeyChainStore.h */; };
+		B85E420F47005A75C519344D /* DRColorPickerHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EF0DE20DE6879F3CE0449A /* DRColorPickerHomeViewController.m */; };
+		CB30FF25C4FA981ADA740336 /* Pods-Lignite-UICKeyChainStore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D982A2CF5C0530192782011 /* Pods-Lignite-UICKeyChainStore-dummy.m */; };
+		CB8CC9F19F8ACD942AC962EC /* DRColorPickerColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA3442F162A6C8629C286CF /* DRColorPickerColorView.m */; };
+		D44BDF4D00201A3C23A3E5A5 /* DRColorPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBF404E2A807AC59D1F437 /* DRColorPicker.m */; };
+		D6C0530DF14DEC6E8E99099E /* DRColorPickerGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD618D8A5A4812AAA4DACB /* DRColorPickerGridViewController.m */; };
+		D8A73A9A9723DBEC2B85E0C7 /* DRColorPickerGridView.h in Headers */ = {isa = PBXBuildFile; fileRef = E6CDA820258FFB082D08B77F /* DRColorPickerGridView.h */; };
+		DAB5FC1B17C097DDDD4E9500 /* Pods-Lignite-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B534CDD48F3046FCCF584B9 /* Pods-Lignite-dummy.m */; };
+		E4BC40E564E50ADCF0C8C30F /* DRColorPickerGridViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F3533CCE51AA35A56E715FFA /* DRColorPickerGridViewController.h */; };
+		ECCE30C3D3F1EEAE87CF5358 /* DRColorPickerHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5878C532D1E43ABA81934C1B /* DRColorPickerHomeView.m */; };
+		EE0A7DAF6BDCA9049602A306 /* DRColorPickerHueViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 651F87DBE96678C1527306E2 /* DRColorPickerHueViewController.h */; };
+		F822FC2C28481996C4576C1A /* DRColorPicker+UIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 82FC0073865D1340CF2D29DD /* DRColorPicker+UIColor.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1172C403D8158F0E12A65CDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22306E1C1F04CAAB8169DE61 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEC7708BD14E489633C87FEA;
+			remoteInfo = "Pods-Lignite-UICKeyChainStore";
+		};
+		AEEB1A34D067028F3AC2D5F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22306E1C1F04CAAB8169DE61 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDBEC64BB5C4811A82F17250;
+			remoteInfo = "Pods-Lignite-DRColorPicker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		084DDF03E0A0C49147B7D4D1 /* DRColorPickerWheelViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerWheelViewController.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerWheelViewController.h; sourceTree = "<group>"; };
+		0C2C5B078E8FC013B994A910 /* Pods-Lignite-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Lignite-environment.h"; sourceTree = "<group>"; };
+		14A64F63F70046D819C8BF6E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		1691150DF7BE5369E3BDB2DF /* Pods-Lignite-UICKeyChainStore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Lignite-UICKeyChainStore-prefix.pch"; sourceTree = "<group>"; };
+		1758582FD39424B665A8C7AB /* DRColorPicker.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DRColorPicker.bundle; path = DRColorPickerExample/DRColorPicker/DRColorPicker.bundle; sourceTree = "<group>"; };
+		18BBF404E2A807AC59D1F437 /* DRColorPicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPicker.m; path = DRColorPickerExample/DRColorPicker/DRColorPicker.m; sourceTree = "<group>"; };
+		196157BFBCE8A34BBEA0F805 /* UICKeyChainStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UICKeyChainStore.m; path = Lib/UICKeyChainStore/UICKeyChainStore.m; sourceTree = "<group>"; };
+		1B534CDD48F3046FCCF584B9 /* Pods-Lignite-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lignite-dummy.m"; sourceTree = "<group>"; };
+		2488A63C6B7B8F30F4C0AFA1 /* Pods-Lignite-DRColorPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Lignite-DRColorPicker-prefix.pch"; sourceTree = "<group>"; };
+		2D0C2D71EA28549AC61D2ECD /* DRColorPicker+UIColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DRColorPicker+UIColor.m"; path = "DRColorPickerExample/DRColorPicker/DRColorPicker+UIColor.m"; sourceTree = "<group>"; };
+		2DA324021D637235BF756AEB /* DRColorPickerViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerViewController.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerViewController.h; sourceTree = "<group>"; };
+		2EAD618D8A5A4812AAA4DACB /* DRColorPickerGridViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerGridViewController.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerGridViewController.m; sourceTree = "<group>"; };
+		3019B94E1AD324BB691F6CCB /* Pods-Lignite-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Lignite-acknowledgements.markdown"; sourceTree = "<group>"; };
+		359FE5C8E92D97AA04A437B2 /* DRColorPickerGridViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerGridViewCell.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerGridViewCell.h; sourceTree = "<group>"; };
+		384856C3CDA573BD140E432F /* DRColorPickerWheelView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerWheelView.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerWheelView.h; sourceTree = "<group>"; };
+		3ABBF034AA1EC73BD5098555 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		3D0340345D7A163B0AA529BB /* Pods-Lignite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lignite.release.xcconfig"; sourceTree = "<group>"; };
+		3D982A2CF5C0530192782011 /* Pods-Lignite-UICKeyChainStore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lignite-UICKeyChainStore-dummy.m"; sourceTree = "<group>"; };
+		40A7E5998E16FFD868F11D31 /* DRColorPickerWheelViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerWheelViewController.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerWheelViewController.m; sourceTree = "<group>"; };
+		4358BF5092E3F9DA8D2EDB32 /* Pods-Lignite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lignite.debug.xcconfig"; sourceTree = "<group>"; };
+		47EF0DE20DE6879F3CE0449A /* DRColorPickerHomeViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerHomeViewController.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerHomeViewController.m; sourceTree = "<group>"; };
+		4A95AB7DC23794BD72FCA588 /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleKit.framework; sourceTree = "<group>"; };
+		4C38A3CE7D656AA6FD849316 /* libPods-Lignite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lignite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EE7546502141EF40F7FF6FF /* Pods-Lignite-DRColorPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lignite-DRColorPicker.xcconfig"; sourceTree = "<group>"; };
+		55AD3926FC5C1DFA6CD1A9C8 /* UICKeyChainStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UICKeyChainStore.h; path = Lib/UICKeyChainStore/UICKeyChainStore.h; sourceTree = "<group>"; };
+		5878C532D1E43ABA81934C1B /* DRColorPickerHomeView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerHomeView.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerHomeView.m; sourceTree = "<group>"; };
+		5C19048F2D0D10537D161EF9 /* Pods-Lignite-DRColorPicker-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lignite-DRColorPicker-Private.xcconfig"; sourceTree = "<group>"; };
+		5EDD0C97023D0B92458D6793 /* DRColorPickerStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerStore.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerStore.h; sourceTree = "<group>"; };
+		651F87DBE96678C1527306E2 /* DRColorPickerHueViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerHueViewController.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerHueViewController.h; sourceTree = "<group>"; };
+		7201609F58F505D23B5E2922 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7C8D8895781C1A8B93B9A3A0 /* DRColorPickerStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerStore.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerStore.m; sourceTree = "<group>"; };
+		7FA3442F162A6C8629C286CF /* DRColorPickerColorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerColorView.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerColorView.m; sourceTree = "<group>"; };
+		8063CC1C85752ABEE158921D /* libPods-Lignite-DRColorPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lignite-DRColorPicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82FC0073865D1340CF2D29DD /* DRColorPicker+UIColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DRColorPicker+UIColor.h"; path = "DRColorPickerExample/DRColorPicker/DRColorPicker+UIColor.h"; sourceTree = "<group>"; };
+		8445BD6E02FF3BBD4F415F19 /* DRColorPickerColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerColor.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerColor.m; sourceTree = "<group>"; };
+		85803B2D25CBB893A7C307DD /* DRColorPickerHomeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerHomeView.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerHomeView.h; sourceTree = "<group>"; };
+		87C12A10E403376904D5FC72 /* DRColorPickerGridView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerGridView.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerGridView.m; sourceTree = "<group>"; };
+		95A13D794151F64E22D47FDA /* DRColorPickerHueView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerHueView.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerHueView.h; sourceTree = "<group>"; };
+		98125D0D968B1CCD002085B8 /* Pods-Lignite-UICKeyChainStore-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lignite-UICKeyChainStore-Private.xcconfig"; sourceTree = "<group>"; };
+		994D0585109ECBD7AF8898DE /* DRColorPickerHueViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerHueViewController.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerHueViewController.m; sourceTree = "<group>"; };
+		9C89460983D2638BF336EC81 /* DRColorPickerWheelView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerWheelView.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerWheelView.m; sourceTree = "<group>"; };
+		9CDE1049E39FC5762DE60D63 /* DRColorPickerBaseViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerBaseViewController.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerBaseViewController.m; sourceTree = "<group>"; };
+		A5B474B3F745296DF92BCD6B /* Pods-Lignite-UICKeyChainStore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lignite-UICKeyChainStore.xcconfig"; sourceTree = "<group>"; };
+		A93095B18476CF67ED80FF25 /* Pods-Lignite-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lignite-resources.sh"; sourceTree = "<group>"; };
+		A97A109CA384D943EC310DB0 /* DRColorPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPicker.h; path = DRColorPickerExample/DRColorPicker/DRColorPicker.h; sourceTree = "<group>"; };
+		B049793CDA80E3B49E80C00C /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleVendor.framework; sourceTree = "<group>"; };
+		B3151E7CA25EA250FEFB04B7 /* Pods-Lignite-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Lignite-acknowledgements.plist"; sourceTree = "<group>"; };
+		B98129D08C470214A2FE9709 /* DRColorPickerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerViewController.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerViewController.m; sourceTree = "<group>"; };
+		C3EA20CCE8DED6FE9BAEC333 /* DRColorPickerHueView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerHueView.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerHueView.m; sourceTree = "<group>"; };
+		CAD2BBBE09FC614EB05515B3 /* DRColorPickerColorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerColorView.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerColorView.h; sourceTree = "<group>"; };
+		CC3EF7F2EA8E75C33D6B94EA /* DRColorPickerGridViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerGridViewCell.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerGridViewCell.m; sourceTree = "<group>"; };
+		D01CBCCBFD08038458DC1B77 /* libPods-Lignite-UICKeyChainStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lignite-UICKeyChainStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D204B7BEA503004DC0ADAC70 /* DRColorPickerColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerColor.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerColor.h; sourceTree = "<group>"; };
+		D53196E8339A7428A7C98C90 /* DRColorPickerHomeViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerHomeViewController.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerHomeViewController.h; sourceTree = "<group>"; };
+		D767022D67846C6D3F8BDB9C /* DRColorPickerBaseViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerBaseViewController.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerBaseViewController.h; sourceTree = "<group>"; };
+		E64BA30C2347C7AB6D02A141 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		E6CDA820258FFB082D08B77F /* DRColorPickerGridView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerGridView.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerGridView.h; sourceTree = "<group>"; };
+		E8C08D0A7ACF88A62D6512AB /* DRColorPickerHorizontalCollectionViewLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerHorizontalCollectionViewLayout.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerHorizontalCollectionViewLayout.h; sourceTree = "<group>"; };
+		E92797233DCB308EA4B5BC24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F17C931FD36F6EC3271D85FE /* DRColorPickerHorizontalCollectionViewLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DRColorPickerHorizontalCollectionViewLayout.m; path = DRColorPickerExample/DRColorPicker/DRColorPickerHorizontalCollectionViewLayout.m; sourceTree = "<group>"; };
+		F1FF6EFA5F082EF0868BF1B0 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F3533CCE51AA35A56E715FFA /* DRColorPickerGridViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DRColorPickerGridViewController.h; path = DRColorPickerExample/DRColorPicker/DRColorPickerGridViewController.h; sourceTree = "<group>"; };
+		FE432D367C34B20D5F2753B3 /* Pods-Lignite-DRColorPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lignite-DRColorPicker-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		62B092D11651AF8C83491265 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				020C62C2654EE68D1F0DCD8C /* Foundation.framework in Frameworks */,
+				3AEE7F803943A9A4C13FE420 /* ImageIO.framework in Frameworks */,
+				874617B00F764C11CEB14ACF /* QuartzCore.framework in Frameworks */,
+				56B89819ADADD70D30701EA6 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BB716B85C39CCA10B58995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D98F0E1E0AB8D713C6EDA9E /* Foundation.framework in Frameworks */,
+				7AD62F6BBF0921BFEAE436FF /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8F54BE8BC5480738A740624 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDCDD1041A3CDECF4D1489A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4092395E393B1008468669D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C38A3CE7D656AA6FD849316 /* libPods-Lignite.a */,
+				8063CC1C85752ABEE158921D /* libPods-Lignite-DRColorPicker.a */,
+				D01CBCCBFD08038458DC1B77 /* libPods-Lignite-UICKeyChainStore.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		61BC7600DE6D1EB2479A1B5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98D85D04A1CF99703B1926B3 /* DRColorPicker */,
+				68CF9166C65BAF00C4080F11 /* PebbleKit */,
+				D016B3F672200C9ADC1807B6 /* UICKeyChainStore */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		61C6E38EE1F6FF359B4EA2CA /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD860ACAC06ED8A1F07BD9BD /* Pods-Lignite */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		68CF9166C65BAF00C4080F11 /* PebbleKit */ = {
+			isa = PBXGroup;
+			children = (
+				E96967FEFC4715F60A5F32DA /* Frameworks */,
+			);
+			path = PebbleKit;
+			sourceTree = "<group>";
+		};
+		7BFE2B0B68F6348F60A1CABA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E92797233DCB308EA4B5BC24 /* Foundation.framework */,
+				E64BA30C2347C7AB6D02A141 /* ImageIO.framework */,
+				3ABBF034AA1EC73BD5098555 /* QuartzCore.framework */,
+				14A64F63F70046D819C8BF6E /* Security.framework */,
+				7201609F58F505D23B5E2922 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		98B117A97936ECC456F86B1F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1758582FD39424B665A8C7AB /* DRColorPicker.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		98D85D04A1CF99703B1926B3 /* DRColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				A97A109CA384D943EC310DB0 /* DRColorPicker.h */,
+				18BBF404E2A807AC59D1F437 /* DRColorPicker.m */,
+				82FC0073865D1340CF2D29DD /* DRColorPicker+UIColor.h */,
+				2D0C2D71EA28549AC61D2ECD /* DRColorPicker+UIColor.m */,
+				D767022D67846C6D3F8BDB9C /* DRColorPickerBaseViewController.h */,
+				9CDE1049E39FC5762DE60D63 /* DRColorPickerBaseViewController.m */,
+				D204B7BEA503004DC0ADAC70 /* DRColorPickerColor.h */,
+				8445BD6E02FF3BBD4F415F19 /* DRColorPickerColor.m */,
+				CAD2BBBE09FC614EB05515B3 /* DRColorPickerColorView.h */,
+				7FA3442F162A6C8629C286CF /* DRColorPickerColorView.m */,
+				E6CDA820258FFB082D08B77F /* DRColorPickerGridView.h */,
+				87C12A10E403376904D5FC72 /* DRColorPickerGridView.m */,
+				359FE5C8E92D97AA04A437B2 /* DRColorPickerGridViewCell.h */,
+				CC3EF7F2EA8E75C33D6B94EA /* DRColorPickerGridViewCell.m */,
+				F3533CCE51AA35A56E715FFA /* DRColorPickerGridViewController.h */,
+				2EAD618D8A5A4812AAA4DACB /* DRColorPickerGridViewController.m */,
+				85803B2D25CBB893A7C307DD /* DRColorPickerHomeView.h */,
+				5878C532D1E43ABA81934C1B /* DRColorPickerHomeView.m */,
+				D53196E8339A7428A7C98C90 /* DRColorPickerHomeViewController.h */,
+				47EF0DE20DE6879F3CE0449A /* DRColorPickerHomeViewController.m */,
+				E8C08D0A7ACF88A62D6512AB /* DRColorPickerHorizontalCollectionViewLayout.h */,
+				F17C931FD36F6EC3271D85FE /* DRColorPickerHorizontalCollectionViewLayout.m */,
+				95A13D794151F64E22D47FDA /* DRColorPickerHueView.h */,
+				C3EA20CCE8DED6FE9BAEC333 /* DRColorPickerHueView.m */,
+				651F87DBE96678C1527306E2 /* DRColorPickerHueViewController.h */,
+				994D0585109ECBD7AF8898DE /* DRColorPickerHueViewController.m */,
+				5EDD0C97023D0B92458D6793 /* DRColorPickerStore.h */,
+				7C8D8895781C1A8B93B9A3A0 /* DRColorPickerStore.m */,
+				2DA324021D637235BF756AEB /* DRColorPickerViewController.h */,
+				B98129D08C470214A2FE9709 /* DRColorPickerViewController.m */,
+				384856C3CDA573BD140E432F /* DRColorPickerWheelView.h */,
+				9C89460983D2638BF336EC81 /* DRColorPickerWheelView.m */,
+				084DDF03E0A0C49147B7D4D1 /* DRColorPickerWheelViewController.h */,
+				40A7E5998E16FFD868F11D31 /* DRColorPickerWheelViewController.m */,
+				98B117A97936ECC456F86B1F /* Resources */,
+				E97C4112637A0D4B98D09D7F /* Support Files */,
+			);
+			path = DRColorPicker;
+			sourceTree = "<group>";
+		};
+		A6AB13C3D6CFE5F6E7A951B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BFE2B0B68F6348F60A1CABA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD860ACAC06ED8A1F07BD9BD /* Pods-Lignite */ = {
+			isa = PBXGroup;
+			children = (
+				3019B94E1AD324BB691F6CCB /* Pods-Lignite-acknowledgements.markdown */,
+				B3151E7CA25EA250FEFB04B7 /* Pods-Lignite-acknowledgements.plist */,
+				1B534CDD48F3046FCCF584B9 /* Pods-Lignite-dummy.m */,
+				0C2C5B078E8FC013B994A910 /* Pods-Lignite-environment.h */,
+				A93095B18476CF67ED80FF25 /* Pods-Lignite-resources.sh */,
+				4358BF5092E3F9DA8D2EDB32 /* Pods-Lignite.debug.xcconfig */,
+				3D0340345D7A163B0AA529BB /* Pods-Lignite.release.xcconfig */,
+			);
+			name = "Pods-Lignite";
+			path = "Target Support Files/Pods-Lignite";
+			sourceTree = "<group>";
+		};
+		BDD524662A24C7E73A5DCBC9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5B474B3F745296DF92BCD6B /* Pods-Lignite-UICKeyChainStore.xcconfig */,
+				98125D0D968B1CCD002085B8 /* Pods-Lignite-UICKeyChainStore-Private.xcconfig */,
+				3D982A2CF5C0530192782011 /* Pods-Lignite-UICKeyChainStore-dummy.m */,
+				1691150DF7BE5369E3BDB2DF /* Pods-Lignite-UICKeyChainStore-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Lignite-UICKeyChainStore";
+			sourceTree = "<group>";
+		};
+		C30F2871B8FFDEF198A24152 = {
+			isa = PBXGroup;
+			children = (
+				F1FF6EFA5F082EF0868BF1B0 /* Podfile */,
+				A6AB13C3D6CFE5F6E7A951B9 /* Frameworks */,
+				61BC7600DE6D1EB2479A1B5D /* Pods */,
+				4092395E393B1008468669D3 /* Products */,
+				61C6E38EE1F6FF359B4EA2CA /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D016B3F672200C9ADC1807B6 /* UICKeyChainStore */ = {
+			isa = PBXGroup;
+			children = (
+				55AD3926FC5C1DFA6CD1A9C8 /* UICKeyChainStore.h */,
+				196157BFBCE8A34BBEA0F805 /* UICKeyChainStore.m */,
+				BDD524662A24C7E73A5DCBC9 /* Support Files */,
+			);
+			path = UICKeyChainStore;
+			sourceTree = "<group>";
+		};
+		E96967FEFC4715F60A5F32DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A95AB7DC23794BD72FCA588 /* PebbleKit.framework */,
+				B049793CDA80E3B49E80C00C /* PebbleVendor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E97C4112637A0D4B98D09D7F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4EE7546502141EF40F7FF6FF /* Pods-Lignite-DRColorPicker.xcconfig */,
+				5C19048F2D0D10537D161EF9 /* Pods-Lignite-DRColorPicker-Private.xcconfig */,
+				FE432D367C34B20D5F2753B3 /* Pods-Lignite-DRColorPicker-dummy.m */,
+				2488A63C6B7B8F30F4C0AFA1 /* Pods-Lignite-DRColorPicker-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Lignite-DRColorPicker";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6C421672B05DCADA19A4E90B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F822FC2C28481996C4576C1A /* DRColorPicker+UIColor.h in Headers */,
+				57E8FACD105AB17119CB07D0 /* DRColorPicker.h in Headers */,
+				2F282C8AB034639B4A8EDFC6 /* DRColorPickerBaseViewController.h in Headers */,
+				3877BD633EE2355E5DC6431C /* DRColorPickerColor.h in Headers */,
+				1701F29D77BC3D5D36E293B5 /* DRColorPickerColorView.h in Headers */,
+				D8A73A9A9723DBEC2B85E0C7 /* DRColorPickerGridView.h in Headers */,
+				A8245AA3B820EB46CD3B9868 /* DRColorPickerGridViewCell.h in Headers */,
+				E4BC40E564E50ADCF0C8C30F /* DRColorPickerGridViewController.h in Headers */,
+				96E49C068F9133C12E677B28 /* DRColorPickerHomeView.h in Headers */,
+				20DC7E96A1B7A7A096684377 /* DRColorPickerHomeViewController.h in Headers */,
+				7CA5892B8CA9A9B05315257F /* DRColorPickerHorizontalCollectionViewLayout.h in Headers */,
+				3AE739B0B0EC1ABDAA971003 /* DRColorPickerHueView.h in Headers */,
+				EE0A7DAF6BDCA9049602A306 /* DRColorPickerHueViewController.h in Headers */,
+				6C63A8A7E0205B3DF9ECE87D /* DRColorPickerStore.h in Headers */,
+				7D03BA82825398A6BB38B987 /* DRColorPickerViewController.h in Headers */,
+				82F6D3CCF783B05FEFF3100A /* DRColorPickerWheelView.h in Headers */,
+				6FED225CFC7B9E5F5AF92395 /* DRColorPickerWheelViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC83E968E9953779858D012C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD4F191D8FD6BBD7D71AE90 /* UICKeyChainStore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5846C23CDE779692EE1C6D19 /* Pods-Lignite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BB61A6EF9268DBE31146ECE /* Build configuration list for PBXNativeTarget "Pods-Lignite" */;
+			buildPhases = (
+				DA966B6E18303F112DEE72D2 /* Sources */,
+				F8F54BE8BC5480738A740624 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6ED56635B89C3F7927073252 /* PBXTargetDependency */,
+				7ED4B3CB6E07DFBDA1A43619 /* PBXTargetDependency */,
+			);
+			name = "Pods-Lignite";
+			productName = "Pods-Lignite";
+			productReference = 4C38A3CE7D656AA6FD849316 /* libPods-Lignite.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DDBEC64BB5C4811A82F17250 /* Pods-Lignite-DRColorPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6136EF739643257E9C5D1CE2 /* Build configuration list for PBXNativeTarget "Pods-Lignite-DRColorPicker" */;
+			buildPhases = (
+				C70C4E7A02DD98E53553844C /* Sources */,
+				62B092D11651AF8C83491265 /* Frameworks */,
+				6C421672B05DCADA19A4E90B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Lignite-DRColorPicker";
+			productName = "Pods-Lignite-DRColorPicker";
+			productReference = 8063CC1C85752ABEE158921D /* libPods-Lignite-DRColorPicker.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FEC7708BD14E489633C87FEA /* Pods-Lignite-UICKeyChainStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 973A771355E7EC7A3F74DF6D /* Build configuration list for PBXNativeTarget "Pods-Lignite-UICKeyChainStore" */;
+			buildPhases = (
+				E0FF20049C620AADE881F284 /* Sources */,
+				A5BB716B85C39CCA10B58995 /* Frameworks */,
+				FC83E968E9953779858D012C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Lignite-UICKeyChainStore";
+			productName = "Pods-Lignite-UICKeyChainStore";
+			productReference = D01CBCCBFD08038458DC1B77 /* libPods-Lignite-UICKeyChainStore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22306E1C1F04CAAB8169DE61 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = 53CBF770E6925FBAFB293885 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C30F2871B8FFDEF198A24152;
+			productRefGroup = 4092395E393B1008468669D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5846C23CDE779692EE1C6D19 /* Pods-Lignite */,
+				DDBEC64BB5C4811A82F17250 /* Pods-Lignite-DRColorPicker */,
+				FEC7708BD14E489633C87FEA /* Pods-Lignite-UICKeyChainStore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C70C4E7A02DD98E53553844C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B0A65F2A293496B0DE948B /* DRColorPicker+UIColor.m in Sources */,
+				D44BDF4D00201A3C23A3E5A5 /* DRColorPicker.m in Sources */,
+				3E14B6E3B2A6E65EB5FCEFC9 /* DRColorPickerBaseViewController.m in Sources */,
+				A73AA47DB7134729F2EBBB31 /* DRColorPickerColor.m in Sources */,
+				CB8CC9F19F8ACD942AC962EC /* DRColorPickerColorView.m in Sources */,
+				3FBC3CA782B876E2B5474B5C /* DRColorPickerGridView.m in Sources */,
+				7E72891946B7F210F3B39502 /* DRColorPickerGridViewCell.m in Sources */,
+				D6C0530DF14DEC6E8E99099E /* DRColorPickerGridViewController.m in Sources */,
+				ECCE30C3D3F1EEAE87CF5358 /* DRColorPickerHomeView.m in Sources */,
+				B85E420F47005A75C519344D /* DRColorPickerHomeViewController.m in Sources */,
+				0A656B308CA16CFD5A57B4C3 /* DRColorPickerHorizontalCollectionViewLayout.m in Sources */,
+				528958FF9AEBD6F19BA7C924 /* DRColorPickerHueView.m in Sources */,
+				5F3DF8E5D63F925169AA5EC8 /* DRColorPickerHueViewController.m in Sources */,
+				06FCEA5783AD0215BAEF11B1 /* DRColorPickerStore.m in Sources */,
+				8FB414D11A9F507959C69C26 /* DRColorPickerViewController.m in Sources */,
+				17E6E11B401E6D9DF9D4B9DA /* DRColorPickerWheelView.m in Sources */,
+				4151AC3F28DA1CC2E041073B /* DRColorPickerWheelViewController.m in Sources */,
+				8ABE59E778E6D1329EFD28CD /* Pods-Lignite-DRColorPicker-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA966B6E18303F112DEE72D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAB5FC1B17C097DDDD4E9500 /* Pods-Lignite-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0FF20049C620AADE881F284 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB30FF25C4FA981ADA740336 /* Pods-Lignite-UICKeyChainStore-dummy.m in Sources */,
+				9ECCBBA38C4AA98D969DC79E /* UICKeyChainStore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6ED56635B89C3F7927073252 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Lignite-DRColorPicker";
+			target = DDBEC64BB5C4811A82F17250 /* Pods-Lignite-DRColorPicker */;
+			targetProxy = AEEB1A34D067028F3AC2D5F8 /* PBXContainerItemProxy */;
+		};
+		7ED4B3CB6E07DFBDA1A43619 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Lignite-UICKeyChainStore";
+			target = FEC7708BD14E489633C87FEA /* Pods-Lignite-UICKeyChainStore */;
+			targetProxy = 1172C403D8158F0E12A65CDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0F579314A4DC57AE27F64DB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D9097A298F29C2CB13E66C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C19048F2D0D10537D161EF9 /* Pods-Lignite-DRColorPicker-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Lignite-DRColorPicker/Pods-Lignite-DRColorPicker-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6264531E2AB2D5A97725B8C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D0340345D7A163B0AA529BB /* Pods-Lignite.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		652A82BD76978373A3FDACA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4358BF5092E3F9DA8D2EDB32 /* Pods-Lignite.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6A1762988FBF6C04C9BF1964 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		90A611C1E907393645CD1AEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98125D0D968B1CCD002085B8 /* Pods-Lignite-UICKeyChainStore-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Lignite-UICKeyChainStore/Pods-Lignite-UICKeyChainStore-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E3BA84E0B21CB3048DC4FF7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98125D0D968B1CCD002085B8 /* Pods-Lignite-UICKeyChainStore-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Lignite-UICKeyChainStore/Pods-Lignite-UICKeyChainStore-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FBEB88994EC96BBB2DE0C986 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C19048F2D0D10537D161EF9 /* Pods-Lignite-DRColorPicker-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Lignite-DRColorPicker/Pods-Lignite-DRColorPicker-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BB61A6EF9268DBE31146ECE /* Build configuration list for PBXNativeTarget "Pods-Lignite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				652A82BD76978373A3FDACA5 /* Debug */,
+				6264531E2AB2D5A97725B8C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53CBF770E6925FBAFB293885 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A1762988FBF6C04C9BF1964 /* Debug */,
+				0F579314A4DC57AE27F64DB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6136EF739643257E9C5D1CE2 /* Build configuration list for PBXNativeTarget "Pods-Lignite-DRColorPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBEB88994EC96BBB2DE0C986 /* Debug */,
+				5D9097A298F29C2CB13E66C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		973A771355E7EC7A3F74DF6D /* Build configuration list for PBXNativeTarget "Pods-Lignite-UICKeyChainStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3BA84E0B21CB3048DC4FF7D /* Debug */,
+				90A611C1E907393645CD1AEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22306E1C1F04CAAB8169DE61 /* Project object */;
+}

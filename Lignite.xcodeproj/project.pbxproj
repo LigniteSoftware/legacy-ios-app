@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3902F2A2D3FA03EA2DBF9617 /* libPods-Lignite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFBCCD2B4BA98F8C2195114 /* libPods-Lignite.a */; };
+		6A13BE8F1B1A6242005BA4CB /* Chunky.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A13BE8E1B1A6242005BA4CB /* Chunky.m */; };
+		6A13BE971B1B5C48005BA4CB /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A13BE961B1B5C48005BA4CB /* CreditsViewController.m */; };
+		6A13BE9B1B1BAEA7005BA4CB /* Lignite-BETA-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A13BE9A1B1BAEA7005BA4CB /* Lignite-BETA-logo.png */; };
+		6A13BE9E1B1BD4C1005BA4CB /* colours_tintin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A13BE9C1B1BD4C1005BA4CB /* colours_tintin.png */; };
+		6A13BE9F1B1BD4C1005BA4CB /* colours_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A13BE9D1B1BD4C1005BA4CB /* colours_time.png */; };
+		6A1927921B4829FF004017CA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1927911B4829FF004017CA /* StoreKit.framework */; };
+		6A1927951B487DD7004017CA /* NSUserDefaults+MPSecureUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1927941B487DD7004017CA /* NSUserDefaults+MPSecureUserDefaults.m */; };
+		6A1C89DE1AF5C59800517A8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C89DD1AF5C59800517A8E /* main.m */; };
+		6A1C89E11AF5C59800517A8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C89E01AF5C59800517A8E /* AppDelegate.m */; };
+		6A1C89E41AF5C59800517A8E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C89E31AF5C59800517A8E /* ViewController.m */; };
+		6A1C89E91AF5C59800517A8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C89E81AF5C59800517A8E /* Images.xcassets */; };
+		6A1C89EC1AF5C59800517A8E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C89EA1AF5C59800517A8E /* LaunchScreen.xib */; };
+		6A3A83771B5052290037134C /* slot machine_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3A83751B5052290037134C /* slot machine_time.png */; };
+		6A3A83781B5052290037134C /* pulse_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3A83761B5052290037134C /* pulse_time.png */; };
+		6A3A837B1B5052700037134C /* slot machine_tintin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3A83791B5052700037134C /* slot machine_tintin.png */; };
+		6A3A837C1B5052700037134C /* pulse_tintin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3A837A1B5052700037134C /* pulse_tintin.png */; };
+		6A4867EB1B0C200C00161580 /* Speedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4867EA1B0C200C00161580 /* Speedometer.m */; };
+		6A5D026B1B0A9ACD00DE77B1 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D026A1B0A9ACC00DE77B1 /* FeedbackViewController.m */; };
+		6A5D026E1B0AC47500DE77B1 /* DataFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D026D1B0AC47500DE77B1 /* DataFramework.m */; };
+		6A5D02711B0AD37C00DE77B1 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D02701B0AD37C00DE77B1 /* UIView+Toast.m */; };
+		6A5D02741B0ADEB600DE77B1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D02731B0ADEB600DE77B1 /* LoginViewController.m */; };
+		6A8002CA1B1C68ED0069D070 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8002C91B1C68ED0069D070 /* Colours.m */; };
+		6A8002CD1B1C88CE0069D070 /* Lines.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8002CC1B1C88CE0069D070 /* Lines.m */; };
+		6A869B771B4DAFC3002FCD15 /* Timezones.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869B761B4DAFC3002FCD15 /* Timezones.m */; };
+		6A869B7A1B4DD3FA002FCD15 /* SimpleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869B791B4DD3FA002FCD15 /* SimpleTableViewController.m */; };
+		6A869B7D1B4E296B002FCD15 /* timezones_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A869B7B1B4E296B002FCD15 /* timezones_time.png */; };
+		6A869B7E1B4E296B002FCD15 /* timezones_tintin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A869B7C1B4E296B002FCD15 /* timezones_tintin.png */; };
+		6A869B811B4E84FB002FCD15 /* SlotMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869B801B4E84FB002FCD15 /* SlotMachine.m */; };
+		6A869B841B4E8AE9002FCD15 /* Pulse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869B831B4E8AE9002FCD15 /* Pulse.m */; };
+		6A8991CE1B3C7E38002C9A03 /* TreeOfColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8991CD1B3C7E38002C9A03 /* TreeOfColours.m */; };
+		6A98FD6B1AF66D060044C70A /* colours.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A98FD6A1AF66D060044C70A /* colours.png */; };
+		6AD6CB091B09882300A81319 /* chunky_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6CAFD1B09882300A81319 /* chunky_time.png */; };
+		6AD6CB0A1B09882300A81319 /* chunky_tintin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6CAFE1B09882300A81319 /* chunky_tintin.png */; };
+		6AD6CB0C1B09882300A81319 /* knightrider_og.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6CB001B09882300A81319 /* knightrider_og.png */; };
+		6AD6CB0D1B09882300A81319 /* rightnighter_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6CB011B09882300A81319 /* rightnighter_time.png */; };
+		6AD6CB0E1B09882300A81319 /* rightnighter_tintin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6CB021B09882300A81319 /* rightnighter_tintin.png */; };
+		6AD6CB0F1B09882300A81319 /* lines_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6CB031B09882300A81319 /* lines_time.png */; };
+		6AD6CB101B09882300A81319 /* lines_tintin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6CB041B09882300A81319 /* lines_tintin.png */; };
+		6AD6CB111B09882300A81319 /* speedometer_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6CB051B09882300A81319 /* speedometer_time.png */; };
+		6AD6CB121B09882300A81319 /* speedometer_tintin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6CB061B09882300A81319 /* speedometer_tintin.png */; };
+		6AD6CB131B09882300A81319 /* timedock_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6CB071B09882300A81319 /* timedock_time.png */; };
+		6AD6CB141B09882300A81319 /* timedock_tintin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6CB081B09882300A81319 /* timedock_tintin.png */; };
+		6AD6CB221B09985500A81319 /* PebbleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6CB211B09985500A81319 /* PebbleInfo.m */; };
+		6ADD8B751B3B0045000D0F7E /* tree of colours_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ADD8B731B3B0045000D0F7E /* tree of colours_time.png */; };
+		6ADD8B761B3B0045000D0F7E /* tree of colours_tintin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ADD8B741B3B0045000D0F7E /* tree of colours_tintin.png */; };
+		6AE2A7231B093B12007BAE3C /* lignite_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AE2A7221B093B12007BAE3C /* lignite_logo.png */; };
+		6AEB27361B0E6E9B00750B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AEB27351B0E6E9B00750B21 /* Main.storyboard */; };
+		6AEB27391B0E9A6500750B21 /* Knightrider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB27381B0E9A6500750B21 /* Knightrider.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		543390EE929F86789563CA2D /* Pods-Lignite Collection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lignite Collection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lignite Collection/Pods-Lignite Collection.debug.xcconfig"; sourceTree = "<group>"; };
+		6A13BE8D1B1A6242005BA4CB /* Chunky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chunky.h; sourceTree = "<group>"; };
+		6A13BE8E1B1A6242005BA4CB /* Chunky.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chunky.m; sourceTree = "<group>"; };
+		6A13BE951B1B5C48005BA4CB /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
+		6A13BE961B1B5C48005BA4CB /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
+		6A13BE9A1B1BAEA7005BA4CB /* Lignite-BETA-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lignite-BETA-logo.png"; sourceTree = "<group>"; };
+		6A13BE9C1B1BD4C1005BA4CB /* colours_tintin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colours_tintin.png; sourceTree = "<group>"; };
+		6A13BE9D1B1BD4C1005BA4CB /* colours_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colours_time.png; sourceTree = "<group>"; };
+		6A1927911B4829FF004017CA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		6A1927931B487DD7004017CA /* NSUserDefaults+MPSecureUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+MPSecureUserDefaults.h"; sourceTree = "<group>"; };
+		6A1927941B487DD7004017CA /* NSUserDefaults+MPSecureUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+MPSecureUserDefaults.m"; sourceTree = "<group>"; };
+		6A1C89D81AF5C59700517A8E /* Lignite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lignite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A1C89DC1AF5C59700517A8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A1C89DD1AF5C59800517A8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6A1C89DF1AF5C59800517A8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6A1C89E01AF5C59800517A8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6A1C89E21AF5C59800517A8E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6A1C89E31AF5C59800517A8E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6A1C89E81AF5C59800517A8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6A1C89EB1AF5C59800517A8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6A3A83751B5052290037134C /* slot machine_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slot machine_time.png"; sourceTree = "<group>"; };
+		6A3A83761B5052290037134C /* pulse_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulse_time.png; sourceTree = "<group>"; };
+		6A3A83791B5052700037134C /* slot machine_tintin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slot machine_tintin.png"; sourceTree = "<group>"; };
+		6A3A837A1B5052700037134C /* pulse_tintin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulse_tintin.png; sourceTree = "<group>"; };
+		6A4867E91B0C200C00161580 /* Speedometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speedometer.h; sourceTree = "<group>"; };
+		6A4867EA1B0C200C00161580 /* Speedometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speedometer.m; sourceTree = "<group>"; };
+		6A5D02691B0A9ACC00DE77B1 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		6A5D026A1B0A9ACC00DE77B1 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		6A5D026C1B0AC47500DE77B1 /* DataFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFramework.h; sourceTree = "<group>"; };
+		6A5D026D1B0AC47500DE77B1 /* DataFramework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFramework.m; sourceTree = "<group>"; };
+		6A5D026F1B0AD37C00DE77B1 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		6A5D02701B0AD37C00DE77B1 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		6A5D02721B0ADEB600DE77B1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		6A5D02731B0ADEB600DE77B1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		6A8002C81B1C68ED0069D070 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		6A8002C91B1C68ED0069D070 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+		6A8002CB1B1C88CE0069D070 /* Lines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lines.h; sourceTree = "<group>"; };
+		6A8002CC1B1C88CE0069D070 /* Lines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lines.m; sourceTree = "<group>"; };
+		6A869B751B4DAFC3002FCD15 /* Timezones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timezones.h; sourceTree = "<group>"; };
+		6A869B761B4DAFC3002FCD15 /* Timezones.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timezones.m; sourceTree = "<group>"; };
+		6A869B781B4DD3FA002FCD15 /* SimpleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableViewController.h; sourceTree = "<group>"; };
+		6A869B791B4DD3FA002FCD15 /* SimpleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableViewController.m; sourceTree = "<group>"; };
+		6A869B7B1B4E296B002FCD15 /* timezones_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timezones_time.png; path = ../../../AndroidStudioProjects/Lignite/app/build/intermediates/res/debug/drawable/timezones_time.png; sourceTree = "<group>"; };
+		6A869B7C1B4E296B002FCD15 /* timezones_tintin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timezones_tintin.png; path = ../../../AndroidStudioProjects/Lignite/app/build/intermediates/res/debug/drawable/timezones_tintin.png; sourceTree = "<group>"; };
+		6A869B7F1B4E84FB002FCD15 /* SlotMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlotMachine.h; sourceTree = "<group>"; };
+		6A869B801B4E84FB002FCD15 /* SlotMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlotMachine.m; sourceTree = "<group>"; };
+		6A869B821B4E8AE9002FCD15 /* Pulse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pulse.h; sourceTree = "<group>"; };
+		6A869B831B4E8AE9002FCD15 /* Pulse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pulse.m; sourceTree = "<group>"; };
+		6A8991CC1B3C7E38002C9A03 /* TreeOfColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeOfColours.h; sourceTree = "<group>"; };
+		6A8991CD1B3C7E38002C9A03 /* TreeOfColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeOfColours.m; sourceTree = "<group>"; };
+		6A98FD6A1AF66D060044C70A /* colours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colours.png; sourceTree = "<group>"; };
+		6AD6CAFD1B09882300A81319 /* chunky_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chunky_time.png; sourceTree = "<group>"; };
+		6AD6CAFE1B09882300A81319 /* chunky_tintin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chunky_tintin.png; sourceTree = "<group>"; };
+		6AD6CB001B09882300A81319 /* knightrider_og.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knightrider_og.png; sourceTree = "<group>"; };
+		6AD6CB011B09882300A81319 /* rightnighter_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightnighter_time.png; sourceTree = "<group>"; };
+		6AD6CB021B09882300A81319 /* rightnighter_tintin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightnighter_tintin.png; sourceTree = "<group>"; };
+		6AD6CB031B09882300A81319 /* lines_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lines_time.png; sourceTree = "<group>"; };
+		6AD6CB041B09882300A81319 /* lines_tintin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lines_tintin.png; sourceTree = "<group>"; };
+		6AD6CB051B09882300A81319 /* speedometer_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speedometer_time.png; sourceTree = "<group>"; };
+		6AD6CB061B09882300A81319 /* speedometer_tintin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speedometer_tintin.png; sourceTree = "<group>"; };
+		6AD6CB071B09882300A81319 /* timedock_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timedock_time.png; sourceTree = "<group>"; };
+		6AD6CB081B09882300A81319 /* timedock_tintin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timedock_tintin.png; sourceTree = "<group>"; };
+		6AD6CB201B09985500A81319 /* PebbleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PebbleInfo.h; sourceTree = "<group>"; };
+		6AD6CB211B09985500A81319 /* PebbleInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PebbleInfo.m; sourceTree = "<group>"; };
+		6ADD8B731B3B0045000D0F7E /* tree of colours_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree of colours_time.png"; sourceTree = "<group>"; };
+		6ADD8B741B3B0045000D0F7E /* tree of colours_tintin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree of colours_tintin.png"; sourceTree = "<group>"; };
+		6AE2A7221B093B12007BAE3C /* lignite_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lignite_logo.png; sourceTree = "<group>"; };
+		6AEB27351B0E6E9B00750B21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6AEB27371B0E9A6500750B21 /* Knightrider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Knightrider.h; sourceTree = "<group>"; };
+		6AEB27381B0E9A6500750B21 /* Knightrider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Knightrider.m; sourceTree = "<group>"; };
+		874D5E04213D92D8D3863CC4 /* Pods-Lignite Collection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lignite Collection.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lignite Collection/Pods-Lignite Collection.release.xcconfig"; sourceTree = "<group>"; };
+		A1BF0943B904B8CFE5124C50 /* Pods_Lignite_Collection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lignite_Collection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5FBCAB4F89C2ACA1BE88A34 /* Pods-Lignite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lignite.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lignite/Pods-Lignite.release.xcconfig"; sourceTree = "<group>"; };
+		BB6D9703F013005132FA591A /* Pods-Lignite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lignite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lignite/Pods-Lignite.debug.xcconfig"; sourceTree = "<group>"; };
+		CDFBCCD2B4BA98F8C2195114 /* libPods-Lignite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lignite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A1C89D51AF5C59700517A8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A1927921B4829FF004017CA /* StoreKit.framework in Frameworks */,
+				3902F2A2D3FA03EA2DBF9617 /* libPods-Lignite.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66C5FB3F009E5B61AC6EAB42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				543390EE929F86789563CA2D /* Pods-Lignite Collection.debug.xcconfig */,
+				874D5E04213D92D8D3863CC4 /* Pods-Lignite Collection.release.xcconfig */,
+				BB6D9703F013005132FA591A /* Pods-Lignite.debug.xcconfig */,
+				B5FBCAB4F89C2ACA1BE88A34 /* Pods-Lignite.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6A1211BF1B0E2D000052F3D0 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				6A869B821B4E8AE9002FCD15 /* Pulse.h */,
+				6A869B831B4E8AE9002FCD15 /* Pulse.m */,
+				6A869B7F1B4E84FB002FCD15 /* SlotMachine.h */,
+				6A869B801B4E84FB002FCD15 /* SlotMachine.m */,
+				6A869B781B4DD3FA002FCD15 /* SimpleTableViewController.h */,
+				6A869B791B4DD3FA002FCD15 /* SimpleTableViewController.m */,
+				6A869B751B4DAFC3002FCD15 /* Timezones.h */,
+				6A869B761B4DAFC3002FCD15 /* Timezones.m */,
+				6A4867E91B0C200C00161580 /* Speedometer.h */,
+				6A4867EA1B0C200C00161580 /* Speedometer.m */,
+				6AEB27371B0E9A6500750B21 /* Knightrider.h */,
+				6AEB27381B0E9A6500750B21 /* Knightrider.m */,
+				6A13BE8D1B1A6242005BA4CB /* Chunky.h */,
+				6A13BE8E1B1A6242005BA4CB /* Chunky.m */,
+				6A8002C81B1C68ED0069D070 /* Colours.h */,
+				6A8002C91B1C68ED0069D070 /* Colours.m */,
+				6A8002CB1B1C88CE0069D070 /* Lines.h */,
+				6A8002CC1B1C88CE0069D070 /* Lines.m */,
+				6A8991CC1B3C7E38002C9A03 /* TreeOfColours.h */,
+				6A8991CD1B3C7E38002C9A03 /* TreeOfColours.m */,
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
+		6A1C89CF1AF5C59700517A8E = {
+			isa = PBXGroup;
+			children = (
+				6A1C89DA1AF5C59700517A8E /* Lignite Collection */,
+				6A1C89D91AF5C59700517A8E /* Products */,
+				66C5FB3F009E5B61AC6EAB42 /* Pods */,
+				6D83830269A1AFDFDE755FC3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6A1C89D91AF5C59700517A8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A1C89D81AF5C59700517A8E /* Lignite.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A1C89DA1AF5C59700517A8E /* Lignite Collection */ = {
+			isa = PBXGroup;
+			children = (
+				6A1211BF1B0E2D000052F3D0 /* settings */,
+				6AE2A7201B093AED007BAE3C /* values */,
+				6A1C89DF1AF5C59800517A8E /* AppDelegate.h */,
+				6A1C89E01AF5C59800517A8E /* AppDelegate.m */,
+				6A1C89E31AF5C59800517A8E /* ViewController.m */,
+				6A1C89E21AF5C59800517A8E /* ViewController.h */,
+				6A13BE951B1B5C48005BA4CB /* CreditsViewController.h */,
+				6A13BE961B1B5C48005BA4CB /* CreditsViewController.m */,
+				6A5D02691B0A9ACC00DE77B1 /* FeedbackViewController.h */,
+				6A5D026A1B0A9ACC00DE77B1 /* FeedbackViewController.m */,
+				6A1927931B487DD7004017CA /* NSUserDefaults+MPSecureUserDefaults.h */,
+				6A1927941B487DD7004017CA /* NSUserDefaults+MPSecureUserDefaults.m */,
+				6A5D02721B0ADEB600DE77B1 /* LoginViewController.h */,
+				6A5D02731B0ADEB600DE77B1 /* LoginViewController.m */,
+				6AD6CB201B09985500A81319 /* PebbleInfo.h */,
+				6AD6CB211B09985500A81319 /* PebbleInfo.m */,
+				6A5D026C1B0AC47500DE77B1 /* DataFramework.h */,
+				6A5D026D1B0AC47500DE77B1 /* DataFramework.m */,
+				6A5D026F1B0AD37C00DE77B1 /* UIView+Toast.h */,
+				6A5D02701B0AD37C00DE77B1 /* UIView+Toast.m */,
+				6A1C89EA1AF5C59800517A8E /* LaunchScreen.xib */,
+				6AEB27351B0E6E9B00750B21 /* Main.storyboard */,
+				6A1C89E81AF5C59800517A8E /* Images.xcassets */,
+				6A1C89DB1AF5C59700517A8E /* Supporting Files */,
+			);
+			path = "Lignite Collection";
+			sourceTree = "<group>";
+		};
+		6A1C89DB1AF5C59700517A8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A1C89DC1AF5C59700517A8E /* Info.plist */,
+				6A1C89DD1AF5C59800517A8E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6AE2A7201B093AED007BAE3C /* values */ = {
+			isa = PBXGroup;
+			children = (
+				6AE2A7211B093B06007BAE3C /* drawable */,
+			);
+			name = values;
+			sourceTree = "<group>";
+		};
+		6AE2A7211B093B06007BAE3C /* drawable */ = {
+			isa = PBXGroup;
+			children = (
+				6A3A83791B5052700037134C /* slot machine_tintin.png */,
+				6A3A837A1B5052700037134C /* pulse_tintin.png */,
+				6A3A83751B5052290037134C /* slot machine_time.png */,
+				6A3A83761B5052290037134C /* pulse_time.png */,
+				6A869B7B1B4E296B002FCD15 /* timezones_time.png */,
+				6A869B7C1B4E296B002FCD15 /* timezones_tintin.png */,
+				6ADD8B731B3B0045000D0F7E /* tree of colours_time.png */,
+				6ADD8B741B3B0045000D0F7E /* tree of colours_tintin.png */,
+				6A13BE9C1B1BD4C1005BA4CB /* colours_tintin.png */,
+				6A13BE9D1B1BD4C1005BA4CB /* colours_time.png */,
+				6A13BE9A1B1BAEA7005BA4CB /* Lignite-BETA-logo.png */,
+				6AD6CAFD1B09882300A81319 /* chunky_time.png */,
+				6AD6CAFE1B09882300A81319 /* chunky_tintin.png */,
+				6AD6CB001B09882300A81319 /* knightrider_og.png */,
+				6AD6CB011B09882300A81319 /* rightnighter_time.png */,
+				6AD6CB021B09882300A81319 /* rightnighter_tintin.png */,
+				6AD6CB031B09882300A81319 /* lines_time.png */,
+				6AD6CB041B09882300A81319 /* lines_tintin.png */,
+				6AD6CB051B09882300A81319 /* speedometer_time.png */,
+				6AD6CB061B09882300A81319 /* speedometer_tintin.png */,
+				6AD6CB071B09882300A81319 /* timedock_time.png */,
+				6AD6CB081B09882300A81319 /* timedock_tintin.png */,
+				6A98FD6A1AF66D060044C70A /* colours.png */,
+				6AE2A7221B093B12007BAE3C /* lignite_logo.png */,
+			);
+			name = drawable;
+			sourceTree = "<group>";
+		};
+		6D83830269A1AFDFDE755FC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A1927911B4829FF004017CA /* StoreKit.framework */,
+				A1BF0943B904B8CFE5124C50 /* Pods_Lignite_Collection.framework */,
+				CDFBCCD2B4BA98F8C2195114 /* libPods-Lignite.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A1C89D71AF5C59700517A8E /* Lignite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A1C89FB1AF5C59800517A8E /* Build configuration list for PBXNativeTarget "Lignite" */;
+			buildPhases = (
+				866536A727FC15F96AE31AA4 /* Check Pods Manifest.lock */,
+				6A1C89D41AF5C59700517A8E /* Sources */,
+				6A1C89D51AF5C59700517A8E /* Frameworks */,
+				6A1C89D61AF5C59700517A8E /* Resources */,
+				F48E999F64C80A4FD2E540C6 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lignite;
+			productName = "Lignite Collection";
+			productReference = 6A1C89D81AF5C59700517A8E /* Lignite.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A1C89D01AF5C59700517A8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Edwin Finch";
+				TargetAttributes = {
+					6A1C89D71AF5C59700517A8E = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = FC8DY8T6N2;
+					};
+				};
+			};
+			buildConfigurationList = 6A1C89D31AF5C59700517A8E /* Build configuration list for PBXProject "Lignite" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A1C89CF1AF5C59700517A8E;
+			productRefGroup = 6A1C89D91AF5C59700517A8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A1C89D71AF5C59700517A8E /* Lignite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A1C89D61AF5C59700517A8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A13BE9F1B1BD4C1005BA4CB /* colours_time.png in Resources */,
+				6A13BE9E1B1BD4C1005BA4CB /* colours_tintin.png in Resources */,
+				6AD6CB0C1B09882300A81319 /* knightrider_og.png in Resources */,
+				6AD6CB111B09882300A81319 /* speedometer_time.png in Resources */,
+				6A3A83771B5052290037134C /* slot machine_time.png in Resources */,
+				6AD6CB101B09882300A81319 /* lines_tintin.png in Resources */,
+				6A869B7E1B4E296B002FCD15 /* timezones_tintin.png in Resources */,
+				6A3A837C1B5052700037134C /* pulse_tintin.png in Resources */,
+				6A13BE9B1B1BAEA7005BA4CB /* Lignite-BETA-logo.png in Resources */,
+				6AD6CB141B09882300A81319 /* timedock_tintin.png in Resources */,
+				6ADD8B751B3B0045000D0F7E /* tree of colours_time.png in Resources */,
+				6A3A837B1B5052700037134C /* slot machine_tintin.png in Resources */,
+				6AD6CB0F1B09882300A81319 /* lines_time.png in Resources */,
+				6A3A83781B5052290037134C /* pulse_time.png in Resources */,
+				6AEB27361B0E6E9B00750B21 /* Main.storyboard in Resources */,
+				6AD6CB0E1B09882300A81319 /* rightnighter_tintin.png in Resources */,
+				6A869B7D1B4E296B002FCD15 /* timezones_time.png in Resources */,
+				6AD6CB131B09882300A81319 /* timedock_time.png in Resources */,
+				6AD6CB091B09882300A81319 /* chunky_time.png in Resources */,
+				6A1C89EC1AF5C59800517A8E /* LaunchScreen.xib in Resources */,
+				6AE2A7231B093B12007BAE3C /* lignite_logo.png in Resources */,
+				6AD6CB121B09882300A81319 /* speedometer_tintin.png in Resources */,
+				6AD6CB0A1B09882300A81319 /* chunky_tintin.png in Resources */,
+				6ADD8B761B3B0045000D0F7E /* tree of colours_tintin.png in Resources */,
+				6AD6CB0D1B09882300A81319 /* rightnighter_time.png in Resources */,
+				6A98FD6B1AF66D060044C70A /* colours.png in Resources */,
+				6A1C89E91AF5C59800517A8E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		866536A727FC15F96AE31AA4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F48E999F64C80A4FD2E540C6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lignite/Pods-Lignite-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A1C89D41AF5C59700517A8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A8991CE1B3C7E38002C9A03 /* TreeOfColours.m in Sources */,
+				6A5D02711B0AD37C00DE77B1 /* UIView+Toast.m in Sources */,
+				6A869B811B4E84FB002FCD15 /* SlotMachine.m in Sources */,
+				6A1C89E41AF5C59800517A8E /* ViewController.m in Sources */,
+				6A13BE8F1B1A6242005BA4CB /* Chunky.m in Sources */,
+				6A13BE971B1B5C48005BA4CB /* CreditsViewController.m in Sources */,
+				6A869B7A1B4DD3FA002FCD15 /* SimpleTableViewController.m in Sources */,
+				6A1C89E11AF5C59800517A8E /* AppDelegate.m in Sources */,
+				6A4867EB1B0C200C00161580 /* Speedometer.m in Sources */,
+				6A869B771B4DAFC3002FCD15 /* Timezones.m in Sources */,
+				6AD6CB221B09985500A81319 /* PebbleInfo.m in Sources */,
+				6A8002CD1B1C88CE0069D070 /* Lines.m in Sources */,
+				6A5D02741B0ADEB600DE77B1 /* LoginViewController.m in Sources */,
+				6A1C89DE1AF5C59800517A8E /* main.m in Sources */,
+				6A8002CA1B1C68ED0069D070 /* Colours.m in Sources */,
+				6A5D026B1B0A9ACD00DE77B1 /* FeedbackViewController.m in Sources */,
+				6A5D026E1B0AC47500DE77B1 /* DataFramework.m in Sources */,
+				6A869B841B4E8AE9002FCD15 /* Pulse.m in Sources */,
+				6A1927951B487DD7004017CA /* NSUserDefaults+MPSecureUserDefaults.m in Sources */,
+				6AEB27391B0E9A6500750B21 /* Knightrider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6A1C89EA1AF5C59800517A8E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A1C89EB1AF5C59800517A8E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A1C89F91AF5C59800517A8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A1C89FA1AF5C59800517A8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A1C89FC1AF5C59800517A8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB6D9703F013005132FA591A /* Pods-Lignite.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Lignite Collection/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FC8DY8T6N2.com.edwinfinch.lignite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		6A1C89FD1AF5C59800517A8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5FBCAB4F89C2ACA1BE88A34 /* Pods-Lignite.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Lignite Collection/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FC8DY8T6N2.com.edwinfinch.lignite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A1C89D31AF5C59700517A8E /* Build configuration list for PBXProject "Lignite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A1C89F91AF5C59800517A8E /* Debug */,
+				6A1C89FA1AF5C59800517A8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A1C89FB1AF5C59800517A8E /* Build configuration list for PBXNativeTarget "Lignite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A1C89FC1AF5C59800517A8E /* Debug */,
+				6A1C89FD1AF5C59800517A8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A1C89D01AF5C59700517A8E /* Project object */;
+}
