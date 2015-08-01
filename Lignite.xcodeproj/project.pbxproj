@@ -59,6 +59,8 @@
 		6AFD21471B6C0ED100D42FBE /* speedometer.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AFD21461B6C0ED100D42FBE /* speedometer.json */; };
 		6AFD214A1B6C104000D42FBE /* LNSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD21491B6C104000D42FBE /* LNSettingsViewController.m */; };
 		6AFD214D1B6C74E200D42FBE /* LNSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD214C1B6C74E200D42FBE /* LNSwitch.m */; };
+		6AFD21501B6C7D9600D42FBE /* LNLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD214F1B6C7D9600D42FBE /* LNLabel.m */; };
+		6AFD21531B6C842F00D42FBE /* LNSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD21521B6C842F00D42FBE /* LNSlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +139,10 @@
 		6AFD21491B6C104000D42FBE /* LNSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNSettingsViewController.m; sourceTree = "<group>"; };
 		6AFD214B1B6C74E200D42FBE /* LNSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNSwitch.h; sourceTree = "<group>"; };
 		6AFD214C1B6C74E200D42FBE /* LNSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNSwitch.m; sourceTree = "<group>"; };
+		6AFD214E1B6C7D9600D42FBE /* LNLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNLabel.h; sourceTree = "<group>"; };
+		6AFD214F1B6C7D9600D42FBE /* LNLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNLabel.m; sourceTree = "<group>"; };
+		6AFD21511B6C842F00D42FBE /* LNSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNSlider.h; sourceTree = "<group>"; };
+		6AFD21521B6C842F00D42FBE /* LNSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNSlider.m; sourceTree = "<group>"; };
 		874D5E04213D92D8D3863CC4 /* Pods-Lignite Collection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lignite Collection.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lignite Collection/Pods-Lignite Collection.release.xcconfig"; sourceTree = "<group>"; };
 		A1BF0943B904B8CFE5124C50 /* Pods_Lignite_Collection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lignite_Collection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FBCAB4F89C2ACA1BE88A34 /* Pods-Lignite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lignite.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lignite/Pods-Lignite.release.xcconfig"; sourceTree = "<group>"; };
@@ -231,8 +237,12 @@
 				6A1927941B487DD7004017CA /* NSUserDefaults+MPSecureUserDefaults.m */,
 				6A5D02721B0ADEB600DE77B1 /* LoginViewController.h */,
 				6A5D02731B0ADEB600DE77B1 /* LoginViewController.m */,
+				6AFD214E1B6C7D9600D42FBE /* LNLabel.h */,
+				6AFD214F1B6C7D9600D42FBE /* LNLabel.m */,
 				6AFD21481B6C104000D42FBE /* LNSettingsViewController.h */,
 				6AFD21491B6C104000D42FBE /* LNSettingsViewController.m */,
+				6AFD21511B6C842F00D42FBE /* LNSlider.h */,
+				6AFD21521B6C842F00D42FBE /* LNSlider.m */,
 				6AFD214B1B6C74E200D42FBE /* LNSwitch.h */,
 				6AFD214C1B6C74E200D42FBE /* LNSwitch.m */,
 				6AD6CB201B09985500A81319 /* PebbleInfo.h */,
@@ -453,6 +463,7 @@
 				6A13BE8F1B1A6242005BA4CB /* Chunky.m in Sources */,
 				6A13BE971B1B5C48005BA4CB /* CreditsViewController.m in Sources */,
 				6A869B7A1B4DD3FA002FCD15 /* SimpleTableViewController.m in Sources */,
+				6AFD21501B6C7D9600D42FBE /* LNLabel.m in Sources */,
 				6A1C89E11AF5C59800517A8E /* AppDelegate.m in Sources */,
 				6A4867EB1B0C200C00161580 /* Speedometer.m in Sources */,
 				6A869B771B4DAFC3002FCD15 /* Timezones.m in Sources */,
@@ -463,6 +474,7 @@
 				6A8002CA1B1C68ED0069D070 /* Colours.m in Sources */,
 				6AFD214D1B6C74E200D42FBE /* LNSwitch.m in Sources */,
 				6A5D026B1B0A9ACD00DE77B1 /* FeedbackViewController.m in Sources */,
+				6AFD21531B6C842F00D42FBE /* LNSlider.m in Sources */,
 				6A5D026E1B0AC47500DE77B1 /* DataFramework.m in Sources */,
 				6A869B841B4E8AE9002FCD15 /* Pulse.m in Sources */,
 				6A1927951B487DD7004017CA /* NSUserDefaults+MPSecureUserDefaults.m in Sources */,

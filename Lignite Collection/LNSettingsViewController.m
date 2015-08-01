@@ -6,10 +6,13 @@
 //
 //
 
+#import <DRColorPicker/DRColorPicker.h>
 #import "LNSettingsViewController.h"
 #import "PebbleInfo.h"
 #import "DataFramework.h"
 #import "LNSwitch.h"
+#import "LNLabel.h"
+#import "LNSlider.h"
 
 @interface LNSettingsViewController ()
 
@@ -18,11 +21,14 @@
 @property NSMutableArray *label_array, *switch_array, *colour_label_array, *slider_array, *slider_value_label_array;
 @property int section_count;
 
+@property (nonatomic, strong) DRColorPickerColor* color;
+
 @end
 
 @implementation LNSettingsViewController
 
 int section_item_count[8];
+int last_value;
 
 - (void)setPebbleApp:(AppTypeCode)app {
     self.settings_code = app;
@@ -50,12 +56,6 @@ int section_item_count[8];
     
     self.section_count = (int)[[self.settings_dict objectForKey:@"items"] count];
     
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.tableView.editing = false;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
     self.tableView.allowsSelection = false;
@@ -66,6 +66,81 @@ int section_item_count[8];
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setUpColourPicker:(LNLabel*)label {
+    DRColorPickerBackgroundColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
+    DRColorPickerBorderColor = [UIColor blackColor];
+    DRColorPickerFont = [UIFont systemFontOfSize:16.0f];
+    DRColorPickerLabelColor = [UIColor blackColor];
+    
+    DRColorPickerStoreMaxColors = 200;
+    DRColorPickerShowSaturationBar = NO;
+    DRColorPickerHighlightLastHue = YES;
+    
+    DRColorPickerUsePNG = NO;
+    DRColorPickerJPEG2000Quality = 0.9f;
+    DRColorPickerSharedAppGroup = nil;
+    
+    DRColorPickerViewController* vc = [DRColorPickerViewController newColorPickerWithColor:self.color];
+    vc.modalPresentationStyle = UIModalPresentationFormSheet;
+    vc.rootViewController.showAlphaSlider = NO;
+    
+    vc.rootViewController.addToFavoritesImage = nil;
+    vc.rootViewController.favoritesImage = nil;
+    vc.rootViewController.hueImage = nil;
+    vc.rootViewController.wheelImage = nil;
+    vc.rootViewController.importImage = nil;
+    
+    vc.rootViewController.importBlock = nil;
+    
+    vc.rootViewController.dismissBlock = ^(BOOL cancel){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+    
+    vc.rootViewController.colorSelectedBlock = ^(DRColorPickerColor* color, DRColorPickerBaseViewController* vc){
+        self.color = color;
+        
+        label.backgroundColor = color.rgbColor;
+        
+        //self.outerLabel.backgroundColor = color.rgbColor;
+        self.color.alpha = 1.0;
+        
+        CGFloat floatR,floatG,floatB, a;
+        [self.color.rgbColor getRed:&floatR green:&floatG blue: &floatB alpha: &a];
+        
+        int r = (int)(255.0 * floatR);
+        int g = (int)(255.0 * floatG);
+        int b = (int)(255.0 * floatB);
+        
+        NSString *string = [NSString stringWithFormat:@"%02x%02x%02x", r, g, b];
+        [DataFramework sendColourToPebble:string :(NSInteger)[label.json_object objectForKey:@"pebble_key"] :[label.json_object objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
+    };
+    
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)changeSwitch:(id)sender{
+    LNSwitch *changed_switch = sender;
+    NSDictionary *item = changed_switch.json_object;
+    [DataFramework sendBooleanToPebble:changed_switch.on :(NSInteger)[item objectForKey:@"pebble_key"] :[item objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
+}
+
+- (void)changeSlider:(id)sender{
+    LNSlider *changed_slider = sender;
+    UILabel *value_label = [self.slider_value_label_array objectAtIndex:[self.slider_array indexOfObject:sender]];
+    value_label.text = [NSString stringWithFormat:@"%d", (int)floor(changed_slider.value)];
+    
+    if(last_value != (int)floor(changed_slider.value)){
+        NSDictionary *item = changed_slider.json_object;
+        [DataFramework sendNumberToPebble:[NSNumber numberWithInt:(int)floor(changed_slider.value)] :(NSInteger)[item objectForKey:@"pebble_key"] :[item objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
+        last_value = floor(changed_slider.value);
+    }
+}
+
+- (void)colourLabelTapped:(UITapGestureRecognizer*)sender {
+    LNLabel *label = (LNLabel*)sender.view;
+    [self setUpColourPicker:label];
 }
 
 #pragma mark - Table view data source
@@ -80,12 +155,6 @@ int section_item_count[8];
     return section_item_count[section];
 }
 
-- (void)changeSwitch:(id)sender{
-    LNSwitch *changed_switch = sender;
-    NSDictionary *item = changed_switch.json_object;
-    [DataFramework sendBooleanToPebble:changed_switch.on :(NSInteger)[item objectForKey:@"pebble_key"]:[item objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
     
@@ -93,30 +162,48 @@ int section_item_count[8];
     NSArray *itemsArray = [items objectForKey:@"items"];
     NSDictionary *item = [itemsArray objectAtIndex:[indexPath item]];
     
+    NSMutableDictionary *settings = [DataFramework getSettingsDictionaryForAppType:self.settings_code];
+    
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     
     NSString *item_type = [item objectForKey:@"type"];
     if([item_type isEqual:@"toggle"]){
         CGRect toggle_rect = CGRectMake(screenRect.size.width-60, 5.0f, 30.0f, 15.0f);
+        
         LNSwitch *toggle = [[LNSwitch alloc]initWithFrame:toggle_rect];
         [toggle addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
+        
         toggle.json_object = item;
+        toggle.on = [[settings objectForKey:[item objectForKey:@"ios_key"]] isEqual:@1];
+        
         [self.switch_array insertObject:toggle atIndex:[self.switch_array count]];
         [cell addSubview:toggle];
     }
     else if([item_type isEqual:@"colour"]){
         CGRect colour_rect = CGRectMake(screenRect.size.width-50, 7.0f, 30.0f, 30.0f);
-        UILabel *colour_label = [[UILabel alloc]initWithFrame:colour_rect];
-        colour_label.backgroundColor = [[UIColor alloc]initWithRed:255.0f green:0.0f blue:0.0f alpha:255.0f];
+        
+        LNLabel *colour_label = [[LNLabel alloc]initWithFrame:colour_rect];
+        colour_label.backgroundColor = [DataFramework colorFromHexString:[settings objectForKey:[item objectForKey:@"ios_key"]]];
+        
+        colour_label.userInteractionEnabled = YES;
+        colour_label.json_object = item;
+        
+        UITapGestureRecognizer *colour_recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(colourLabelTapped:)];
+        [colour_label addGestureRecognizer:colour_recognizer];
+        
         [self.colour_label_array insertObject:colour_label atIndex:[self.colour_label_array count]];
         [cell addSubview:colour_label];
     }
     else if([item_type isEqual:@"number_picker"]){
         CGRect slider_rect = CGRectMake(5.0f, 5.0f, screenRect.size.width-70, 30.0f);
-        UISlider *slider = [[UISlider alloc]initWithFrame:slider_rect];
+        LNSlider *slider = [[LNSlider alloc]initWithFrame:slider_rect];
         slider.minimumValue = 0.0f;
         slider.value = 5.0f;
         slider.maximumValue = 10.0f;
+        slider.json_object = item;
+        
+        [slider addTarget:self action:@selector(changeSlider:) forControlEvents:UIControlEventValueChanged];
+        
         [self.slider_array insertObject:slider atIndex:[self.slider_array count]];
         [cell addSubview:slider];
         

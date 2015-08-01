@@ -7,21 +7,21 @@
                        {
                        "type":"toggle",
                        "label":"Invert",
-                       "ios_key":"spe_invert",
+                       "ios_key":"spe-invert",
                        "pebble_key":0,
                        "default_value":false
                        },
                        {
                        "type":"toggle",
                        "label":"Bluetooth disconnect alert",
-                       "ios_key":"spe_btdisalert",
+                       "ios_key":"spe-btdisalert",
                        "pebble_key":1,
                        "default_value":true
                        },
                        {
                        "type":"toggle",
                        "label":"Bluetooth reconnect alert",
-                       "ios_key":"spe_btrealert",
+                       "ios_key":"spe-btrealert",
                        "pebble_key":2,
                        "default_value":false
                        }
@@ -43,21 +43,21 @@
                        {
                        "type":"toggle",
                        "label":"Boot animation",
-                       "ios_key":"spe_boot_anim",
+                       "ios_key":"spe-bootanim",
                        "pebble_key":4,
                        "default_value":false
                        },
                        {
                        "type":"toggle",
                        "label":"Bluetooth icon",
-                       "ios_key":"spe_bticon",
+                       "ios_key":"spe-bticon",
                        "pebble_key":5,
                        "default_value":false
                        },
                        {
                        "type":"toggle",
                        "label":"Antialiasing",
-                       "ios_key":"spe_dithering",
+                       "ios_key":"spe-dithering",
                        "pebble_key":6,
                        "default_value":false
                        }
@@ -69,21 +69,21 @@
                        {
                        "type":"colour",
                        "label":"Outer colour",
-                       "ios_key":"spe_outer_colour",
+                       "ios_key":"spe-outer-colour",
                        "pebble_key":8,
                        "default_value":false
                        },
                        {
                        "type":"colour",
                        "label":"Middle colour",
-                       "ios_key":"spe_middle_colour",
+                       "ios_key":"spe-middle-colour",
                        "pebble_key":9,
                        "default_value":true
                        },
                        {
                        "type":"colour",
                        "label":"Inner colour",
-                       "ios_key":"spe_inner_colour",
+                       "ios_key":"spe-inner-colour",
                        "pebble_key":10,
                        "default_value":false
                        }
