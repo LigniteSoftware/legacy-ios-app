@@ -22,6 +22,7 @@
 #import "Lines.h"
 #import "CreditsViewController.h"
 #import "FeedbackViewController.h"
+#import "LNSettingsViewController.h"
 
 @interface ViewController () <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
@@ -224,6 +225,7 @@ bool owns_app[APP_COUNT];
         [self purchaseApp];
         return;
     }
+    /*
     ViewController *controller;
     switch(self.currentType){
         case APP_TYPE_SPEEDOMETER:
@@ -256,20 +258,19 @@ bool owns_app[APP_COUNT];
         default:
             break;
     }
+     
     [self showViewController:controller sender:self];
-    NSLog(@"getting uuid");
     NSString *appUUID = [PebbleInfo getAppUUID:self.currentType];
-    NSLog(@"got uuid");
     [DataFramework sendLigniteGuardUnlockToPebble:self.currentType];
-    NSLog(@"setting uuid");
     uuid_t myAppUUIDbytes;
     NSUUID *myAppUUID = [[NSUUID alloc] initWithUUIDString:appUUID];
     [myAppUUID getUUIDBytes:myAppUUIDbytes];
-    NSLog(@"getting bytes");
-    
     PBWatch *watch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
     [watch appMessagesLaunch:nil withUUID:[NSData dataWithBytes:myAppUUIDbytes length:16]];
-    NSLog(@"getting watch");
+*/
+    LNSettingsViewController *view_controller = [[LNSettingsViewController alloc]initWithStyle:UITableViewStyleGrouped];
+    [view_controller setPebbleApp:APP_TYPE_SPEEDOMETER];
+    [self showViewController:view_controller sender:self];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -397,6 +398,10 @@ bool owns_app[APP_COUNT];
     if(![DataFramework isUserBacker]){
         self.navigationItem.leftBarButtonItem.title = @"Restore";
     }
+    
+    LNSettingsViewController *view_controller = [[LNSettingsViewController alloc]initWithStyle:UITableViewStyleGrouped];
+    [view_controller setPebbleApp:APP_TYPE_SPEEDOMETER];
+    [self showViewController:view_controller sender:self];
 
 }
 

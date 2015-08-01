@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A216g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3jr-Ec-VVJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3jr-Ec-VVJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -786,15 +786,15 @@
             </objects>
             <point key="canvasLocation" x="2519" y="718"/>
         </scene>
-        <!--Knightrider-->
+        <!--RightNighter-->
         <scene sceneID="PCu-So-sT6">
             <objects>
-                <tableViewController storyboardIdentifier="SETTINGS-Knightrider" title="Knightrider" id="c4F-oS-4XJ" customClass="KnightriderTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SETTINGS-Knightrider" title="RightNighter" id="c4F-oS-4XJ" customClass="KnightriderTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="lZZ-A4-oQs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="General" id="pIv-oE-UT5">
                                 <cells>
@@ -1353,7 +1353,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="General" id="dw5-Pq-rVK">
                                 <cells>
@@ -1366,7 +1366,7 @@
                                                     <rect key="frame" x="8" y="11" width="527" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c0P-MD-Mb2">
@@ -1404,7 +1404,7 @@
                                                     <rect key="frame" x="8" y="11" width="527" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1435,7 +1435,7 @@
                                                         <constraint firstAttribute="width" constant="55" id="Oub-FM-Jda"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2h9-0F-m7u">
@@ -1469,7 +1469,7 @@
                                                     <rect key="frame" x="8" y="11" width="534" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X36-Mm-RHo">
@@ -1512,7 +1512,7 @@
                                                     <rect key="frame" x="8" y="11" width="527" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1540,7 +1540,7 @@
                                                     <rect key="frame" x="8" y="0.0" width="584" height="44"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1570,7 +1570,7 @@
                                                     <rect key="frame" x="8" y="11" width="527" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1597,7 +1597,7 @@
                                                         <constraint firstAttribute="width" constant="52" id="lgf-uX-mP8"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ug-WT-sbx">
@@ -1631,7 +1631,7 @@
                                                     <rect key="frame" x="8" y="11" width="534" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNO-vQ-UPa">
@@ -1674,7 +1674,7 @@
                                                     <rect key="frame" x="8" y="11" width="527" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -2084,11 +2084,11 @@
                                 <rect key="frame" x="0.0" y="209" width="600" height="391"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.060231345870000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Thank you to every single person, from family to backers, that helped make this project a reality. When Philipp and I originally launched our Lignite Kickstarter in March of 2015, we never expected 1176 backers or $7,177 CAD. You all blew us away with your love and support for our work, and we hope we can pay you back with an awesome collection of watchfaces and apps. This is truly a dream come true.Below lies the list of people who brought this project to life.
+                                <mutableString key="text">Thank you to every single person, from family to backers, that helped make this project a reality. When Philipp and I originally launched our Lignite Kickstarter in March of 2015, we never expected 1176 backers or $7,177 CAD. You all blew us away with your love and support for our work, and we hope we can pay you back with an awesome collection of watchfaces and apps. This is truly a dream come true.Below lies the list of people who brought this project to life.
 
-Android app developer, iOS app developer, Pebble app/watchface developer, and server-backend developer: Edwin Finch (edwinfinch.com)
+Companion app developer, Pebble app/watchface developer, and server-backend developer: Edwin Finch (edwinfinch.com)
 
-Designer of Android and iOS apps, designer of every single Pebble app/watchface, website and graphic creator: Philipp Weder (iphibse.ch)
+Designer of companion app, designer of every single Pebble app/watchface, website and graphic creator: Philipp Weder (iphibse.ch)
 
 Special thanks to (by Edwin):
 -My mom, Tara Bauer, for being insanely supportive of my work and always motivating me :)
@@ -2264,7 +2264,7 @@ Amr Tamimi, Christoph W., Daniel Snor, Jeroen Horlings, Amr Ismail Gawish, Sarah
 Michele De Paola, Lee Zerrilla, Blegueni, Ian Sanderson, Emjay, Mike Roberts, Lukas Maurer, PHAM NHAT CUONG, Rohit
 
 $1.00+ CAD backers
-Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Brett Levy, Fredrik Seglem</string>
+Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Brett Levy, Fredrik Seglem</mutableString>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3015,7 +3015,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="General" id="zps-dJ-469">
                                 <cells>
@@ -3028,7 +3028,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                     <rect key="frame" x="8" y="11" width="527" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HTb-57-KHU">
@@ -3066,7 +3066,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                     <rect key="frame" x="8" y="11" width="527" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -3097,7 +3097,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                         <constraint firstAttribute="width" constant="121" id="eAW-zs-XL8"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xn-ia-OKg">
@@ -3130,7 +3130,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                         <constraint firstAttribute="width" constant="146" id="O3L-FB-iP7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RHy-Hl-hqQ">
@@ -3167,7 +3167,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                     <rect key="frame" x="8" y="11" width="527" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -3211,7 +3211,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="General" id="4hz-nk-JCN">
                                 <cells>
@@ -3224,7 +3224,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                     <rect key="frame" x="8" y="11" width="527" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CaJ-n8-slI">
@@ -3262,7 +3262,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                     <rect key="frame" x="8" y="11" width="527" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -3293,7 +3293,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                         <constraint firstAttribute="width" constant="121" id="Ccy-z8-kEO"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZeN-UM-xfb">
@@ -3326,7 +3326,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                         <constraint firstAttribute="width" constant="146" id="maL-p4-48Y"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y26-1z-lDs">
@@ -3363,7 +3363,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                     <rect key="frame" x="8" y="11" width="527" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -3394,7 +3394,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                         <constraint firstAttribute="width" constant="121" id="Vbz-HH-daw"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4i-oX-vth">
@@ -3405,7 +3405,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                         <constraint firstAttribute="width" constant="36" id="s0K-i4-wsd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -3429,7 +3429,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                     <rect key="frame" x="8" y="11" width="146" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inW-fZ-gjf">
@@ -3440,7 +3440,7 @@ Kyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, iPhibse, Bre
                                                         <constraint firstAttribute="width" constant="36" id="EWn-Fk-arm"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

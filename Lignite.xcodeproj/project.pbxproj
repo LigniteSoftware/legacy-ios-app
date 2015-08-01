@@ -56,6 +56,9 @@
 		6AE2A7231B093B12007BAE3C /* lignite_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AE2A7221B093B12007BAE3C /* lignite_logo.png */; };
 		6AEB27361B0E6E9B00750B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AEB27351B0E6E9B00750B21 /* Main.storyboard */; };
 		6AEB27391B0E9A6500750B21 /* Knightrider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB27381B0E9A6500750B21 /* Knightrider.m */; };
+		6AFD21471B6C0ED100D42FBE /* speedometer.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AFD21461B6C0ED100D42FBE /* speedometer.json */; };
+		6AFD214A1B6C104000D42FBE /* LNSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD21491B6C104000D42FBE /* LNSettingsViewController.m */; };
+		6AFD214D1B6C74E200D42FBE /* LNSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD214C1B6C74E200D42FBE /* LNSwitch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +132,11 @@
 		6AEB27351B0E6E9B00750B21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6AEB27371B0E9A6500750B21 /* Knightrider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Knightrider.h; sourceTree = "<group>"; };
 		6AEB27381B0E9A6500750B21 /* Knightrider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Knightrider.m; sourceTree = "<group>"; };
+		6AFD21461B6C0ED100D42FBE /* speedometer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = speedometer.json; sourceTree = "<group>"; };
+		6AFD21481B6C104000D42FBE /* LNSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNSettingsViewController.h; sourceTree = "<group>"; };
+		6AFD21491B6C104000D42FBE /* LNSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNSettingsViewController.m; sourceTree = "<group>"; };
+		6AFD214B1B6C74E200D42FBE /* LNSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNSwitch.h; sourceTree = "<group>"; };
+		6AFD214C1B6C74E200D42FBE /* LNSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNSwitch.m; sourceTree = "<group>"; };
 		874D5E04213D92D8D3863CC4 /* Pods-Lignite Collection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lignite Collection.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lignite Collection/Pods-Lignite Collection.release.xcconfig"; sourceTree = "<group>"; };
 		A1BF0943B904B8CFE5124C50 /* Pods_Lignite_Collection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lignite_Collection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FBCAB4F89C2ACA1BE88A34 /* Pods-Lignite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lignite.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lignite/Pods-Lignite.release.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +216,7 @@
 		6A1C89DA1AF5C59700517A8E /* Lignite Collection */ = {
 			isa = PBXGroup;
 			children = (
+				6AFD21401B6C021700D42FBE /* json */,
 				6A1211BF1B0E2D000052F3D0 /* settings */,
 				6AE2A7201B093AED007BAE3C /* values */,
 				6A1C89DF1AF5C59800517A8E /* AppDelegate.h */,
@@ -222,6 +231,10 @@
 				6A1927941B487DD7004017CA /* NSUserDefaults+MPSecureUserDefaults.m */,
 				6A5D02721B0ADEB600DE77B1 /* LoginViewController.h */,
 				6A5D02731B0ADEB600DE77B1 /* LoginViewController.m */,
+				6AFD21481B6C104000D42FBE /* LNSettingsViewController.h */,
+				6AFD21491B6C104000D42FBE /* LNSettingsViewController.m */,
+				6AFD214B1B6C74E200D42FBE /* LNSwitch.h */,
+				6AFD214C1B6C74E200D42FBE /* LNSwitch.m */,
 				6AD6CB201B09985500A81319 /* PebbleInfo.h */,
 				6AD6CB211B09985500A81319 /* PebbleInfo.m */,
 				6A5D026C1B0AC47500DE77B1 /* DataFramework.h */,
@@ -282,6 +295,14 @@
 				6AE2A7221B093B12007BAE3C /* lignite_logo.png */,
 			);
 			name = drawable;
+			sourceTree = "<group>";
+		};
+		6AFD21401B6C021700D42FBE /* json */ = {
+			isa = PBXGroup;
+			children = (
+				6AFD21461B6C0ED100D42FBE /* speedometer.json */,
+			);
+			name = json;
 			sourceTree = "<group>";
 		};
 		6D83830269A1AFDFDE755FC3 /* Frameworks */ = {
@@ -355,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A13BE9F1B1BD4C1005BA4CB /* colours_time.png in Resources */,
+				6AFD21471B6C0ED100D42FBE /* speedometer.json in Resources */,
 				6A13BE9E1B1BD4C1005BA4CB /* colours_tintin.png in Resources */,
 				6AD6CB0C1B09882300A81319 /* knightrider_og.png in Resources */,
 				6AD6CB111B09882300A81319 /* speedometer_time.png in Resources */,
@@ -439,11 +461,13 @@
 				6A5D02741B0ADEB600DE77B1 /* LoginViewController.m in Sources */,
 				6A1C89DE1AF5C59800517A8E /* main.m in Sources */,
 				6A8002CA1B1C68ED0069D070 /* Colours.m in Sources */,
+				6AFD214D1B6C74E200D42FBE /* LNSwitch.m in Sources */,
 				6A5D026B1B0A9ACD00DE77B1 /* FeedbackViewController.m in Sources */,
 				6A5D026E1B0AC47500DE77B1 /* DataFramework.m in Sources */,
 				6A869B841B4E8AE9002FCD15 /* Pulse.m in Sources */,
 				6A1927951B487DD7004017CA /* NSUserDefaults+MPSecureUserDefaults.m in Sources */,
 				6AEB27391B0E9A6500750B21 /* Knightrider.m in Sources */,
+				6AFD214A1B6C104000D42FBE /* LNSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

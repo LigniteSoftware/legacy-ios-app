@@ -1,0 +1,93 @@
+{
+    "name":"speedometer",
+    "items": [
+              {
+              "title":"General",
+              "items":[
+                       {
+                       "type":"toggle",
+                       "label":"Invert",
+                       "ios_key":"spe_invert",
+                       "pebble_key":0,
+                       "default_value":false
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Bluetooth disconnect alert",
+                       "ios_key":"spe_btdisalert",
+                       "pebble_key":1,
+                       "default_value":true
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Bluetooth reconnect alert",
+                       "ios_key":"spe_btrealert",
+                       "pebble_key":2,
+                       "default_value":false
+                       }
+                       ]
+              },
+              {
+               "title":"Number slider demo",
+               "items":[
+                      {
+                        "type":"number_picker",
+                        "ios_key":"test",
+                        "default_value":5
+                      }
+                  ]
+              },
+              {
+              "title":"Look and Feel",
+              "items":[
+                       {
+                       "type":"toggle",
+                       "label":"Boot animation",
+                       "ios_key":"spe_boot_anim",
+                       "pebble_key":4,
+                       "default_value":false
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Bluetooth icon",
+                       "ios_key":"spe_bticon",
+                       "pebble_key":5,
+                       "default_value":false
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Antialiasing",
+                       "ios_key":"spe_dithering",
+                       "pebble_key":6,
+                       "default_value":false
+                       }
+                       ]
+              },
+              {
+              "title":"General",
+              "items":[
+                       {
+                       "type":"colour",
+                       "label":"Outer colour",
+                       "ios_key":"spe_outer_colour",
+                       "pebble_key":8,
+                       "default_value":false
+                       },
+                       {
+                       "type":"colour",
+                       "label":"Middle colour",
+                       "ios_key":"spe_middle_colour",
+                       "pebble_key":9,
+                       "default_value":true
+                       },
+                       {
+                       "type":"colour",
+                       "label":"Inner colour",
+                       "ios_key":"spe_inner_colour",
+                       "pebble_key":10,
+                       "default_value":false
+                       }
+                       ]
+              }
+              ]
+}
