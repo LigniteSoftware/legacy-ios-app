@@ -8,17 +8,19 @@
 
 #import <DRColorPicker/DRColorPicker.h>
 #import "LNSettingsViewController.h"
+#import "SimpleTableViewController.h"
 #import "PebbleInfo.h"
 #import "DataFramework.h"
 #import "LNSwitch.h"
 #import "LNLabel.h"
 #import "LNSlider.h"
 
-@interface LNSettingsViewController ()
+@interface LNSettingsViewController () <SimpleTableViewControllerDelegate>
 
 @property NSDictionary *settings_dict;
 @property AppTypeCode settings_code;
 @property NSMutableArray *label_array, *switch_array, *colour_label_array, *slider_array, *slider_value_label_array;
+@property LNLabel *timezones_label;
 @property int section_count;
 
 @property (nonatomic, strong) DRColorPickerColor* color;
@@ -143,15 +145,45 @@ int last_value;
     [self setUpColourPicker:label];
 }
 
+- (void)itemSelectedatRow:(NSInteger)row{
+    NSString *name = [[NSTimeZone knownTimeZoneNames] objectAtIndex:row];
+    [self.timezones_label setText:[NSString stringWithFormat:@"Timezone: %@", name]];
+    
+    NSTimeZone *nba = [NSTimeZone localTimeZone];
+    NSTimeZone *inTheZone = [NSTimeZone timeZoneWithName:[[NSTimeZone knownTimeZoneNames] objectAtIndex:row]];
+    
+    //long timeDifference = nba.getRawOffset() - inTheZone.getRawOffset() + nba.getDSTSavings() - inTheZone.getDSTSavings();
+    long difference = nba.secondsFromGMT - inTheZone.secondsFromGMT;
+    if(nba.daylightSavingTime)
+        difference += nba.daylightSavingTimeOffset;
+    if(inTheZone.daylightSavingTime)
+        difference -= nba.daylightSavingTimeOffset;
+    
+    NSDictionary *item = self.timezones_label.json_object;
+    
+    [DataFramework sendNumberToPebble:[NSNumber numberWithLong:difference] :[[item objectForKey:@"pebble_key"] integerValue] :[item objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
+    
+    [DataFramework updateStringSetting:self.settings_code :(NSString*)name :[item objectForKey:@"ios_key"]];
+}
+
+- (void)timezonesButtonPushed{
+    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *navigationController = (UINavigationController *)[storybord instantiateViewControllerWithIdentifier:@"SimpleTableVC"];
+    SimpleTableViewController *tableViewController = (SimpleTableViewController *)[[navigationController viewControllers] objectAtIndex:0];
+    tableViewController.tableData = [NSTimeZone knownTimeZoneNames];
+    tableViewController.navigationItem.title = @"Timezones";
+    tableViewController.delegate = self;
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return self.section_count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return section_item_count[section];
 }
 
@@ -197,9 +229,10 @@ int last_value;
     else if([item_type isEqual:@"number_picker"]){
         CGRect slider_rect = CGRectMake(5.0f, 5.0f, screenRect.size.width-70, 30.0f);
         LNSlider *slider = [[LNSlider alloc]initWithFrame:slider_rect];
-        slider.minimumValue = 0.0f;
-        slider.value = 5.0f;
-        slider.maximumValue = 10.0f;
+        
+        slider.minimumValue = [[item objectForKey:@"min_value"] floatValue];
+        slider.value = [[settings objectForKey:[item objectForKey:@"ios_key"]] floatValue];
+        slider.maximumValue = [[item objectForKey:@"max_value"] floatValue];
         slider.json_object = item;
         
         [slider addTarget:self action:@selector(changeSlider:) forControlEvents:UIControlEventValueChanged];
@@ -212,6 +245,17 @@ int last_value;
         value_label.text = @"10";
         [self.slider_value_label_array insertObject:value_label atIndex:[self.slider_value_label_array count]];
         [cell addSubview:value_label];
+    }
+    else if([item_type isEqual:@"timezones"]){
+        CGRect timezones_label_rect = CGRectMake(screenRect.origin.x+10, 7, screenRect.size.width-35.0f, 30.0f);
+        self.timezones_label = [[LNLabel alloc]initWithFrame:timezones_label_rect];
+        self.timezones_label.text = @"Timezone demo";
+        
+        UITapGestureRecognizer *timezone_recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(timezonesButtonPushed)];
+        [self.timezones_label addGestureRecognizer:timezone_recognizer];
+        self.timezones_label.userInteractionEnabled = YES;
+        
+        [cell addSubview:self.timezones_label];
     }
     
     if(![item_type isEqual:@"number_picker"]){

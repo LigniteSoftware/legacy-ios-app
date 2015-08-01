@@ -33,8 +33,15 @@
                       {
                         "type":"number_picker",
                         "ios_key":"test",
+                        "max_value":15,
+                        "min_value":1,
                         "default_value":5
-                      }
+                      },
+                        {
+                        "type":"timezones",
+                        "ios_key":"timezones_test",
+                        "pebble_key":0
+                        }
                   ]
               },
               {

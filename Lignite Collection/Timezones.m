@@ -84,10 +84,15 @@
 
 - (void)timezonesButtonPushed{
     UINavigationController *navigationController = (UINavigationController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SimpleTableVC"];
+    NSLog(@"0.1");
     SimpleTableViewController *tableViewController = (SimpleTableViewController *)[[navigationController viewControllers] objectAtIndex:0];
+    NSLog(@"0.3");
     tableViewController.tableData = [NSTimeZone knownTimeZoneNames];
+    NSLog(@"0.5");
     tableViewController.navigationItem.title = @"Timezones";
+    NSLog(@"1");
     tableViewController.delegate = self;
+    NSLog(@"Presenting presentation");
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 

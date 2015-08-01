@@ -1748,7 +1748,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xZv-iR-HPV">
             <objects>
-                <navigationController storyboardIdentifier="SimpleTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6CT-Of-iwe" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SimpleTableVC" id="6CT-Of-iwe" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kG3-kr-nGz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
