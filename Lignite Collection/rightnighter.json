@@ -1,0 +1,51 @@
+{
+    "name":"rightnighter",
+    "items": [
+              {
+              "title":"General",
+              "items":[
+                       {
+                       "type":"toggle",
+                       "label":"Bluetooth disconnect alert",
+                       "ios_key":"rn-btdisalert",
+                       "pebble_key":0
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Bluetooth reconnect alert",
+                       "ios_key":"rn-btrealert",
+                       "pebble_key":1
+                       }
+                       ]
+              },
+              {
+              "title":"Look and Feel",
+              "items":[
+                       {
+                       "type":"toggle",
+                       "label":"Boot animation",
+                       "ios_key":"rn-bootanim",
+                       "pebble_key":3
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Antialiasing",
+                       "ios_key":"rn-antialiasing",
+                       "pebble_key":4
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Constant animations",
+                       "ios_key":"rn-constantanim",
+                       "pebble_key":5
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Invert",
+                       "ios_key":"rn-invert",
+                       "pebble_key":6
+                       }
+                       ]
+              }
+              ]
+}

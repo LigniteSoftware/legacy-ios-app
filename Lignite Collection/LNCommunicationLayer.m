@@ -9,8 +9,8 @@
 #import <sys/utsname.h>
 #import <PebbleKit/PebbleKit.h>
 #import <UICKeyChainStore/UICKeyChainStore.h>
-#import "DataFramework.h"
-#import "PebbleInfo.h"
+#import "LNCommunicationLayer.h"
+#import "LNAppInfo.h"
 
 @implementation DataFramework
 
@@ -91,6 +91,10 @@
 + (void)setSettingsDictionaryForAppType:(AppTypeCode)type :(NSMutableDictionary*)dict {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *key = [NSString stringWithFormat:@"%@", [PebbleInfo getAppNameFromType:type]];
+    if(!dict){
+        NSLog(@"Error: dict for AppTypeCode %d is null!!!", type);
+        return;
+    }
     [defaults setObject:dict forKey:key];
     BOOL result = [defaults synchronize];
     if(result){
@@ -100,6 +104,10 @@
 
 + (void)updateStringSetting:(AppTypeCode)type :(NSString*)setting :(NSString*)key {
     NSMutableDictionary *dict = [self getSettingsDictionaryForAppType:type];
+    if(!setting){
+        NSLog(@"Error: setting for key %@ is null!!!", key);
+        return;
+    }
     [dict setObject:setting forKey:key];
     [self setSettingsDictionaryForAppType:type :dict];
 }
@@ -112,6 +120,10 @@
 
 + (void)updateNumberSetting:(AppTypeCode)type :(NSNumber*)setting :(NSString*)key {
     NSMutableDictionary *dict = [self getSettingsDictionaryForAppType:type];
+    if(!setting){
+        NSLog(@"Error: setting for key %@ is null!!!", key);
+        return;
+    }
     [dict setValue:setting forKey:key];
     [self setSettingsDictionaryForAppType:type :dict];
 }

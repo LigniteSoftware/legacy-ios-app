@@ -9,17 +9,19 @@
 #import <DRColorPicker/DRColorPicker.h>
 #import "LNSettingsViewController.h"
 #import "SimpleTableViewController.h"
-#import "PebbleInfo.h"
-#import "DataFramework.h"
+#import "LNAppInfo.h"
+#import "LNCommunicationLayer.h"
 #import "LNSwitch.h"
 #import "LNLabel.h"
 #import "LNSlider.h"
+#import "LNTextField.h"
 
 @interface LNSettingsViewController () <SimpleTableViewControllerDelegate>
 
 @property NSDictionary *settings_dict;
 @property AppTypeCode settings_code;
 @property NSMutableArray *label_array, *switch_array, *colour_label_array, *slider_array, *slider_value_label_array;
+@property LNTextField *textfield_to_disappear;
 @property LNLabel *timezones_label;
 @property int section_count;
 
@@ -39,7 +41,7 @@ int last_value;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSData *data = [[NSData alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"speedometer" ofType:@"json"]];
+    NSData *data = [[NSData alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[PebbleInfo getAppNameFromType:self.settings_code] ofType:@"json"]];
     
     NSError *error;
     self.settings_dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
@@ -116,7 +118,7 @@ int last_value;
         int b = (int)(255.0 * floatB);
         
         NSString *string = [NSString stringWithFormat:@"%02x%02x%02x", r, g, b];
-        [DataFramework sendColourToPebble:string :(NSInteger)[label.json_object objectForKey:@"pebble_key"] :[label.json_object objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
+        [DataFramework sendColourToPebble:string :[[label.json_object objectForKey:@"pebble_key"] integerValue] :[label.json_object objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
     };
     
     [self presentViewController:vc animated:YES completion:nil];
@@ -125,7 +127,7 @@ int last_value;
 - (void)changeSwitch:(id)sender{
     LNSwitch *changed_switch = sender;
     NSDictionary *item = changed_switch.json_object;
-    [DataFramework sendBooleanToPebble:changed_switch.on :(NSInteger)[item objectForKey:@"pebble_key"] :[item objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
+    [DataFramework sendBooleanToPebble:changed_switch.on :[[item objectForKey:@"pebble_key"] integerValue] :[item objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
 }
 
 - (void)changeSlider:(id)sender{
@@ -135,7 +137,7 @@ int last_value;
     
     if(last_value != (int)floor(changed_slider.value)){
         NSDictionary *item = changed_slider.json_object;
-        [DataFramework sendNumberToPebble:[NSNumber numberWithInt:(int)floor(changed_slider.value)] :(NSInteger)[item objectForKey:@"pebble_key"] :[item objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
+        [DataFramework sendNumberToPebble:[NSNumber numberWithInt:(int)floor(changed_slider.value)] :[[item objectForKey:@"pebble_key"] integerValue] :[item objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
         last_value = floor(changed_slider.value);
     }
 }
@@ -160,7 +162,7 @@ int last_value;
         difference -= nba.daylightSavingTimeOffset;
     
     NSDictionary *item = self.timezones_label.json_object;
-    
+
     [DataFramework sendNumberToPebble:[NSNumber numberWithLong:difference] :[[item objectForKey:@"pebble_key"] integerValue] :[item objectForKey:@"ios_key"] :[PebbleInfo getAppUUID:self.settings_code]];
     
     [DataFramework updateStringSetting:self.settings_code :(NSString*)name :[item objectForKey:@"ios_key"]];
@@ -168,14 +170,27 @@ int last_value;
 
 - (void)timezonesButtonPushed{
     UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
     UINavigationController *navigationController = (UINavigationController *)[storybord instantiateViewControllerWithIdentifier:@"SimpleTableVC"];
     SimpleTableViewController *tableViewController = (SimpleTableViewController *)[[navigationController viewControllers] objectAtIndex:0];
+    
     tableViewController.tableData = [NSTimeZone knownTimeZoneNames];
     tableViewController.navigationItem.title = @"Timezones";
     tableViewController.delegate = self;
+    
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
+- (BOOL)textFieldShouldReturn:(LNTextField *)textField {
+    NSLog(@"%@ hello", textField);
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)makeKeyboardDisappear:(id)sender {
+    NSLog(@"Make keyboard disappear");
+    [self textFieldShouldReturn:self.textfield_to_disappear];
+}
 
 #pragma mark - Table view data source
 
@@ -251,14 +266,26 @@ int last_value;
         self.timezones_label = [[LNLabel alloc]initWithFrame:timezones_label_rect];
         self.timezones_label.text = @"Timezone demo";
         
+        self.timezones_label.json_object = item;
+        
         UITapGestureRecognizer *timezone_recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(timezonesButtonPushed)];
         [self.timezones_label addGestureRecognizer:timezone_recognizer];
         self.timezones_label.userInteractionEnabled = YES;
         
         [cell addSubview:self.timezones_label];
     }
+    else if([item_type isEqual:@"textfield"]){
+        CGRect textfield_rect = CGRectMake(screenRect.origin.x+10, 3, screenRect.size.width-20, 30.0f);
+        LNTextField *textfield = [[LNTextField alloc]initWithFrame:textfield_rect];
+        textfield.borderStyle = UITextBorderStyleRoundedRect;
+        UITapGestureRecognizer *keyboard_down_recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(makeKeyboardDisappear:)];
+        [self.view addGestureRecognizer:keyboard_down_recognizer];
+        
+        self.textfield_to_disappear = textfield;
+        [cell addSubview:textfield];
+    }
     
-    if(![item_type isEqual:@"number_picker"]){
+    if(![item_type isEqual:@"number_picker"] && ![item_type isEqual:@"textfield"]){
         CGRect label_rect = CGRectMake(screenRect.origin.x+10, 7, screenRect.size.width-35.0f, 30.0f);
         UILabel *label = [[UILabel alloc]initWithFrame:label_rect];
         [self.label_array insertObject:label atIndex:[self.label_array count]];

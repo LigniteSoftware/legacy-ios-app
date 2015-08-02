@@ -1,0 +1,78 @@
+{
+    "name":"colours",
+    "items": [
+              {
+              "title":"General",
+              "items":[
+                       {
+                       "type":"toggle",
+                       "label":"Bluetooth disconnect alert",
+                       "ios_key":"col-btdisalert",
+                       "pebble_key":0
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Bluetooth reconnect alert",
+                       "ios_key":"col-btrealert",
+                       "pebble_key":1
+                       }
+                       ]
+              },
+              {
+              "title":"Look and Feel",
+              "items":[
+                       {
+                       "type":"toggle",
+                       "label":"Black border on numbers",
+                       "ios_key":"col-border",
+                       "pebble_key":3
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Constant animations",
+                       "ios_key":"col-constantanim",
+                       "pebble_key":4
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Organize colours",
+                       "ios_key":"col-organize",
+                       "pebble_key":5
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Randomize bar width (beta)",
+                       "ios_key":"col-randomize",
+                       "pebble_key":6
+                       }
+                       ]
+              },
+              {
+              "title":"Default bar width",
+              "items":[
+                      {
+                        "type":"number_picker",
+                        "ios_key":"col-default-width",
+                        "pebble_key":7
+                      }
+              ]
+              },
+              {
+              "title":"Colours",
+              "items":[
+                       {
+                       "type":"colour",
+                       "label":"Minute",
+                       "ios_key":"ch-minute-colour",
+                       "pebble_key":9
+                       },
+                       {
+                       "type":"colour",
+                       "label":"Hour",
+                       "ios_key":"ch-hour-colour",
+                       "pebble_key":10
+                       }
+                       ]
+              }
+              ]
+}

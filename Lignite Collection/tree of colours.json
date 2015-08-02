@@ -1,0 +1,83 @@
+{
+    "name":"tree of colours",
+    "items": [
+              {
+              "title":"General",
+              "items":[
+                       {
+                       "type":"toggle",
+                       "label":"Bluetooth disconnect alert",
+                       "ios_key":"tre-btdisalert",
+                       "pebble_key":0
+                       },
+                       {
+                       "type":"toggle",
+                       "label":"Bluetooth reconnect alert",
+                       "ios_key":"tre-btrealert",
+                       "pebble_key":1
+                       }
+                       ]
+              },
+              {
+              "title":"Look and Feel",
+              "items":[
+                       {
+                       "type":"toggle",
+                       "label":"Randomize colours",
+                       "ios_key":"tre-randomize",
+                       "pebble_key":3
+                       }
+                       ]
+              },
+              {
+              "title":"Branch width",
+              "items":[
+                       {
+                       "type":"number_picker",
+                       "ios_key":"tre-branch-width",
+                       "pebble_key":4
+                       }
+                       ]
+              },
+              {
+              "title":"Custom Colours",
+              "items":[
+                       {
+                       "type":"colour",
+                       "label":"Colour 1",
+                       "ios_key":"tre-cust-colour-1",
+                       "pebble_key":6
+                       },
+                       {
+                       "type":"colour",
+                       "label":"Colour 2",
+                       "ios_key":"tre-cust-colour-2",
+                       "pebble_key":7
+                       },
+                       {
+                       "type":"colour",
+                       "label":"Colour 3",
+                       "ios_key":"tre-cust-colour-3",
+                       "pebble_key":8
+                       }
+                       ]
+              },
+              {
+              "title":"Other Colours",
+              "items":[
+                       {
+                       "type":"colour",
+                       "label":"Circle colour",
+                       "ios_key":"tre-circle-colour",
+                       "pebble_key":10
+                       },
+                       {
+                       "type":"colour",
+                       "label":"Time colour",
+                       "ios_key":"tre-time-colour",
+                       "pebble_key":11
+                       }
+                       ]
+              }
+              ]
+}

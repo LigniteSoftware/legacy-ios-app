@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Edwin Finch. All rights reserved.
 //
 
-#import "PebbleInfo.h"
+#import "LNAppInfo.h"
 
 @implementation PebbleInfo
 

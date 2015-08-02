@@ -7,7 +7,7 @@
 //
 
 #import "FeedbackViewController.h"
-#import "DataFramework.h"
+#import "LNCommunicationLayer.h"
 #import "UIView+Toast.h"
 
 @interface FeedbackViewController ()

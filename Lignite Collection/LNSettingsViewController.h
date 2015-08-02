@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PebbleInfo.h"
+#import "LNAppInfo.h"
 
 @interface LNSettingsViewController : UITableViewController
 

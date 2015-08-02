@@ -9,17 +9,11 @@
 #import <PebbleKit/PebbleKit.h>
 #import <StoreKit/StoreKit.h>
 #import "NSUserDefaults+MPSecureUserDefaults.h"
-
 #import "ViewController.h"
 #import "LoginViewController.h"
-#import "Speedometer.h"
-#import "PebbleInfo.h"
+#import "LNAppInfo.h"
 #import "UIView+Toast.h"
-#import "DataFramework.h"
-#import "Knightrider.h"
-#import "Chunky.h"
-#import "Colours.h"
-#import "Lines.h"
+#import "LNCommunicationLayer.h"
 #import "CreditsViewController.h"
 #import "FeedbackViewController.h"
 #import "LNSettingsViewController.h"
@@ -225,41 +219,6 @@ bool owns_app[APP_COUNT];
         [self purchaseApp];
         return;
     }
-    /*
-    ViewController *controller;
-    switch(self.currentType){
-        case APP_TYPE_SPEEDOMETER:
-            controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SETTINGS-Speedometer"];
-            break;
-        case APP_TYPE_KNIGHTRIDER:
-            controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SETTINGS-Knightrider"];
-            break;
-        case APP_TYPE_CHUNKY:
-            controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SETTINGS-Chunky"];
-            break;
-        case APP_TYPE_COLOURS:
-            controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SETTINGS-Colours"];
-            break;
-        case APP_TYPE_LINES:
-            controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SETTINGS-Lines"];
-            break;
-        case APP_TYPE_TREE_OF_COLOURS:
-            controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SETTINGS-TreeOfColours"];
-            break;
-        case APP_TYPE_TIMEZONES:;
-            controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SETTINGS-Timezones"];
-            break;
-        case APP_TYPE_SLOT_MACHINE:
-            controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SETTINGS-SlotMachine"];
-            break;
-        case APP_TYPE_PULSE:
-            controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SETTINGS-Pulse"];
-            break;
-        default:
-            break;
-    }
-     
-    [self showViewController:controller sender:self];
     NSString *appUUID = [PebbleInfo getAppUUID:self.currentType];
     [DataFramework sendLigniteGuardUnlockToPebble:self.currentType];
     uuid_t myAppUUIDbytes;
@@ -267,9 +226,9 @@ bool owns_app[APP_COUNT];
     [myAppUUID getUUIDBytes:myAppUUIDbytes];
     PBWatch *watch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
     [watch appMessagesLaunch:nil withUUID:[NSData dataWithBytes:myAppUUIDbytes length:16]];
-*/
+
     LNSettingsViewController *view_controller = [[LNSettingsViewController alloc]initWithStyle:UITableViewStyleGrouped];
-    [view_controller setPebbleApp:APP_TYPE_SPEEDOMETER];
+    [view_controller setPebbleApp:self.currentType];
     [self showViewController:view_controller sender:self];
 }
 
@@ -399,10 +358,11 @@ bool owns_app[APP_COUNT];
         self.navigationItem.leftBarButtonItem.title = @"Restore";
     }
     
+    /*
     LNSettingsViewController *view_controller = [[LNSettingsViewController alloc]initWithStyle:UITableViewStyleGrouped];
     [view_controller setPebbleApp:APP_TYPE_SPEEDOMETER];
     [self showViewController:view_controller sender:self];
-
+     */
 }
 
 - (void)tapImageGestureRecognizer:(UITapGestureRecognizer*)rec {
