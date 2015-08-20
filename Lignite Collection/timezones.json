@@ -2,83 +2,83 @@
     "name":"timezones",
     "items": [
               {
-              "title":"General",
+              "title":"pref_header_general",
               "items":[
                        {
                        "type":"toggle",
-                       "label":"Bluetooth disconnect alert",
-                       "ios_key":"tim-btdisalert",
+                       "label":"pref_btdisalert",
+                       "storage_key":"tim-btdisalert",
                        "pebble_key":0
                        },
                        {
                        "type":"toggle",
-                       "label":"Bluetooth reconnect alert",
-                       "ios_key":"tim-btrealert",
+                       "label":"pref_btrealert",
+                       "storage_key":"tim-btrealert",
                        "pebble_key":1
                        }
                        ]
               },
               {
-              "title":"Your Time",
+              "title":"your_time",
               "items":[
                        {
                        "type":"colour",
-                       "label":"Colour",
-                       "ios_key":"tim-colour-1",
+                       "label":"colour",
+                       "storage_key":"tim-colour-1",
                        "pebble_key":4
                        },
                        {
                        "type":"toggle",
-                       "label":"Analogue Circles",
-                       "ios_key":"tim-analogue-1",
+                       "label":"analogue",
+                       "storage_key":"tim-analogue-1",
                        "pebble_key":5
                        }
                        ]
               },
               {
-              "title":"Name",
+              "title":"name",
               "items":[
                        {
                        "type":"textfield",
-                       "ios_key":"tim-name-1",
+                       "storage_key":"tim-name-1",
                        "pebble_key":3
                        }
                        ]
               },
               {
-              "title":"Other Time",
+              "title":"other_time",
               "items":[
                        {
                        "type":"timezones",
-                       "ios_key":"tim-timezone",
+                       "storage_key":"tim-timezone",
                        "pebble_key":7
                        },
                        {
                        "type":"toggle",
-                       "label":"Subtract an hour",
-                       "ios_key":"tim-subtract-hour",
+                       "label":"subtract_hour",
+                       "storage_key":"tim-subtract-hour",
                        "pebble_key":8
                        },
                        {
                        "type":"colour",
-                       "label":"Colour",
-                       "ios_key":"tim-colour-2",
+                       "label":"colour",
+                       "storage_key":"tim-colour-2",
                        "pebble_key":10
                        },
                        {
                        "type":"toggle",
-                       "label":"Analogue circles",
-                       "ios_key":"tim-analogue-2",
+                       "label":"analogue",
+                       "storage_key":"tim-analogue-2",
                        "pebble_key":11
-                       },
+                       }
                        ]
               },
               {
-              "title":"Name",
+              "title":"name",
               "items":[
                       {
                        "type":"textfield",
-                       "ios_key":"tim-name-2",
+                       "storage_key":"tim-name-2",
                        "pebble_key":9
                       }
               ]

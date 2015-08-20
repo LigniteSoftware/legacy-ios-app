@@ -6,11 +6,12 @@
 //  Copyright (c) 2015 Edwin Finch. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LNAppListViewController.h"
 
 @interface FeedbackViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, NSURLConnectionDelegate>
 
 @property IBOutlet UILabel *whatTypeTitleLabel, *howImportantTitleLabel, *detailsTitleLabel, *howImportantValueLabel, *feedbackPolicyLabel;
+@property IBOutlet UITextView *disclaimerView;
 @property IBOutlet UIPickerView *whatTypeValuePicker;
 @property IBOutlet UISlider *howImportantValueSlider;
 @property IBOutlet UITextField *detailsValueTextField;

@@ -36,8 +36,14 @@
     
     UITapGestureRecognizer *keyboardGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(makeKeyboardDisappear:)];
     [self.view addGestureRecognizer:keyboardGestureRecognizer];
+
+    self.howImportantTitleLabel.text = NSLocalizedString(@"importance", "how important the issue is");
+    self.whatTypeTitleLabel.text = NSLocalizedString(@"type", nil);
+    self.detailsTitleLabel.text = NSLocalizedString(@"description", nil);
+    self.disclaimerView.text = NSLocalizedString(@"feedback_disclaimer", nil);
+    [self.saveButton setTitle:NSLocalizedString(@"send", nil)];
     
-    self.whatTypeData = [NSArray arrayWithObjects:@"Crash", @"Bug", @"Design-related", @"Feature-related", @"Other", nil];
+    self.whatTypeData = [NSArray arrayWithObjects:NSLocalizedString(@"type_crash", nil), NSLocalizedString(@"type_bug", nil), NSLocalizedString(@"type_design", nil), NSLocalizedString(@"type_feature", nil), NSLocalizedString(@"type_other", nil), nil];
     self.whatTypeValuePicker.delegate = self;
     self.whatTypeValuePicker.dataSource = self;
 }
@@ -64,7 +70,8 @@
 }
 
 - (IBAction)saveButtonPressed:(id)sender {
-    NSString *post = [NSString stringWithFormat:@"username=%@&currentDevice=%@&accessToken=%@&type=%@&details=%@&importance=%d", [DataFramework getUsername], [DataFramework getCurrentDevice], [DataFramework getUserToken], self.whatTypeData[[self.whatTypeValuePicker selectedRowInComponent:0]], self.detailsValueTextField.text, (int)floor(self.howImportantValueSlider.value)];
+    NSString *encodedString = [self.detailsValueTextField.text stringByReplacingOccurrencesOfString:@"'" withString:@""];
+    NSString *post = [NSString stringWithFormat:@"username=%@&currentDevice=%@&accessToken=%@&type=%@&details=%@&importance=%d", [DataFramework getUsername], [DataFramework getCurrentDevice], [DataFramework getUserToken], self.whatTypeData[[self.whatTypeValuePicker selectedRowInComponent:0]], encodedString, (int)floor(self.howImportantValueSlider.value)];
 
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     

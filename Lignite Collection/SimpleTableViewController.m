@@ -59,7 +59,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableData = [NSTimeZone knownTimeZoneNames];
 }
 
 @end

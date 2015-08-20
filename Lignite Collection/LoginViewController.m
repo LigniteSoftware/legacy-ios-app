@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import "LNCommunicationLayer.h"
 #import "UIView+Toast.h"
-#import "ViewController.h"
+#import "LNAppListViewController.h"
 
 @interface LoginViewController ()
 
@@ -20,22 +20,18 @@
 @implementation LoginViewController
 
 - (IBAction)checkcodeButtonHit:(id)sender {
-    if(self.accessCodeTextField.text.length < 6){
-        self.descriptionLabel.text = @"Code must be 6 characters.";
-        return;
-    }
-    NSLog(@"Got value of %@", self.accessCodeTextField.text);
+    NSLog(@"Got username of %@ and password of %@", self.usernameTextField.text, self.passwordTextField.text);
     
-    [DataFramework setUsername:self.accessCodeTextField.text];
+    [DataFramework setUsername:self.passwordTextField.text];
     
-    NSString *post = [NSString stringWithFormat:@"username=%@&currentDevice=%@", self.accessCodeTextField.text, [DataFramework getCurrentDevice]];
+    NSString *post = [NSString stringWithFormat:@"email=%@&password=%@&currentDevice=%@", self.usernameTextField.text, self.passwordTextField.text, [DataFramework getCurrentDevice]];
     
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"https://api.lignite.me/v2/login/index.php"]];
+    [request setURL:[NSURL URLWithString:@"https://api.lignite.me/v2/login/ios/index.php"]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -65,9 +61,10 @@
         NSError *error;
         NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         NSNumber *status = [jsonResult objectForKey:@"status"];
+        NSLog(@"Got login result of %@", jsonResult);
         if([status isEqual:@200]){
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-            NSString *requestURL = [[NSString alloc]initWithFormat:@"https://api.lignite.me/v2/backer/get_info_with_code.php?username=%@", self.accessCodeTextField.text];
+            NSString *requestURL = [[NSString alloc]initWithFormat:@"https://api.lignite.me/v2/backer/get_info_with_code.php?username=%@", [DataFramework getUsername]];
             [request setURL:[NSURL URLWithString:requestURL]];
             [request setHTTPMethod:@"GET"];
             [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -79,7 +76,7 @@
         }
         else{
             if([status isEqual:@401]){
-                NSString *failedDescription = [[NSString alloc]initWithFormat:@"Nice try. Someone is already logged in with this access code. If you are the owner of this access code, log out of your previous device or email contact@edwinfinch.com to recover it. (Error 401)"];
+                NSString *failedDescription = [[NSString alloc]initWithFormat:@"Nice try. Someone is already logged in to this account. If you are the owner of this account, you can reset your account for access by clicking the link below and following the instructions on our external website."];
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Now, now..."
                                                                 message:failedDescription
                                                                delegate:nil
@@ -88,7 +85,7 @@
                 [alert show];
             }
             else if([status isEqual:@404]){
-                NSString *failedDescription = [[NSString alloc]initWithFormat:@"No Kickstarter backer was found with this access code, sorry! Make sure it's perfectly typed. Please avoid copy-pasting. (Error 404)"];
+                NSString *failedDescription = [[NSString alloc]initWithFormat:@"No Lignite accounts were found with this username and password, sorry! Make sure it's perfectly typed. Please avoid copy-pasting. (Error 404)"];
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops, silly goose!"
                                                                 message:failedDescription
                                                                delegate:nil
@@ -117,6 +114,7 @@
             NSLog(@"Error parsing user data: %@", [error localizedDescription]);
         }
         
+        NSLog(@"Got user data %@", object);
         NSString *name = @"my friend";
         if([object isKindOfClass:[NSDictionary class]]){
             NSDictionary *results = object;
@@ -126,7 +124,7 @@
             [DataFramework setUserLoggedIn:[DataFramework getUsername] :YES];
             /* proceed with results as you like; the assignment to
              an explicit NSDictionary * is artificial step to get
-             compile-time checking from here on down (and better autocompletion
+             compile-time checking f9rom here on down (and better autocompletion
              when editing). You could have just made object an NSDictionary *
              in the first place but stylistically you might prefer to keep
              the question of type open until it's confirmed */
@@ -149,9 +147,25 @@
     NSLog(@"Finished, boi");
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)makeKeyboardDisappear:(id)sender {
+    [self textFieldShouldReturn:self.passwordTextField];
+    [self textFieldShouldReturn:self.usernameTextField];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.accessCodeTextField setDelegate:self];
+    [self.checkcodeButton setTitle:NSLocalizedString(@"check", "check code") forState:UIControlStateNormal];
+    [self.accessButton setTitle:NSLocalizedString(@"login", nil) forState:UIControlStateNormal];
+    self.usernameTextField.placeholder = NSLocalizedString(@"username", nil);
+    self.passwordTextField.placeholder = NSLocalizedString(@"password", nil);
+    self.resetLabel.text = NSLocalizedString(@"cant_login", @"for resetting account");
+    [self.noAccountButton setTitle:NSLocalizedString(@"no_account", "for non backers") forState:UIControlStateNormal];
+    
     if([DataFramework isUserLoggedIn]){
         NSDictionary *userData = [DataFramework getUserData];
         if(!userData){
@@ -159,16 +173,23 @@
             self.descriptionLabel.text = @"Weird issue parsing your data :/";
             return;
         }
+        NSLog(@"Got %@", userData);
         NSString *name = [userData objectForKey:@"name"];
-        NSString *accessCode = [DataFramework getUsername];
+        NSString *email = [DataFramework getEmail];
+        NSString *password = [DataFramework getUsername];
         self.checkcodeButton.enabled = false;
         self.accessButton.enabled = true;
-        self.accessCodeTextField.text = accessCode;
-        self.descriptionLabel.text = [[NSString alloc]initWithFormat:@"Welcome back, %@.", name];
-        self.accessCodeTextField.enabled = NO;
+        self.usernameTextField.text = email;
+        self.passwordTextField.text = password;
+        self.descriptionLabel.text = [[NSString alloc]initWithFormat:NSLocalizedString(@"welcome_back", "welcome back %@"), name];
+        self.usernameTextField.enabled = NO;
+        self.passwordTextField.enabled = NO;
     }
     UITapGestureRecognizer *resetGestureRec = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(resetCodeLinkHit)];
     [self.resetLabel addGestureRecognizer:resetGestureRec];
+    
+    UITapGestureRecognizer *keyboardGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(makeKeyboardDisappear:)];
+    [self.view addGestureRecognizer:keyboardGestureRecognizer];
     
     /*
     UITapGestureRecognizer *gaveUpGestureRec = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gaveUpLinkHit)];

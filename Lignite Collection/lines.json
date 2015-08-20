@@ -2,58 +2,58 @@
     "name":"lines",
     "items": [
               {
-              "title":"General",
+              "title":"pref_header_general",
               "items":[
                        {
                        "type":"toggle",
-                       "label":"Bluetooth disconnect alert",
-                       "ios_key":"li-btdisalert",
+                       "label":"pref_btdisalert",
+                       "storage_key":"li-btdisalert",
                        "pebble_key":0
                        },
                        {
                        "type":"toggle",
-                       "label":"Bluetooth reconnect alert",
-                       "ios_key":"li-btrealert",
+                       "label":"pref_btrealert",
+                       "storage_key":"li-btrealert",
                        "pebble_key":1
                        }
                        ]
               },
               {
-              "title":"Look and Feel",
+              "title":"pref_title_lookandfeel",
               "items":[
                        {
                        "type":"toggle",
-                       "label":"Show date",
-                       "ios_key":"li-showdate",
+                       "label":"show_date",
+                       "storage_key":"li-showdate",
                        "pebble_key":3
                        },
                        {
                        "type":"toggle",
-                       "label":"mm/dd/yy date format",
-                       "ios_key":"li-altdateformat",
+                       "label":"alt_date_format",
+                       "storage_key":"li-altdateformat",
                        "pebble_key":4
                        }
                        ]
               },
               {
-              "title":"General",
+              "title":"pref_header_colours",
               "items":[
                        {
                        "type":"colour",
-                       "label":"Time",
-                       "ios_key":"li-minute-colour",
+                       "label":"time_colour",
+                       "storage_key":"li-minute-colour",
                        "pebble_key":6
                        },
                        {
                        "type":"colour",
-                       "label":"Date",
-                       "ios_key":"li-hour-colour",
+                       "label":"date_colour",
+                       "storage_key":"li-hour-colour",
                        "pebble_key":7
                        },
                        {
                        "type":"colour",
-                       "label":"Background",
-                       "ios_key":"li-background-colour",
+                       "label":"background_colour",
+                       "storage_key":"li-background-colour",
                        "pebble_key":8
                        }
                        ]

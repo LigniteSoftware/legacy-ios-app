@@ -2,35 +2,35 @@
     "name":"slot machine",
     "items": [
               {
-              "title":"General",
+              "title":"pref_header_general",
               "items":[
                        {
                        "type":"toggle",
-                       "label":"Bluetooth disconnect alert",
-                       "ios_key":"slo-btdisalert",
+                       "label":"pref_btdisalert",
+                       "storage_key":"slo-btdisalert",
                        "pebble_key":0
                        },
                        {
                        "type":"toggle",
-                       "label":"Bluetooth reconnect alert",
-                       "ios_key":"slo-btrealert",
+                       "label":"pref_btrealert",
+                       "storage_key":"slo-btrealert",
                        "pebble_key":1
                        }
                        ]
               },
               {
-              "title":"Look and Feel",
+              "title":"pref_header_lookandfeel",
               "items":[
                        {
                        "type":"toggle",
-                       "label":"Invert",
-                       "ios_key":"slo-invert",
+                       "label":"pref_title_invert",
+                       "storage_key":"slo-invert",
                        "pebble_key":2
                        },
                        {
                        "type":"toggle",
-                       "label":"Update every second",
-                       "ios_key":"slo-seconds",
+                       "label":"secondly_updates",
+                       "storage_key":"slo-seconds",
                        "pebble_key":5
                        }
                        ]

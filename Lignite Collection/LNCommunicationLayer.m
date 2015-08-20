@@ -50,40 +50,9 @@
     NSString *key = [NSString stringWithFormat:@"%@", [PebbleInfo getAppNameFromType:type]];
     NSMutableDictionary *dict = [defaults objectForKey:key];
     if(!dict){
-        NSLog(@"dict for %@ is null, creating new dict...", [NSString stringWithFormat:@"%@", [PebbleInfo getAppNameFromType:type]]);
-        switch(type){
-            case APP_TYPE_SPEEDOMETER:
-                dict = [[NSMutableDictionary alloc]initWithObjects:@[@0, @0, @0, @0, @0, @0, @"ffffff", @"ffffff", @"ffffff"] forKeys:@[@"spe-invert", @"spe-btdisalert", @"spe-btrealert", @"spe-bootanim", @"spe-bticon", @"spe-dithering", @"spe-outer-colour", @"spe-middle-colour", @"spe-inner-colour"]];
-                break;
-            case APP_TYPE_KNIGHTRIDER:
-                dict = [[NSMutableDictionary alloc]initWithObjects:@[@0, @0, @0, @0, @0, @0] forKeys:@[@"kni-btdisalert", @"kni-btrealert", @"kni-bootanim", @"kni-constant", @"kni-dithering", @"kni-invert"]];
-                break;
-            case APP_TYPE_CHUNKY:
-                dict = [[NSMutableDictionary alloc]initWithObjects:@[@1, @0, @0, @1, @"ff0000", @"ff0000", @"000000"] forKeys:@[@"chu-btdisalert", @"chu-btrealert", @"chu-invert", @"chu-batterybar", @"chu-minute-colour", @"chu-hour-colour", @"chu-background-colour"]];
-                break;
-            case APP_TYPE_COLOURS:
-                dict = [[NSMutableDictionary alloc]initWithObjects:@[@1, @0, @1, @0, @6, @"ffffff", @"ffffff"] forKeys:@[@"col-btdisalert", @"col-btrealert", @"col-organize", @"col-randomize", @"col-bar-width", @"col-minute-colour", @"col-hour-colour"]];
-                break;
-            case APP_TYPE_LINES:
-                dict = [[NSMutableDictionary alloc]initWithObjects:@[@1, @0, @1, @0, @"ffffff", @"ffffff", @"00ffff"] forKeys:@[@"lin-btdisalert", @"lin-btrealert", @"lin-showdate", @"lin-altdate", @"lin-time-colour", @"lin-date-colour", @"lin-background-colour"]];
-                break;
-            case APP_TYPE_TREE_OF_COLOURS:
-                dict = [[NSMutableDictionary alloc]initWithObjects:@[@1, @0, @1, @2, @"000000", @"000000", @"000000", @"000000", @"000000"] forKeys:@[@"tre-btdisalert", @"tre-btrealert", @"tre-randomize", @"tre-default-width", @"tre-custom-colour-1", @"tre-custom-colour-2", @"tre-custom-colour-3", @"tre-circle-colour", @"tre-time-colour"]];
-                break;
-            case APP_TYPE_TIMEZONES:
-                dict = [[NSMutableDictionary alloc]initWithObjects:@[@1, @0, @"You", @"000000", @1, @"Not set", @0, @"Other", @"000000", @1] forKeys:@[@"tim-btdisalert", @"tim-btrealert", @"tim-name-1", @"tim-colour-1", @"tim-analogue_1", @"tim-timezone", @"tim-subtract-hour", @"tim-name-2", @"tim-colour-2", @"tim-analogue_2"]];
-                break;
-            case APP_TYPE_SLOT_MACHINE:
-                dict = [[NSMutableDictionary alloc]initWithObjects:@[@1, @0, @0, @0, @0] forKeys:@[@"pul-btdisalert", @"pul-btrealert", @"pul-invert", @"pul-shake", @"pul-seconds"]];
-                break;
-            case APP_TYPE_PULSE:
-                dict = [[NSMutableDictionary alloc]initWithObjects:@[@1, @0, @0, @0, @0, @"000000", @"000000"] forKeys:@[@"pul-btdisalert", @"pul-btrealert", @"pul-invert", @"pul-shake", @"pul-constant", @"pul-circle-colour", @"pul-background-colour"]];
-                break;
-            default:
-                break;
-        }
+        NSLog(@"Dict for %@ is null, creating new...", [NSString stringWithFormat:@"%@", [PebbleInfo getAppNameFromType:type]]);
+        return [[NSMutableDictionary alloc]init];
     }
-    NSLog(@"dict is %@", dict);
     dict = [dict mutableCopy];
     return dict;
 }
@@ -145,10 +114,10 @@
     NSDictionary *update = @{ @(pebbleKey):number };
     [currentWatch appMessagesPushUpdate:update onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
         if (!error) {
-            NSLog(@"Successfully sent boolean.");
+            NSLog(@"Successfully sent number.");
         }
         else {
-            NSLog(@"Error sending boolean: %@", error);
+            NSLog(@"Error sending number: %@", error);
         }
     }];
 }
@@ -181,6 +150,8 @@
 + (void)sendColourToPebble:(NSString*)colour :(NSInteger)pebbleKey :(NSString*)storageKey :(NSString*)appUUID {
     [self updateStringSetting:[PebbleInfo getAppTypeCode:appUUID] :colour :storageKey];
     
+    NSLog(@"got colour %@", colour);
+    
     PBWatch *currentWatch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
     if(!currentWatch){
         NSLog(@"No watch connected, however, the colour was saved to storage.");
@@ -195,12 +166,40 @@
     NSDictionary *update = @{ @(pebbleKey):colour };
     [currentWatch appMessagesPushUpdate:update onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
         if (!error) {
-            NSLog(@"Successfully sent colour.");
+            NSLog(@"Successfully sent colour (%@).", update);
         }
         else {
             NSLog(@"Error sending colour: %@", error);
         }
     }];
+}
+
++ (AppTypeCode)getPreviousAppType{
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"previous_app_type"];
+}
+
++ (void)setPreviousAppType:(AppTypeCode)type{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:type forKey:@"previous_app_type"];
+    [defaults synchronize];
+}
+
++ (BOOL)pebbleImageIsTime:(NSString *)pebble {
+    if([pebble containsString:@"bobby"] || [pebble containsString:@"snowy"]){
+        return YES;
+    }
+    return NO;
+}
+
++ (NSString*)defaultPebbleImage {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:@"pebbleImage"];
+}
+
++ (void)setDefaultPebbleImage:(NSString*)pebbleImage {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:pebbleImage forKey:@"pebbleImage"];
+    [defaults synchronize];
 }
 
 NSString* deviceName(){
@@ -210,12 +209,35 @@ NSString* deviceName(){
     return [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
 }
 
++ (BOOL)hasAnsweredBackerQuestion{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"returning %d", [defaults boolForKey:@"key-ANSWERED"]);
+    return [defaults boolForKey:@"key-ANSWERED"];
+}
+
++ (void)userAnsweredBackerQuestion:(BOOL)response{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:response forKey:@"key-ANSWERED"];
+    BOOL success = [defaults synchronize];
+    NSLog(@"%d for %d", success, response);
+}
+
 + (NSString*)getUsername {
     NSString *username = @"NOBODY";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     username = [defaults objectForKey:@"key-ACCESS_CODE"];
-    NSLog(@"Found username of %@", username);
     return username;
+}
+
++ (NSString*)getEmail {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:@"key-EMAIL"];
+}
+
++ (void)setEmail:(NSString *)email {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:email forKey:@"key-EMAIL"];
+    [defaults synchronize];
 }
 
 + (void)setUsername:(NSString*)newUsername {

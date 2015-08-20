@@ -2,47 +2,47 @@
     "name":"rightnighter",
     "items": [
               {
-              "title":"General",
+              "title":"pref_header_general",
               "items":[
                        {
                        "type":"toggle",
-                       "label":"Bluetooth disconnect alert",
-                       "ios_key":"rn-btdisalert",
+                       "label":"pref_btdisalert",
+                       "storage_key":"rn-btdisalert",
                        "pebble_key":0
                        },
                        {
                        "type":"toggle",
-                       "label":"Bluetooth reconnect alert",
-                       "ios_key":"rn-btrealert",
+                       "label":"pref_btrealert",
+                       "storage_key":"rn-btrealert",
                        "pebble_key":1
                        }
                        ]
               },
               {
-              "title":"Look and Feel",
+              "title":"pref_title_lookandfeel",
               "items":[
                        {
                        "type":"toggle",
-                       "label":"Boot animation",
-                       "ios_key":"rn-bootanim",
+                       "label":"pref_boot_animation",
+                       "storage_key":"rn-bootanim",
                        "pebble_key":3
                        },
                        {
                        "type":"toggle",
-                       "label":"Antialiasing",
-                       "ios_key":"rn-antialiasing",
+                       "label":"pref_antialiased",
+                       "storage_key":"rn-antialiasing",
                        "pebble_key":4
                        },
                        {
                        "type":"toggle",
-                       "label":"Constant animations",
-                       "ios_key":"rn-constantanim",
+                       "label":"pref_constant_anim",
+                       "storage_key":"rn-constantanim",
                        "pebble_key":5
                        },
                        {
                        "type":"toggle",
-                       "label":"Invert",
-                       "ios_key":"rn-invert",
+                       "label":"pref_title_invert",
+                       "storage_key":"rn-invert",
                        "pebble_key":6
                        }
                        ]

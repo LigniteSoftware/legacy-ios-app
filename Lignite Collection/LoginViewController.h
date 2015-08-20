@@ -11,7 +11,7 @@
 @interface LoginViewController : UIViewController<NSURLConnectionDelegate, UITextFieldDelegate>
 
 @property IBOutlet UILabel *titleLabel, *subtitleLabel, *descriptionLabel, *resetLabel;
-@property IBOutlet UITextField *accessCodeTextField;
-@property IBOutlet UIButton *accessButton, *checkcodeButton;
+@property IBOutlet UITextField *usernameTextField, *passwordTextField;
+@property IBOutlet UIButton *accessButton, *checkcodeButton, *noAccountButton;
 
 @end

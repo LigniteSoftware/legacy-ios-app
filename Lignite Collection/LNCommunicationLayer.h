@@ -25,6 +25,14 @@
 + (void)sendBooleanToPebble:(BOOL)boolean :(NSInteger)pebbleKey :(NSString*)storageKey :(NSString*)appUUID;
 + (void)sendColourToPebble:(NSString*)colour :(NSInteger)pebbleKey :(NSString*)storageKey :(NSString*)appUUID;
 
++ (AppTypeCode)getPreviousAppType;
++ (void)setPreviousAppType:(AppTypeCode)type;
++ (BOOL)pebbleImageIsTime:(NSString*)pebble;
++ (NSString*)defaultPebbleImage;
++ (void)setDefaultPebbleImage:(NSString*)pebbleImage;
++ (BOOL)hasAnsweredBackerQuestion;
++ (void)userAnsweredBackerQuestion:(BOOL)response;
++ (NSString*)getEmail;
 + (NSString*)getUserToken;
 + (void)setUserToken:(NSString*)newToken;
 + (NSString*)getUsername;
@@ -38,5 +46,6 @@
 + (BOOL)hasUserTakenBackerQuestion;
 + (void)setUserTakenBackerQuestion:(BOOL)taken;
 + (NSString*)getCurrentDevice;
+
 
 @end

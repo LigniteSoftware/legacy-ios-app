@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.creditsView.text = NSLocalizedString(@"full_credits", nil);
+    self.creditsView.textColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {

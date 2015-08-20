@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="15A204h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,7 +11,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lignite_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gc6-AA-eUz">
-                    <rect key="frame" x="8" y="81" width="584" height="442"/>
+                    <rect key="frame" x="32" y="64" width="537" height="472"/>
                     <animations/>
                 </imageView>
             </subviews>
@@ -20,10 +19,10 @@
             <color key="backgroundColor" red="1" green="0.010051519906342232" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Gc6-AA-eUz" secondAttribute="trailing" constant="8" id="16p-e4-8A8"/>
-                <constraint firstAttribute="bottom" secondItem="Gc6-AA-eUz" secondAttribute="bottom" constant="77" id="6FC-ux-P0J"/>
-                <constraint firstItem="Gc6-AA-eUz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="81" id="AET-v9-OrM"/>
-                <constraint firstItem="Gc6-AA-eUz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="neu-6J-IIw"/>
+                <constraint firstAttribute="trailing" secondItem="Gc6-AA-eUz" secondAttribute="trailing" constant="31" id="16p-e4-8A8"/>
+                <constraint firstAttribute="bottom" secondItem="Gc6-AA-eUz" secondAttribute="bottom" constant="64" id="6FC-ux-P0J"/>
+                <constraint firstItem="Gc6-AA-eUz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="AET-v9-OrM"/>
+                <constraint firstItem="Gc6-AA-eUz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="neu-6J-IIw"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <point key="canvasLocation" x="548" y="455"/>
