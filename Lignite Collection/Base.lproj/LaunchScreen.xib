@@ -29,6 +29,6 @@
         </view>
     </objects>
     <resources>
-        <image name="lignite_logo.png" width="982" height="663"/>
+        <image name="lignite_logo.png" width="491" height="331"/>
     </resources>
 </document>

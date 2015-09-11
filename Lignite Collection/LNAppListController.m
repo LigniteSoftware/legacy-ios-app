@@ -7,14 +7,9 @@
 //
 
 #import "LNAppListController.h"
-#import "LNAppListViewController.h"
-#import "LNAppInfo.h"
-#import "LNCommunicationLayer.h"
-#import "LoginViewController.h"
 
-@interface LNAppListController ()
+@interface LNAppListController () <SimpleTableViewControllerDelegate>
 
-@property NSInteger currentIndex;
 @property NSURLConnection *verifyConnection;
 
 @end
@@ -33,13 +28,38 @@ BOOL controller_owns_app[APP_COUNT];
     [controller logoutButtonPushed:self];
 }
 
+- (void)fireBigList:(UISwipeGestureRecognizer*)recognizer{
+    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    UINavigationController *navigationController = (UINavigationController *)[storybord instantiateViewControllerWithIdentifier:@"SimpleTableVC"];
+    SimpleTableViewController *tableViewController = (SimpleTableViewController *)[[navigationController viewControllers] objectAtIndex:0];
+    
+    NSArray *array = [LNAppInfo  nameArray];
+    NSMutableArray *fixedArray = [[NSMutableArray alloc]init];
+    for(int i = 0; i < [array count]; i++){
+        [fixedArray insertObject:[[array objectAtIndex:i] capitalizedString] atIndex:i];
+    }
+    
+    tableViewController.tableData = fixedArray;
+    tableViewController.navigationItem.title = NSLocalizedString(@"pick_an_app", nil);
+    tableViewController.delegate = self;
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
+    
+}
+
+- (void)itemSelectedatRow:(NSInteger)row {
+    self.currentIndex = row;
+    [self selectAnApp:(AppTypeCode)self.currentIndex];
+}
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
     NSError *error;
     NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     NSNumber *status = [jsonResult objectForKey:@"status"];
     if(connection == self.verifyConnection){
         if(![status isEqual:@200]){
-            [DataFramework setUserLoggedIn:[DataFramework getUsername] :NO];
+            [LNDataFramework setUserLoggedIn:[LNDataFramework getUsername] :NO];
             LoginViewController *loginScreen = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
             [self presentViewController:loginScreen animated:YES completion:nil];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"illegal_account", "user's account is malformed")
@@ -69,7 +89,7 @@ BOOL controller_owns_app[APP_COUNT];
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
     
-    LNAppListViewController *startingViewController = [self viewControllerAtIndex:[DataFramework getPreviousAppType]];
+    LNAppListViewController *startingViewController = [self viewControllerAtIndex:[LNDataFramework getPreviousAppType]];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
@@ -84,8 +104,13 @@ BOOL controller_owns_app[APP_COUNT];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"logout", nil) style:UIBarButtonItemStylePlain target:self action:@selector(topLeftPushed:)];
     self.title = @"Lignite";
     
-    if([DataFramework isUserBacker]){
-        NSString *post = [NSString stringWithFormat:@"username=%@&accessToken=%@", [DataFramework getUsername], [DataFramework getUserToken]];
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(fireBigList:)];
+    recognizer.direction = UISwipeGestureRecognizerDirectionUp;
+    self.view.userInteractionEnabled = YES;
+    [self.view addGestureRecognizer:recognizer];
+    
+    if([LNDataFramework isUserBacker]){
+        NSString *post = [NSString stringWithFormat:@"username=%@&accessToken=%@", [LNDataFramework getUsername], [LNDataFramework getUserToken]];
         
         NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
         
@@ -102,9 +127,18 @@ BOOL controller_owns_app[APP_COUNT];
         [self.verifyConnection start];
     }
     
-    if(![DataFramework isUserBacker]){
+    if(![LNDataFramework isUserBacker]){
         self.navigationItem.leftBarButtonItem.title = NSLocalizedString(@"restore", nil);
     }
+	/*
+	for (UIScrollView *view in self.pageViewController.view.subviews) {
+		
+		if ([view isKindOfClass:[UIScrollView class]]) {
+			
+			view.scrollEnabled = NO;
+		}
+	}
+	 */ 
 }
 
 - (void)didReceiveMemoryWarning {
@@ -114,19 +148,34 @@ BOOL controller_owns_app[APP_COUNT];
 
 #pragma mark - Page View Controller Data Source
 
+
+- (void)selectAnApp:(AppTypeCode)app { 
+	// Instead get the view controller of the first page
+	LNAppListViewController *newInitialViewController = (LNAppListViewController *)[self viewControllerAtIndex:app];
+	NSArray *initialViewControllers = [NSArray arrayWithObject:newInitialViewController];
+	// Do the setViewControllers: again but this time use direction animation:
+	[self.pageViewController setViewControllers:initialViewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+}
+/*
 - (void)selectAnApp:(AppTypeCode)app {
     LNAppListViewController *startingViewController = [self viewControllerAtIndex:app];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
     self.currentIndex = app;
+    [self.pageViewController didMoveToParentViewController:self];
 }
-
+*/
 - (LNAppListViewController *)viewControllerAtIndex:(NSUInteger)index{
     // Create a new view controller and pass suitable data.
     LNAppListViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AppViewController"];
     pageContentViewController.currentType = (AppTypeCode)index;
     pageContentViewController.owns_app = controller_owns_app[index];
+	pageContentViewController.sourcePageViewController = self.pageViewController;
+	pageContentViewController.sourceViewController = self;
+    //pageContentViewController.sourceController = self;
     self.currentIndex = index;
+    
+    [LNDataFramework setPreviousAppType:(AppTypeCode)index];
     
     return pageContentViewController;
 }
@@ -147,7 +196,6 @@ BOOL controller_owns_app[APP_COUNT];
     }
     
     index--;
-    [DataFramework setPreviousAppType:(AppTypeCode)index];
     return [self viewControllerAtIndex:index];
 }
 
@@ -162,7 +210,6 @@ BOOL controller_owns_app[APP_COUNT];
     if (index > APP_COUNT-1) {
         return nil;
     }
-    [DataFramework setPreviousAppType:(AppTypeCode)index];
     return [self viewControllerAtIndex:index];
 }
 

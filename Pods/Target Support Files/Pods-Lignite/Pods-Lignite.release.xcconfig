@@ -1,7 +1,6 @@
 FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/PebbleKit" "$(PODS_ROOT)/PebbleKit"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/DRColorPicker" "${PODS_ROOT}/Headers/Public/PebbleKit" "${PODS_ROOT}/Headers/Public/UICKeyChainStore"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/DRColorPicker" -isystem "${PODS_ROOT}/Headers/Public/PebbleKit" -isystem "${PODS_ROOT}/Headers/Public/UICKeyChainStore"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-Lignite-DRColorPicker" -l"Pods-Lignite-UICKeyChainStore" -l"z" -framework "ImageIO" -framework "PebbleKit" -framework "PebbleVendor" -framework "QuartzCore" -framework "Security" -framework "UIKit" -weak_framework "CoreBluetooth" -weak_framework "CoreMotion" -weak_framework "ExternalAccessory" -weak_framework "MessageUI"
-OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/PebbleKit" "${PODS_ROOT}/Headers/Public/PebbleKit/PebbleKit" "${PODS_ROOT}/Headers/Public/PebbleKit/PebbleVendor" "${PODS_ROOT}/Headers/Public/UICKeyChainStore"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/PebbleKit" -isystem "${PODS_ROOT}/Headers/Public/PebbleKit/PebbleKit" -isystem "${PODS_ROOT}/Headers/Public/PebbleKit/PebbleVendor" -isystem "${PODS_ROOT}/Headers/Public/UICKeyChainStore"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"UICKeyChainStore" -l"z" -framework "PebbleKit" -framework "PebbleVendor" -framework "Security" -weak_framework "CoreBluetooth" -weak_framework "CoreMotion" -weak_framework "ExternalAccessory" -weak_framework "MessageUI"
 PODS_ROOT = ${SRCROOT}/Pods

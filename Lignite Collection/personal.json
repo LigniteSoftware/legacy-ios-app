@@ -8,13 +8,15 @@
                        "type":"toggle",
                        "label":"pref_btdisalert",
                        "storage_key":"per-btdisalert",
-                       "pebble_key":0
+                       "pebble_key":0,
+                       "default":true
                        },
                        {
                        "type":"toggle",
                        "label":"pref_btrealert",
                        "storage_key":"per-btrealert",
-                       "pebble_key":1
+                       "pebble_key":1,
+                       "default":false
                        }
                        ]
               },
@@ -25,19 +27,25 @@
                        "type":"toggle",
                        "label":"pref_boot_animation",
                        "storage_key":"per-boot-anim",
-                       "pebble_key":3
+                       "pebble_key":3,
+                       "default":true
                        },
                        {
-                       "type":"toggle",
-                       "label":"compressed_date_format",
-                       "storage_key":"per-show-date",
-                       "pebble_key":4
+                       "type":"list",
+                       "label":"date_format",
+                       "storage_key":"per-date-format",
+                       "pebble_key":4,
+                       "list":[
+                        "Mo. day, year", "mm dd yy Week: ww", "dd mm yy Week: ww"
+                       ],
+                       "default":0
                        },
                        {
                        "type":"toggle",
                        "label":"pref_bluetooth_icon",
                        "storage_key":"per-bluetooth-indicator",
-                       "pebble_key":5
+                       "pebble_key":5,
+                       "default":true
                        }
                        ]
               },
@@ -47,7 +55,8 @@
                         {
                           "type": "textfield",
                           "storage_key": "per-name-1",
-                          "pebble_key": 6
+                          "pebble_key": 6,
+                          "default":"friend"
                         }
                        ]
               },
@@ -58,13 +67,15 @@
                        "type":"colour",
                        "label":"accent",
                        "storage_key":"per-accent-colour",
-                       "pebble_key":8
+                       "pebble_key":8,
+                       "default":"GColorRed"
                        },
                        {
                        "type":"colour",
                        "label":"background_colour",
                        "storage_key":"per-background-colour",
-                       "pebble_key":9
+                       "pebble_key":9,
+                       "default":"GColorBlack"
                        }
                        ]
               }

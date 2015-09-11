@@ -10,8 +10,16 @@
 
 @interface LoginViewController : UIViewController<NSURLConnectionDelegate, UITextFieldDelegate>
 
-@property IBOutlet UILabel *titleLabel, *subtitleLabel, *descriptionLabel, *resetLabel;
-@property IBOutlet UITextField *usernameTextField, *passwordTextField;
-@property IBOutlet UIButton *accessButton, *checkcodeButton, *noAccountButton;
+/*
+ For backer login. It follows a simple check with the server to make sure the credentials are legit,
+ and if it gets a valid response it will handle accordingly.
+ */
+
+@property UIView *rootView;
+
+@property UILabel *titleLabel, *subtitleLabel, *descriptionLabel;
+@property UITextField *usernameTextField, *passwordTextField;
+@property UIButton *accessButton, *checkcodeButton, *noAccountButton, *resetButton, *findAccountButton;
+@property UIImageView *logoView;
 
 @end

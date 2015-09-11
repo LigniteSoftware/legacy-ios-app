@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LNAppInfo.h"
 
-@interface LNSettingsViewController : UITableViewController
+@interface LNSettingsViewController : UITableViewController <UIAlertViewDelegate>
 
+- (void)setAsAlertSettings;
 - (void)setPebbleApp:(AppTypeCode)app;
 
 @end

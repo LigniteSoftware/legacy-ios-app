@@ -10,6 +10,12 @@
 
 @interface FeedbackViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, NSURLConnectionDelegate>
 
+/*
+ The feedback view controller handles sending backer's feedback to our server.
+ In reality, we don't look at their feedback very often. When we do though,
+ we REALLY do take it into consideration and have made many changes based off of it.
+ */
+
 @property IBOutlet UILabel *whatTypeTitleLabel, *howImportantTitleLabel, *detailsTitleLabel, *howImportantValueLabel, *feedbackPolicyLabel;
 @property IBOutlet UITextView *disclaimerView;
 @property IBOutlet UIPickerView *whatTypeValuePicker;

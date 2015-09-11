@@ -11,5 +11,6 @@
 @interface LNLabel : UILabel
 
 @property NSDictionary *json_object;
+@property LNLabel *extra_label;
 
 @end

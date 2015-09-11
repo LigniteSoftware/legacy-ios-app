@@ -4,7 +4,6 @@
 target 'Lignite' do
 
   pod 'PebbleKit'
-  pod 'DRColorPicker', '~> 1.0.11'
   pod 'UICKeyChainStore'
 
 end

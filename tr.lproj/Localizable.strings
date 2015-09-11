@@ -1,0 +1,253 @@
+/*
+ Localizable.strings
+ Lignite
+ 
+ Created by Edwin Finch on 8/12/15.
+ Copyright (c) 2015 Edwin Finch. All rights reserved.
+ */
+
+/*
+ Settings
+ */
+
+"pref_header_general" = "Genel";
+"pref_header_lookandfeel" = "Görünüm ve His";
+"pref_title_lookandfeel" = "Görünüm ve His";
+"pref_header_colours" = "Renkler";
+"pref_header_othercolours" = "Diğer Renkler";
+"pref_header_animations" = "Animasyonlar";
+
+"pref_btdisalert" = "Bluetooth bağlantı kopma uyarısı";
+"pref_btrealert" = "Bluetooth yeniden bağlanma uyarısı";
+
+//Speedometer
+"pref_title_invert" = "Renkleri Tersine Çevir";
+"show_borders" = "Kenarları Tersine Çevir";
+"pref_boot_animation" = "Başlangıç Animasyonu";
+"pref_bluetooth_icon" = "Bluetooth Göstergesi";
+"pref_title_1_colour" = "Dış Renk";
+"pref_title_2_colour" = "Orta Renk";
+"pref_title_3_colour" = "İç Renk";
+"pref_antialiased" = "Kenar Düzleştirme";
+
+//RightNighter
+"pref_constant_anim" = "Sürekli Animasyon";
+
+//Chunky
+"battery_bar" = "Pil Barı";
+"minute_colour" = "Dakika";
+"hour_colour" = "Saat";
+
+//Lines
+"alt_date_format" = "Alternatif Tarih Formatı";
+"date_colour" = "Tarih";
+
+//Colours
+"outline_numbers" = "Siyah Sayı Kenarları";
+"organize_colours" = "Renkleri Düzenle";
+"randomize_width" = "Rasgele Genişlik (beta)";
+"default_width" = "Genişlik";
+
+//Tree of Colours
+"randomize_colours" = "Renkleri DÜzenle";
+"custom_colour_1" = "Özel Renk 1";
+"custom_colour_2" = "Özel Renk 2";
+"custom_colour_3" = "Özel Renk 3";
+"circle_colour" = "Çember";
+
+//Timezones
+"your_time" = "Saat Diliminiz";
+"colour" = "Renk";
+"analogue" = "Analog";
+"subtract_hour" = "Çıkarılan Saat";
+
+//Slot machine
+"secondly_updates" = "Saniyelik Güncelleme";
+
+//Simplified Analogue
+"weekday" = "Haftagünleri";
+"advanced_date" = "Gelişmiş Tarih";
+"digital_time" = "Dijital Saat";
+"minute_analogue" = "Dakika Analog Çemberi";
+"hour_analogue" = "Saat Analog Çemberi";
+
+//Personal
+"compressed_date_format" = "Sıkıştırılmış Tarih Formatı";
+"accent" = "Aksan";
+
+//Beat
+"shake_to_animate" = "Animasyon için Salla";
+"beatline_data" = "Beatline Verisi";
+"animation_type" = "Animasyon Tipi";
+"show_date" = "Tarihi Göster";
+"show_battery" = "Pil Seviyesi Göster";
+"time_colour" = "Zaman";
+"background_colour" = "Arkaplan";
+"front_colour" = "Ön";
+"back_colour" = "Arka";
+
+"battery" = "Pil";
+"bluetooth" = "Bluetooth";
+"random" = "Rasgele";
+
+"animation_type" = "Animasyon Tipi";
+"apple_watch_mode" = "Pil Vampiri (Saniyelik)";
+"minutely" = "Dakikalık";
+"on_change" = "Değişimde";
+
+//Equalizer
+"minute_dependant" = "Bar sayısı = Dakikalar";
+
+"equalizer_animation_mode" = "Equalizer Animasyon Modu";
+"show_day" = "Günü Göster";
+
+"animation_roll" = "Dalga";
+"animation_music" = "Müzik";
+"animation_expand_and_slam" = "Genişlet";
+
+"battery_bar_colour" = "Pil Barı";
+
+/*
+ App Descriptions
+ */
+
+"speedometer_description" = "Speedometer ekranınızda belirten bir saat yüzü!\n\nZamana, haftaya, daikakaya ya da pil durumuna göre dolan çubukları ile harika bir saat yüzü!";
+
+"rightnighter_description" = "80'lerde çocuk olanlar bunun ne demek olduğunu çok iyi bilirler. Kolunuzda bir saat değiştikçe harekete eden bir \"KİTT\" animasyonuna sahip olmak.\n\nSol tarafta tarih sağ tarafta ise pil durumu yer alıyor.";
+
+"chunky_description" = "Renkleri seçip, zamanı büyük sayılar ile görebileceğini güzel kare tasarım.\n\nHer kıyafetinize uyum sağlayacak birçok farklı seçeneğe sahip bir saat yüzü!";
+
+"lines_description" = "Sade ve ancak o kadar da stil bir saat yüzü.\n\nRenk değişikliği gibi birkaç özelleştirme mevcut, daha büyük font seçeneği de çok yakında!";
+
+"colours_description" = "Her dakika değişen renkleri ve Pebble Time'ın siyah arkaplanını her an değiştiren tonları ile Pebble Time'ın ekranını öne çıkaracak bir saat yüzü.\n\nAyarlarda çubuk genişliği ve diğer detayları ayarlayabilirsiniz. Oldukça kullanışlı ve güzel!";
+
+"timedock_description" = "TimeDock by Engineerable için resmi saat yüzü. Şimdi App Store'da! \n\nAyarlarda birçok özellik mevcut ve ücretsiz, bir göz atmanızda fayda var.";
+
+"tree of colours_description" = "Renkli ekranın hayat verdiği bir sat yüzü!\n\nHer saat kendisini baştan başlatıp yepyeni bir animasyon ile karşınıza çıkıyor!";
+
+"timezones_description" = "İki farklı zaman dilimi gösterme ve birçok özellik ile farklı bir saat yüzü.\n\nİçteki ilk saat dilimini gösterirken (Örnekte Phlipp'in saat dilimi) dıştaki çember ikincil saat dilimini gösteriyor. (Örnekte Edwin.).";
+
+"slot machine_description" = "Kumarhanelerdeki Slot makinası temel alınarak hazırlanmış eşsiz bir tasarım daha.\n\nİhtiyacınız olursa diye pil durumu gösterme gibi birkaç özellik de bu saat yüzünde mevcut.";
+
+"pulse_description" = "Animasyonların hayat verdiği bir saat yüzü daha. Her dakika büyüyen bir çember ya da her dakika arkaplan resmini değiştiren bir animasyon.\n\nBu saat yüzü Pebble Time'ın renkli ekranını meydana çıkaracak.";
+
+"simplified analogue_description" = "Sadeliğin kalite ile buluştuğu saat yüzü. \n\nSizlerden gelen geri bildirimler ile hem digital hem de analog saati gösteren bu harika saat yüzünü tasarladık. Ayrıca istediğiniz her bir özelliğini dilediğinzice özelleştirebilirsiniz.";
+
+"personal_description" = "Adı gibi bireysel bir saat yüzü: Personal.\n\nPersonal'ı adınızı gösterecek bir şekilde düzenleyin. Pebble Time'ın ekranına tam optimize tasarım, gerçekten harika görünüyor.";
+
+"beat_description" = "Beat, \"beatline\" adında eşsiz bir animasyon kullanan harika bir saat yüzü.\n\nPebble'ınızı kalp atışınıı ölçüyormuş gibi de gösterebilen birçok harika animasyona sahip, ayrıca renkleri ve birçok düzenlemeyi Lignite uygulaması ile yapabilirsiniz.";
+
+"equalizer_description" = "Renli ekranı çıldırtacak bir tane daha! \n\nDalga ve müzik gibi birçok animasyona sahip olan barlar ve daha fazlası!Bu animasyonların ne sıklıkla olmasını istediğinizi seçebilirsiniz.";
+
+/*
+ Login Screen
+ */
+"username" = "Kullanıcı Adı";
+"password" = "Parola";
+"enter_details" = "Lütfen Lignite Hesap Bilgilerinizi Girin";
+"check" = "Kontrol Et";
+"login" = "Giriş Yap";
+"cant_login" = "Giriş yapamıyor musunuz? Buraya tıklayın.";
+"no_account" = "Hesabınız yok mu? Buraya tıklayarak devam edin.";
+"welcome_back" = "Tekrar Hoşgeldin, %@!";
+
+/*
+ Main app
+ */
+
+"restore" = "Geri Yükle";
+"install" = "Yükle";
+"purchase" = "Satın Al";
+"settings" = "Ayarlar";
+"credits" = "Emeği Geçenler";
+"cancel" = "İptal Et";
+"kickstarter_backer" = "Kickstarter bağışçısı?";
+"are_you_a_backer" = "Kickstarter kampanyasına katıldınız mı?";
+"restoring_purchases" = "Satın almalar geri yükleniyor...";
+"restored_purchases" = "Geri Yüklenmiş Satın Almalar";
+"restored_purchases_description" = "Daha Önceki %d satın almanız geri yüklendi. Desteğiniz için teşekkürler!";
+"logout" = "Çıkış Yap";
+"send_feedback" = "Geri Bildirim Gönder";
+"logging_out" = "Çıkış Yapılıyor...";
+"pick_an_app" = "Bir Uygulama Seç";
+
+/*
+ Tutorial
+ */
+
+"tutorial_logout" = "Bu buton ile satın almaları geri yükleyin.";
+"tutorial_swipe" = "Ekranı sağa veya sola kaydırarak değişik uygulamalar arasında geçiş yapabilirsiniz.";
+"tutorial_action" = "Bu buton ile Kickstarter Bağışçısı olarak giriş yapın, öğreticiyi yeniden başlatın ve emeği geçenleri görüntüleyin";
+"tutorial_install" = "Tap here to install the currently selected app";
+"tutorial_purchase" = "Bu buton ile uygulamayı satın alın, ayarları görüntüleyin, bir saat ücretsiz deneiyn.";
+"replay_tutorial" = "Öğreticiyi Yeniden Başlat";
+
+/*
+ Preview Builder
+ */
+
+"build_a_preview" = "Önizleme Oluştur";
+"screenshot" = "Ekran Görüntüsü";
+"set_as_default_pebble" = "Varsayılan Pebble olarak ayarla";
+
+"bianca-black" = "Pebble Steel - Siyah";
+"bianca-silver" = "Pebble Steel - Gümüş";
+"bobby-black" = "Time Steel - Siyah";
+"bobby-silver" = "Time Steel - Gümüş";
+"bobby-gold" = "Time Steel - Altın";
+"snowy-black" = "Pebble Time - Siyah";
+"snowy-red" = "Pebble Time - Kırmızı";
+"snowy-white" = "Pebble Time - Beyaz";
+"tintin-black" = "Pebble - Siyah";
+"tintin-red" = "Pebble - Kırmızı";
+"tintin-white" = "Pebble - Beyaz";
+
+/*
+ Feedback Submitter
+ */
+
+"description" = "Açıklama";
+"type" = "Tip";
+"type_crash" = "Çökme";
+"type_bug" = "Hata";
+"type_design" = "Tasarım-hakkında";
+"type_feature" = "Özellikler-hakkında";
+"type_other" = "Diğer";
+"importance" = "Önem";
+"feedback_disclaimer" = "Geri bildirim doğrudan Edwin'in suunucunsa gönderiliyor. Gizlilik politikamızı buradan görüntüleyin: http://lignite.io/policy Geribildirimlerinizi Lignite Koleksiyonunun daha da geliştirmek ve en iyi saat yüzü ve saat uygulamalarını yapmak için kullanıyoruz.";
+"send" = "Gönder";
+
+/*
+ Errors
+ */
+
+"failed" = "Hata";
+"failed_to_logout" = "Özür Dilerim, çıkış yaparken hata oldu. Hata: %@";
+"illegal_account" = "Geçersiz Hesap";
+"illegal_account_description" = "Muhtemelen hesap yenileyici kullandığınız için geçersiz giriş yaptınız. Şimdi de çıkış yapmaya zorlandınız.";
+"damn_okay" = "Tamam";
+"tampered_with" = "Kurcalanmış";
+"tampered_with_description" = "Sen kim olduğunu sanıyorsun ? Bildiğin NSUserDefaults kurcalayıp, bedava satın almaya çalışıyorsun. Bu mezarcılık niye, 1  Dolar ver şu kardeşine destek ol!";
+"freeloader" = "Tabii ki de mezarcı değilim, parasını ödeyeceğim :)";
+"cant_pay_title" = "Ödeme yapamıyorum :()";
+"cant_pay_description" = "Görnen o ki ödeme yapamıyorsunuz.\n\nBu muhtemelen cihazınızda Sınırlamaların aktif olmasından kaynaklanıyor. Üzgünüm!";
+
+/*
+ General/Miscellanious
+ */
+
+"okay" = "Tamam";
+"okay_thanks" = "Tamam, teşekkürler!";
+"please_wait" = "Lütfen Bekleyin...";
+"hello_there" = "Merhaba!";
+"no" = "Hayır";
+"yes" = "Evet";
+
+/*
+ Credits
+ */
+"full_credits" = "Ailemden destekçilerime kadar bu projeyi gerçeğe dönüştürmemde yardımcı olan herkese teşekkürler. 2015 Mart ayında Philipp ile Lignite Kickstarter kampanyasını başlattığımızda asla 1776 destekçiye ve ya 7.177 Kanada Dolarına ulaşacağımızı hiç beklemiyorduk. Çalışmamıza olan desteğiniz ve gösterdiğiniz sevgi ile bizi çıldırttınız. Umarız biz de harika bir saat yüzü ve uygulaması koleksiyonu yaparak biraz olsun size bunun karşılığını verebiliriz. Bu bildiğiniz hayalin gerçek olması. Aşağıda bu projeyi gerçeğe döüştürenlerin isimleri yer alıyor.\n\nYardımcı uygulama, Pebble Uygulama/Saat Yüzü ve Sunucu geliştiricisi: edwin Finch (edwinfinch.com)\n\nYardımcı uygulamanın ve her bir Pebble uygulama ve saat yüzünün tasarımcısı, internet sitesi ve grafik tasarımcısı: Philipp Weder (iphibse.ch)\n\nEdwin'den özel teşekkürler: -Annem, Tara Bauer, her zaman en büyük destekçim olduğu ve motive ettiği için :)\n-Babam, AJ Finch, her zaman her şeyde bana mantıklı ve sakin bir perspektif gösterdiği ve hayata daha iyi bir bakış açısı kazandırdığı için\n-Kardeşim, Tucker Finch, en yakın arkadaşım odluğu ve hayatım pahasına güvenebilecğeim her şeyimi paylaşanbileceğim biri olduğu için\n-Ailemin ve arkadaşlarımın kalanı her zaman harika ve sevgi dolu oldukları için\n-Arrested Development, Commnunity ve Chuck, harika TV dizileri olduğu için.\n\nLignite Çeviri Takımına Büyük Teşekkürler\nMartijn - Dutch\nBerkay Oğulcan TUTAL - Turkish\nSam Zhang - Simplified Chinese\nMarco Vasta - Italian\nMonika Mangs - Finnish and Swedish\nPeter Davidson - Spanish\nPhilipp Weder - German\nPaulo Martins - Portuguese\n\n$120.00+ destekçiler\n\nShaun Newman, Pebble Technology ($500!), Daniel Bauen + Microfacturing, Hans D, Trevor Lyman, Ed Pegg\n\n$15.00+ destekçiler\n\nJon Barlow, Mubashir Razvi, Mattia Piola, Martin Frank, Ilkka Vuorenmaa, Donald D. Parker, Gary Funk, Thorne - Erin,Benoit Serra, Gerhard Wesch, Paul, Mangesh Thombare, Bruce Greenfield, Kannika Garcia, leechohan,You Can Sleep When You're Dead, Lupin, Scott Miller, Neil Poultney, Karsten Poppe, Nick Hahn, Mike Corsten, Stephen Miller, Lee Boychuk, Sean McLeod, Linn Htun, Brian Wolfe, Thomas Abbott, Faye Salwin, Bengster, Sonia Koval, Maria Teresa Paton Arevalo\n\n$11.00+ destekçiler\n\nCody Dean, Randy Morris, Rick, Anastriel, Arvinder Ahuja, Jennifer Meadows, Hector, Takiko Momokuri,Ashley Dew, Kartik Gaje, Eric Zillmann, PK, Andrew Witte, Miguel A., Chonnawat Eklapphaibun, Derek Fenwick, Benjamin Vetter, Scotty Bryant, Prioux Nicolas, Alex, Paolo Grassi, Andrea Hennessee, M. van Leeuwen, Cody, Kale Miller, Mark Thompson, Bart Van de Wijdeven, Hello World\n\n$7.00+ destekçiler\n\nPenguwin, TraceStar, Jivy Chhatwal, Stephen Boyd, Marckosvl, Piotr Szewczyk, Mohamed Faisal, Colinlamb,Bob Pfeifer, Daniel Egger, Noah Thompson, Paulino Lopez, RonF, Molly Nakao, Niko-chan, Bogdan, Mindy Tan,Alan Watson, Pakorn Jaruspanavasan, Lee Lin Jun, P, Koh Kah Hoe, Lai Chun Hei Hayley, Muhammad, mboirsbeek,Dave North, Ross R, Wan Ha, Peter Clay, Neil, David Menzel, William, Aditya Banerjee, Jae, Vincent Cutillas,Francis Espinola, Jessica Salyer, Mike Edwards, Brian, Kim Lanc, Gerhard Haider, Xavius Mcclure, Duncan J Ward, Samuele Bellagamba, Martin Bates, Chris Clark, Alfonso, Iek Sam Cheong, Gerhard Langer, Greg Harry, Donald Morrison, Gerhard Zelenka, Kaden Kirkham, Phillip E. Murray, Damian Ng, Joshua Clark, jw, Tom Malone, David, Marc Roselló Van Schoor, Michele, Johan Miltenburg, Florian Rangl, Reinald Castillo, Kevin Wudtke, Steve Crowley, Ian Marsh, Dondi Balisalisa, Inda Aziz, Łukasz Korecki, Andrew Boyett, Michael A. Capps, Pablo Ignacio Rodríguez Skaric, michelle mathieson, Nebbie, Kelvin Tong, Michael Mussington, Geraud Cruz, Valerie Guzman, Michelle Lowe, Joe Amuso, Jochen D., Vince Farrell, Tom Ove Brenden, Howard Lince III, patricia runnion, Joerg Hohn, jonathan belinsky, Guido Landgraf, Andrew Vine, Hans Bennink, Eric Pierrot, Willie, Paul Akterstam, Eirik Mikkelsen, William Romano, marc@borgers.net, Joshua Gill, Kreeta Soontornwipart, Vivek Krishnan, David, clapdady, Mohd Suffian Mohd Rousdin, William Garrido, Jurgen Wagenhauser, Aaron Sorrell, MyTruSkillz, Mike F, Bill Gimbel\n\n$6.00+ destekçiler\n\nOwen D'Aprile, CaffeineJunkie, Yuriy Galanter, Laura Meier, Phil Gastwirth, John Winstanley, Jon, David magallon, Berkay Oğulcan Tutal, Andrew McFarland, Hunter, Mike Wadsten, Matt Caves, Marco Santos, Zoe Hendrickse, Ronald Hudson, Phil Cooper, KJ, Phil Karn, Stephen Smith, Dave Peddle, Haris Shahid, Derek Kuhnline, Christoph Kehl, Jacob Dagenais, taylor charles gracie, George Hussey, Craig Paterson, Richard Turner, Pieter Danckaert, Martin Cohen, Andrew Givens, Leesa, Dom Wakeling, Merch DeGrasse, Tim Shrimpton, Jens Bocklage, Guarionex Alvarado, Justin Cobb, Marie-Andree Poisson, Jerrid White, William Featherstone, Michael Jones, Joshua Stewart Ray, John Waugaman, Chris Ganas, Amel, Jenny-Lynn Lascano, Mark Reed, Tobias Birth, Đominic Tăn, Paul stevens, Duc Le, Rick Peters, LODS, Ashley Strutt, Benjamin Buch, Loren Statema, Mark Ciavarella, Jeff A, Jérémy Taine, NoErrX, Brian, Chad McGee, Jitesh, Vincent Aarsbergen, Adam S, Steve Smith, Don Chen, Andrew W Helgeson, Colin Prudhoe, Elmar Uttenreuther, Nahum, Justin Dawson, John White, Jdgeis, Andrey, Alexander Nilsen, Tuan, ajomo, Mance, John, Matthias Thimm, Ryan Ceurvorst, Marvin Calice, Lloyd Hannesson, Sportinger, Nathaniel Davis, J Grab, Malcolm Dennis, Timo Spiekermann, ethertect, Stephen Africa Moore, Hugh Leoidsson, Alberto Alvarez-Perea, Jens Lißner, Dennis Shelton, Kristenculp, Jason Priest, Ben Crago-Schneider, Keanen Wold, Rick Silver, Jason Auffant, Nick Martin, Dana Charter, Alexander Eilers, Adam Kelly, Steven Webb, Brian Proctor, Venkatesh Subramanian, Andrew, Mick K, Robert Michael Zaccano, Bobby Graese, Nev Rawlins, Christian Emmer, Thomas, Jay Onisch, Brian Budzinski, BergischNRW, Daniel Colosie, Robert Colburn, Paul Selby, Jessica, Sarne Hutcherson, Christian Bootz, Robert Mueller, Ken Bynell, Michael Drake, Stuart Stringer, Teresa Hull, AlexEremenko, Jonpaul, Tabitha Kowitz, Joost Duivenvoorden, Gregory Latimer, Chris Decker, Daniel Gonçalves, Mike Tree, Brian Saccente-Kennedy, David Patterson, Kevin A Pearson, ChunkMunk01, Eoin Morgan, Michael Moore, Serge Stepanov, Robert, Kenneth Elliott, IceCarpediem, cypher, Se4oth, David Castro, Guin, Carsten Manz, Andre Schlüter, Sam Lyon, Niclas Eriksson, Jehad Maher, Robby Witte, Simon Munck, imehesz, Elisa Kagelmaker, Simon Kronberg, Drew Britten, Darrow Nemecek-Gulack, Jeff Iles, Will Moore, Ethan Delaney, Cody Austrie, Alexander Fligel, Craig D\'Amelio, Rajendra, Pawel Martin, gongju00, Neil Forsyth, Ryan Riddle, Gabi fiz, Silvan Röthlisberger, Stuart Lowe, Thomee Wright, Jeff Newfeld, Francois Malherbe, Cindy Cipriano, Alex den Haan, Asbjørn Baagø, rohbaert, James Shannon, Mike Burgoon, Matthew Goodchild, Jean-Francois Messier, Malcolm Hare, James Sawle, Sami Kakko, Geoff Brown, Jason Ellis, Britt Head, Dorothy Strassner, Stefan Hawel, Dennis Rasch, Sebastian Paul, K. David Woolley, Michael Weyershäuser, Jorge Sanz Sanfructuoso, Andrea Scambia, RelakS, Zach Burnham, John Ryan, Rui Sacadura Botte, Kira Lim, Jeremy Wan, Linden Wilson, Spencer Owen, Mats Thell, Chris Trocano, Scott Kuma Pettigrew, Sumayya Tai, Ranjit, Ricky Brincat, neil whitten, ZF, Ruben Pedro, MikeInIdaho, Jaer, Nightfire, Felipe Lucero\n\n$4.00+ backers\n\nStephen C Hokonson, Dean Barrett, Jari Kinnunen, Alf Moens, Steve Gregory, Richard Jones, Christopher Davis, Justin G,Brian Herskovitz,  Martijn Janssen, John Kelly, David Silvernail, Andrew Richter, Meta Meulenbelt, Nathan Blieschke, Pupdog, Michael Arnold, Sebastian Rajzer, Mar-Iolus Do Urden, maximilian, Alexander Luck, Bryan Green, Jeremy Lambert, Philipp H., Sandra González, Nicolas Himbert, Roger O\'Regan, Tony McHugh, Robert Setiadi, Arnaud BECKER, J. McKeever, Francis Q., Eck, Susan Dowling, kellyk413, Dave Sandham, Philip Spaar, Wong Choon Jie, Marcin Steckiewicz, Chris Peterson, Suzanne Schiller, Kenneth Simpson, Holley Hawthorn, Daniel Wiget, Charlie Poole, Steven Hurowitz, Otilia Damian, Jakub Geri, Steve P., Rich Schiller, Andrew Chapman, David Rodríguez Rincón, tanukisan, David Yonug, Steve Michaelis, Stephen Ohno, Paddy Mosse, Chew Shiun Han, Wim Vergult, Neil Pagay, Claire Yu Tiamco, Deep Tanwar, Lam Patrick, Denis Shelston, mmarko, Dale Drechsler, Mr. PACG, Luke Odom, Scott Jennings, Shaun Reece, Jon Pielaet, Mauricio Archila, Matt F., Azneel Izzuan, Micah Maziar, Jarrod, Jeremy Ackerman, JoePalko, Edward Yee Kwan-Shuen, Jerome Kuah, Jochen Schmid, Derek Simpson, Christian Arnold, Ronald Distor, Max, Ollii, Adam Vannatta, Kenneth Jaffe, Alex Peralta, Rajiv Ramchandani, Scott Harvey, Gal Tidhar, Nanda Rizky, Habbie, David Landais, Miguel Aguado, Ezrein Shah, Adam Zovits, samstgt, Mathias Fischer, Gini Westera, Torsten Schmitt, Craciunica Cezar-Victor, Steffen Poehler, Michael Burt, Carel Steensma, Matthew David Glanfield, Christof Bonnkirch, Gerald Sorko, Andre Heeren, Urmas Pail, Fadhli, Tomas, Paul Champion, Luis Carlos Barco, Stefano Casasola, Daniel Johnsen, Carl Boulding, Manuel Dornbusch, Thepchalit Ohnaree, Stefan Baumann, Joseph DiAngelo, David Hardy, Gingi Romano, Glenn Sønderskov, Rodney Dunn, Omar Torres, Darren Suan, Kenny Hoi, keno Weßels, René Jr Purcell, Paul Luchini, scott, Aaron Teets, Gordon Bedford, Angus C, Yunan Fatoni, N.H., Rana Ratanakovit, Brian Tartell, Kliwonz, Chelsea Auld, Pavlo Dudnytskyi, Brian Wechtenhiser, Calvin, Michal Cebera, Benjamin White, Christian Salle, Mikko Leskinen, Mikhail, AHMED N. ALNASSER, Fabian Wolf, Thomas Liden, Paul, Sven C., Steve Tanner, Davis, Roger, Takayama Manabu, David Burgess, Louis Anderson, Steven Day, neoprime33, Robert Hughs, Mikhail Bobkov, Eric Holzhueter, Prinice, Nirmal Ramjee, panustas, Jaewoo Jung, Neil Faulkner, Kenneth Thye Ellenton, Jon Chinnery, Michele Giuliani, Alleyoop, Tim Butler, Gibson Chiew, Patrick Brose, Flavio Oshiro, FedDia, MWoody, Taisia, Justin Green, JDZ, Goran Atanasovski, haidyll amin, Chuck Stewart, Sarah Surzyn, Donald Cowan, Nick Baum, Joel Balboa Martinez, Jeff, Adi Julianloo, Thorsten Gabel, Courtaut Christophe, Mohd Nuraimi, Joran Stegner, Heartnet, Harrie de Leeuw, Ian Jakeman, Eric Henderson, Brenda Ramey, William Marshall, T.Lin, Tim Vogler, Hidetoshi Toya, Xavier Barton, Brandon McCutcheon, Sean S. Fisher, Evelien devinck, Henry Siu Ming Chow, Eric Eshleman, Eamon, Thomas Wan, Peter Sloan, Robert Gattung, Matthew Brown, Gabor Jenei, Michael Pyle, Rupesh Talageri, Nathan Strich, 周朔, Kaushal Bondada, Adam Barnwell, Mirko Krause, Bradley F., Stephane, David McFarlane, Kevin Blake, FRICHE, Dale Kjerulff, Humza, Tymer, Carolyn Meier, Dallas Martin, Joseph Maiorana, BJ Balegar, Justin, Thomas Schwarz, Jonathan Willmer, Simon Vindevåg, Diego Kirsch, TechGuyNJ72, idewaki, Betty Pok Yee LEE, William Osborne, Rebecca Messenger, Leon Koppen, Pavel Boldyrev, Abdulshaheed Salman, maeltj, Anthony Lifrieri, henrik lunder, Harold, Scott Crew, Thomas W, Darren Kelly, Bradley, Eric Sorensen, Aniket Sainani, Robert Roll, Andrew Schmidt, Ocid, CHIN KET MING, Russell Ho-Aitken, XDrz, Eric Lewandowski, Timothy Low, Eloisa Labao,Thomas O\'Hair, acedcibi, l-vizz, Joe Curia, Mario Sarno, Marlon, Adam Carter, Todd, Gem, Chan WengKhong, Lucas Stewart, Christian Hintze, Mark Burston, Christian Fasold, Victor Jacobs, Jared Cronk, Michael, Andrew, John Christensen, Tan Ping Yang, Jonathan P Twine, Palmax, Hasnah Najla, Tomas, Leigh Hotz, Adam Lucas, James Davidson, patchie patch, Jonathon Stevenson, Jang Chau Chie, mark Sangwin, Matt Mayatt, Daniel Ferris, Joshua Lewis, Jarrad Hill, Dirk Disch, Alexander Otte, Erwan Le Guern, Thanh Quan, walt sullivan, Leong Kum Hoo, Meg Gallacher, Peter, James Hardison, Steve, Eduardo Assunção, Benjamin, Xkorter, Jennifer Caitlin Welsh, Lyumin Lee, akmal, Joost Huisman, Lim Kelvin, Erik Cortes, Tucker Rowlinson, JoshOnTech, Michael In-Tune Zetune, Christophe MAUNIER, Jan Jalbert, Sigifredo Hernandez, Taildeman S., Witherbucket, William Chen, Paul de Weerd, Stefan Dettmers, Scott Kendall, Wong Wen Hao, Kin, Crayden Arcand, Cristian Carreon, CHIEN-KAI LIAO, Александр Митрофанов, Yos Sumarjono, Jeffrey Evanko, Andrew Graham, Brian, Kaniawati Zainal Abidin, Philip Rosing, Caleb Woodbine, Mark Lewin, Samuel, John Archibald, Conner Wissmann, Sam Hainsworth, Holger Merk, NS, Phyoe Wai, Robert, MFeisal Nazarudin, Wally Garza, Olaf Eikelenboom, Jesus Lopez, Rafael Mejia, Dino Frangos, Robbie Gorman, Rene Schlechter, Wonggs, Will, Blizzard3001, Puki, Cord Holste, Albert Zandvoort, Hector Gervacci, Brenda Boda Klenke, stanlee lipkin, Shawn Motes, Richard Erdey, Ronald Sutton, John Ellis, Michael, David Berezin, Pankaj Gupta, Susan, jason hutchings, Stefan Tarvis, Arturo Woodward-Montes, Altan, Boaz van Veen, Theodore Swanson, How long can this name be anyways?When d, Noam, Jose Luis, kevin k., Javier Mora, Richard Alter, Julieanne Faas, Brian Levinsen, Alex Kirkland, Tom Morgan, Alexandra herzog, Sam Messick, Richie Gurdler, Corey, Andru Keel, Rebecca, Scott Proctor, Kathy Ford, Bryan Wright, Nathan, Kimon Socrates Inglessis ~ Amsterdamman, Milan Patel, Jonathan, Max Sewesky, Eliot Podgorsky, Nick, Jeramy Freckleton, Jean-Sebastien Duchesne, Marko Samuli Kirves, Gaurav Jain, Con IA, chris, Andrew Do, Shu, Patrick Boos, Will Wong, Jason Clark, Carter Diastika, Eric Mulder, Todd Schwarzmann, 王小路, Olalekan Otubu, Chemilogo, Daniel, Tim Elwell, Magnus Dahl Hegge, Anders, Sébastien Tais, Jeroen Huylebroeck, Carbo Lab, Gus Macdonald, RosyRazly, Keith Miller, Allen Crimmins, Laura, Joost Koehoorn, Steve Petersen, Nicholas Quarrier, Jonathan Andreas Rawung, Christopher Lilly, Marcus Hermansson, Matt Richardi, Sean Ullyatt, Robert Fraser, Ben Cohen, René Verbeek, G.D., Hansi Kneringer, Christian Rieder, Josh Gampp, Alex Taylor, Nathanail Georgiou, Laurie Ralphs, Steven Steckler, J Okutsu, Sarah, varinder singh bal, Eric Lambert, Frank Nienhaus, James Yap Yi Chern, Ospel, Jorge Sanz, Pedro-Juan Ferrer, chincabomber, Balder Lingegård, Marvin Bürkner, Gary T Smith, Demian Hartmann, Eric Pai, landhopi, Patrick Cuyegkeng, Francis Tsen, anonymous, Adam Olivero, Rick Kier, AnnMarie Bartholomaeus, LegendaryTeeth, Mahesh C Patel, Kevin.H, Michael Mrozek, Ando, Gideon, Lex Nguyen, Lydia Perry, Nox Nostic, Jimmy Sawczuk, neuenchr, Robert Gaimari, Madeline Nunnally, Wilson Ngu, Kyp Teh, Ásgeir Gíslason, hillslin, mohamed, Kathryn Bartels, Javier Luna Molina, Aaron B, Nick Wrightson, Matthew Mausbach, Jose gutierrez, Rich Weaver, John Björnholm, Gerardo Romo Nuñez, Marwan, Chepo Ramos, Ly Minh Phuong, Jayakara Kini, RavenMaster, Oliver Carson, Shawn Altman, Sarah, Dipesh, Iman Khan, Sam Gabriel, Pramith Fonseka, Michael Wan, Lee Foster, Steven Chao, Adrian Schärli, Larry Metzger, Andrew Chow, Rich Morgan, Garrett Zeigler, John Elijah Tan, greg, Frank Seebach, James Cowin, Thomas Galipean, VarkoM, Daarsh Gandhi, ricktix1@gmail.com, Mauro Perez, Carlton Russell, KP, Var Hopkns, Alex Maund, Daniel Renner, Jörg Hartmann, Michael Goldberg, Christopher Yip, Ali Al-Shaikhli, walkdifferent, Rachel Chamberlain, Edwin, Patrick Sklenar, Paulo Lama, Greg Steinberger, Benjamin Neff, Guido Rhinow, Mark Watson, James Bray, Andrew Morrow, matriox, Costa, KMMoore, Jaimie Frances Gibson, Ronald Hedlund, John van Gurp, Nate K., Guilherme Schmitt, Tim, Lauren V., Martin N., Balázs Boda, Daniel Leonard, ELIGIO CASTILLO, Ivor Cleine, Balasubramani s, Brandon Barney, Erik, Marc Whiteley, MissYourMark, white.moon, Tobias Peters, Monika, Pierre Boulet, Jessica Mendelsohn, Markus Arnold, De Innovatiefabriek bv, Albert Vidal, Rui Miguel Martins Inacio, Jiri Rozsival, Farbod Saraf, Chad Eichele, K.C. Marsh, Me, Brunche, Keith Colton, Grjrjr, Daniel, David Wilson, Orillian, Jody Walker, Boris Lianto, Florent, Juan E Zuluaga, Aymerick Dupouey, Thomas Regner, Muhammad Hanafi Mohd Sam, Paul Walder, Takis van der Wijngaard, Daniel Prumbaum, Edi Budimilic, Dennis Rundin, Jan van de Wouw, Kyle Bonner, Fabien LOISON, Markus Dick, Neil Thompson, rob de kroon, Neil Crosby, Unai, Sreekkanth, Kris, Ren Shredder - 2015: ARKYD - Spaaaaaace!, Mikel Darnell Boyd, Simon Pereira-Shorey, Sean Closson, Hoder Jensen, Holger Diedert, Kaitlyn Brady, Rens, Jeff McLean, VictorJ, bobzer, Duane Learning, David Fabian, Thomas Hennecke, Philipp Wuestner, Gareth, Sean Scott, Brendo, Jason A. Adams, Alan Quah, Jonathan Sheppard, Rick Langley, Tomoya Tanaka, 이찬진, Joeun Ha, Ron Jacobson, SeokJo Lee, Yves, Rob Ellis, David Vasquez, Kathy, Gautami Arumugam, Ali Mohammed, David Ellis, Pierre Große, Stevie Numbers, David Bresson, Kyle Ingram, Chris Cahill, Poorak, Ong Jun Sheng, Erik Bråhammar, Frank, Benjamin Silver, BuKTop, Nick, K. David Cheng, Todd, kokobin, David Viola, Hector, Krishnamurthy Js, Horatiu Rus, TRAN Loic, Adam, Linda Barkin, Aqasyah, Stephen Esposito, Justin Jefferson, Nicole DiGiambattista, Jacques Simard, Carmine, Dave Levin, Melissa Tan, James Kato, John Sakkas, Akri, Marcus Steinbauer, Adiplin Panupong, JCG, Shawn, Ravipart Lee, Jim Tipton, Ken Heinemann, Joseph Widener, Aaron, Jean-Baptiste RICHARD, Larry Tan, Erin Alease\n\n$3.00+ backers\n\nDeanna Stanley, Keith, Sam-Sung Kwon, Percussionist, Gary Stadter, GSReliableISS, Bruno Garcia, SReliableISS, Ben Huson, Markus Weber, Javier, Norman Hill, Matthew Morris, E Joseph B., Gagu, Simon Roberts, Nick Twigg, Chris Harings, Samy, TAKASHI OMURA, Jamie McAdams, Joe Pettit, Dave Effertz, Matt Jones, Will, Carl-Fredrik Fridén, Pierluc Thibodeau, Ioannis Seitanidis, elmshoernchen, Mike, Steven Devlin, Philip Khaled Brennan, Glenn Dwyer, Amr Tamimi, Christoph W., Daniel Snor, Jeroen Horlings, Amr Ismail Gawish, Sarah Baskerville, Tom, Ahmed Mohsen, Michele De Paola, Lee Zerrilla, Blegueni, Ian Sanderson, Emjay, Mike Roberts, Lukas Maurer, PHAM NHAT CUONG, Rohit\n\n$1.00+ CAD backers\n\nKyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, Brett Levy, Fredrik Seglem\n\nOther credits:\n\nSettings icon made by Egor Rumyantsev (http://www.behance.com/pio-5) from www.flaticon.com and is licensed under CC BY 3.0.";
+
+
+
+//Thanks a lot for translating Lignite :)

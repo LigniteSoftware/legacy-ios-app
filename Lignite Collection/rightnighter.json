@@ -8,13 +8,15 @@
                        "type":"toggle",
                        "label":"pref_btdisalert",
                        "storage_key":"rn-btdisalert",
-                       "pebble_key":0
+                       "pebble_key":0,
+                       "default":true
                        },
                        {
                        "type":"toggle",
                        "label":"pref_btrealert",
                        "storage_key":"rn-btrealert",
-                       "pebble_key":1
+                       "pebble_key":1,
+                       "default":false
                        }
                        ]
               },
@@ -25,25 +27,29 @@
                        "type":"toggle",
                        "label":"pref_boot_animation",
                        "storage_key":"rn-bootanim",
-                       "pebble_key":3
+                       "pebble_key":3,
+                       "default":true
                        },
                        {
                        "type":"toggle",
                        "label":"pref_antialiased",
                        "storage_key":"rn-antialiasing",
-                       "pebble_key":4
+                       "pebble_key":4,
+                       "default":true
                        },
                        {
                        "type":"toggle",
                        "label":"pref_constant_anim",
                        "storage_key":"rn-constantanim",
-                       "pebble_key":5
+                       "pebble_key":5,
+                       "default":false
                        },
                        {
                        "type":"toggle",
                        "label":"pref_title_invert",
                        "storage_key":"rn-invert",
-                       "pebble_key":6
+                       "pebble_key":6,
+                       "default":false
                        }
                        ]
               }

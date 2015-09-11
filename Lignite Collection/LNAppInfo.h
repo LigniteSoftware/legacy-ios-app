@@ -9,9 +9,14 @@
 #import <Foundation/Foundation.h>
 #define APP_COUNT 14
 
-@interface PebbleInfo : NSObject
+@interface LNAppInfo : NSObject
 
-typedef enum AppTypeCode {
+/*
+ LNAppInfo provides the underlaying data and information for the whole app. It provides app names,
+ locations, UUIDs, etc.
+ */
+
+typedef enum {
     APP_TYPE_NOTHING = -1,
     APP_TYPE_SPEEDOMETER = 0,
     APP_TYPE_KNIGHTRIDER,
@@ -39,7 +44,7 @@ typedef enum AppTypeCode {
 + (NSArray*)nameArray;
 + (NSString*)getAppUUID:(AppTypeCode)code;
 + (AppTypeCode)getAppTypeCode:(NSString*)UUID;
-+ (Boolean)settingsEnabled:(AppTypeCode)code;
++ (BOOL)settingsEnabled:(AppTypeCode)code;
 + (NSString*)getAppNameFromType:(AppTypeCode)code;
 + (NSString*)getAppDescriptionFromType:(AppTypeCode)code;
 

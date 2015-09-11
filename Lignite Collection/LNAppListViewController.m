@@ -13,7 +13,7 @@
 #import "LoginViewController.h"
 #import "LNAppInfo.h"
 #import "UIView+Toast.h"
-#import "LNCommunicationLayer.h"
+#import "LNDataFramework.h"
 #import "CreditsViewController.h"
 #import "FeedbackViewController.h"
 #import "LNSettingsViewController.h"
@@ -24,6 +24,7 @@
 @interface LNAppListViewController () <SKProductsRequestDelegate, SKPaymentTransactionObserver, SimpleTableViewControllerDelegate>
 
 @property UIButton *button;
+@property UIAlertView *pebbleAppAlertView;
 @property (strong) UIDocumentInteractionController *uidocumentInteractionController;
 @property NSArray* appArray;
 @property NSData *response1;
@@ -31,17 +32,29 @@
 @property BOOL usingTimeImage;
 @property NSURLConnection *logoutConnection, *verifyConnection;
 
+@property UIAlertView *backerAlert;
+
+//Tutorial shit
+@property UIImageView *tutorialBackgroundImageView, *tutorialArrowImageView;
+@property UIButton *tutorialButton, *skipButton;
+@property UILabel *tutorialLabel;
+@property UIAlertView *tutorialAlert;
+
 @end
 
 @implementation LNAppListViewController
 
-//#define SKIP_PURCHASE
+int tutorialStage = 0;
+BOOL tutorialRunning = NO;
+BOOL runTutorial = NO;
+
+//#define BUILD 56
 
 - (void)purchaseApp {
     if([SKPaymentQueue canMakePayments]){
         NSLog(@"User can make payments");
         
-        SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:[[PebbleInfo skuArray] objectAtIndex:self.currentType]]];
+        SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:[[LNAppInfo skuArray] objectAtIndex:self.currentType]]];
         productsRequest.delegate = self;
         [productsRequest start];
         
@@ -103,14 +116,14 @@
 
 - (void)itemPurchased:(SKPaymentTransaction*)transaction {
     NSLog(@"Transaction state -> Purchased/Restored: %@", transaction.payment.productIdentifier);
-    int index = (int)[[PebbleInfo skuArray] indexOfObject:transaction.payment.productIdentifier];
+    int index = (int)[[LNAppInfo skuArray] indexOfObject:transaction.payment.productIdentifier];
     self.owns_app = true;
     if(index == self.currentType){
         [self.settingsButton setTitle:NSLocalizedString(@"settings", nil) forState:UIControlStateNormal];
     }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setSecureBool:YES forKey:[NSString stringWithFormat:@"owns-%@", [PebbleInfo getAppNameFromType:index]]];
+    [defaults setSecureBool:YES forKey:[NSString stringWithFormat:@"owns-%@", [LNAppInfo getAppNameFromType:index]]];
     [defaults synchronize];
 }
 
@@ -143,7 +156,21 @@
 }
 
 - (IBAction)installApp:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"pebble://appstore/%@", [[PebbleInfo locationArray] objectAtIndex:self.currentType]]]];
+	NSDictionary *settings = [LNDataFramework getSettingsDictionaryForAppType:APP_TYPE_NOTHING];
+	
+	if([[settings objectForKey:@"general-pebble_app_to_open"] integerValue] == 0){
+		self.pebbleAppAlertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"what_pebble_app", nil)
+														   message:NSLocalizedString(@"what_pebble_app_description", nil)
+														   delegate:self
+												           cancelButtonTitle:NSLocalizedString(@"cancel", nil)
+												           otherButtonTitles:NSLocalizedString(@"manage_settings", nil),
+																			 NSLocalizedString(@"pebble_app_original", nil),
+																			 NSLocalizedString(@"pebble_app_time", nil), nil];
+		[self.pebbleAppAlertView show];
+	}
+	else{
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@://appstore/%@", [[settings objectForKey:@"general-pebble_app_to_open"] integerValue] == 1 ? @"pebble-2" : @"pebble-3",[[LNAppInfo locationArray] objectAtIndex:self.currentType]]]];
+	}
     /*
      * RIP in pepperoni 1.2.1 feature u will b missed <3 ;(((
      *
@@ -162,11 +189,11 @@
 }
 
 - (IBAction)logoutButtonPushed:(id)sender {
-    if([DataFramework isUserBacker]){
+    if([LNDataFramework isUserBacker]){
         [self.view makeToast:NSLocalizedString(@"logging_out", "logging the user out...")];
         
         
-        NSString *post = [NSString stringWithFormat:@"username=%@&currentDevice=%@&accessToken=%@", [DataFramework getUsername], [DataFramework getCurrentDevice], [DataFramework getUserToken]];
+        NSString *post = [NSString stringWithFormat:@"username=%@&currentDevice=%@&accessToken=%@", [LNDataFramework getUsername], [LNDataFramework getCurrentDevice], [LNDataFramework getUserToken]];
         
         NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
         
@@ -192,7 +219,7 @@
     UIAlertController *controller = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *logoutAction;
-    if([DataFramework isUserBacker]){
+    if([LNDataFramework isUserBacker]){
         logoutAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"send_feedback", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction* action){
             FeedbackViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"FEEDBACK"];
             [self showViewController:controller sender:nil];
@@ -202,7 +229,7 @@
         logoutAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"kickstarter_backer", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction* action){
             FeedbackViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
             //[self showViewController:controller sender:nil];
-            [DataFramework setUserBacker:YES];
+            [LNDataFramework setUserBacker:YES];
             [self presentViewController:controller animated:YES completion:nil];
         }];
     }
@@ -211,13 +238,27 @@
         [self showViewController:creditsController sender:nil];
     }];
     UIAlertAction *tutorialAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"replay_tutorial", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction* action) {
-        NSLog(@"tutorial");
+		[self safeFireTutorial];
+    }];
+    UIAlertAction *manageAlertsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"lignite_settings", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction*action) {
+        LNSettingsViewController *alertsController = [[LNSettingsViewController alloc]initWithStyle:UITableViewStyleGrouped];
+        [alertsController setAsAlertSettings];
+        [self showViewController:alertsController sender:self];
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", nil) style:UIAlertActionStyleCancel handler:nil];
+    /*
+    UIAlertAction *purchaseAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"purchase_bundles", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"Purchase bundles...");
+    }];
     
-    [controller addAction:creditsAction];
+    if(![LNDataFramework isUserBacker]){
+        [controller addAction:purchaseAction];
+    }
+	 */
     [controller addAction:logoutAction];
     [controller addAction:tutorialAction];
+    [controller addAction:manageAlertsAction];
+    [controller addAction:creditsAction];
     [controller addAction:cancelAction];
     
     controller.popoverPresentationController.sourceView = self.view;
@@ -231,17 +272,17 @@
         [self purchaseApp];
         return;
     }
-    NSString *appUUID = [PebbleInfo getAppUUID:self.currentType];
-    [DataFramework sendLigniteGuardUnlockToPebble:self.currentType];
+    LNSettingsViewController *view_controller = [[LNSettingsViewController alloc]initWithStyle:UITableViewStyleGrouped];
+    [view_controller setPebbleApp:self.currentType];
+    [self showViewController:view_controller sender:self];
+    
+    NSString *appUUID = [LNAppInfo getAppUUID:self.currentType];
+    [LNDataFramework sendLigniteGuardUnlockToPebble:self.currentType settingsController:view_controller];
     uuid_t myAppUUIDbytes;
     NSUUID *myAppUUID = [[NSUUID alloc] initWithUUIDString:appUUID];
     [myAppUUID getUUIDBytes:myAppUUIDbytes];
     PBWatch *watch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
     [watch appMessagesLaunch:nil withUUID:[NSData dataWithBytes:myAppUUIDbytes length:16]];
-    
-    LNSettingsViewController *view_controller = [[LNSettingsViewController alloc]initWithStyle:UITableViewStyleGrouped];
-    [view_controller setPebbleApp:self.currentType];
-    [self showViewController:view_controller sender:self];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -263,7 +304,7 @@
     NSNumber *status = [jsonResult objectForKey:@"status"];
     if(connection == self.logoutConnection){
         if([status isEqual:@200] || [status isEqual:@404]){
-            [DataFramework setUserLoggedIn:[DataFramework getUsername] :NO];
+            [LNDataFramework setUserLoggedIn:[LNDataFramework getUsername] :NO];
             LoginViewController *loginScreen = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
             [self presentViewController:loginScreen animated:YES completion:nil];
         }
@@ -281,14 +322,53 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(0 == buttonIndex){ //cancel button
-        [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
-    }
-    else if (1 == buttonIndex){
-        FeedbackViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
-        [DataFramework setUserBacker:YES];
-        [self presentViewController:controller animated:YES completion:nil];
-    }
+	if(alertView == self.pebbleAppAlertView){
+		NSLog(@"index %d", (int)buttonIndex);
+		switch(buttonIndex){
+			case 2:
+				[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"pebble-2://appstore/%@",[[LNAppInfo locationArray] objectAtIndex:self.currentType]]]];
+				break;
+			case 3:
+				[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"pebble-3://appstore/%@",[[LNAppInfo locationArray] objectAtIndex:self.currentType]]]];
+				break;
+			case 1:;
+				LNSettingsViewController *alertsController = [[LNSettingsViewController alloc]initWithStyle:UITableViewStyleGrouped];
+				[alertsController setAsAlertSettings];
+				[self showViewController:alertsController sender:self];
+				break;
+		}
+	}
+	else if(alertView == self.tutorialAlert){
+		if(0 == buttonIndex){ //cancel button
+			[alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
+			NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+			BOOL answeredResult = [defaults boolForKey:@"key-ANSWERED"];
+			
+			if(!answeredResult){
+				self.backerAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"hello_there", nil)
+															  message:NSLocalizedString(@"are_you_a_backer", nil)
+															 delegate:self
+													cancelButtonTitle:NSLocalizedString(@"no", nil)
+													otherButtonTitles:NSLocalizedString(@"yes", nil), nil];
+				[self.backerAlert show];
+				[LNDataFramework userAnsweredBackerQuestion:YES];
+				[LNDataFramework setupDefaults];
+			}
+		}
+		else if (1 == buttonIndex){
+			[self safeFireTutorial];
+		}
+	}
+	else{
+		if(0 == buttonIndex){ //cancel button
+			[alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
+		}
+		else if (1 == buttonIndex){
+			LoginViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
+			[LNDataFramework setUserBacker:YES];
+			[self presentViewController:controller animated:YES completion:nil];
+		}
+	}
 }
 
 - (void)fireBigList:(UISwipeGestureRecognizer*)recognizer{
@@ -297,7 +377,7 @@
     UINavigationController *navigationController = (UINavigationController *)[storybord instantiateViewControllerWithIdentifier:@"SimpleTableVC"];
     SimpleTableViewController *tableViewController = (SimpleTableViewController *)[[navigationController viewControllers] objectAtIndex:0];
     
-    NSArray *array = [PebbleInfo  nameArray];
+    NSArray *array = [LNAppInfo  nameArray];
     NSMutableArray *fixedArray = [[NSMutableArray alloc]init];
     for(int i = 0; i < [array count]; i++){
         [fixedArray insertObject:[[array objectAtIndex:i] capitalizedString] atIndex:i];
@@ -314,15 +394,299 @@
 - (void)itemSelectedatRow:(NSInteger)row {
     self.currentType = (AppTypeCode)row;
     [self updateContentBasedOnType];
-    [DataFramework setPreviousAppType:self.currentType];
+    [LNDataFramework setPreviousAppType:self.currentType];
+}
+
+- (void)setScrollingEnabled:(BOOL)scrolling {
+	for (UIScrollView *view in self.sourcePageViewController.view.subviews) {
+		if ([view isKindOfClass:[UIScrollView class]]) {
+			view.scrollEnabled = scrolling;
+		}
+	}
+}
+
+- (void)updateTutorial {
+		[UIView animateWithDuration:0.3f animations:^{
+			NSArray *views_array = [NSArray arrayWithObjects:self.skipButton, self.tutorialArrowImageView, self.tutorialButton, self.tutorialLabel, self.settingsButton, self.installButton, nil];
+			for(int i = 0; i < [views_array count]; i++){
+				UIView *view = [views_array objectAtIndex:i];
+				if((view == self.installButton && (tutorialStage < 2 || tutorialStage > 3)) || (view == self.settingsButton && (tutorialStage < 3 || tutorialStage > 4))){
+					goto skip_animate;
+				}
+				[view setAlpha:0.0f];
+				skip_animate:;
+			}
+			//update frames
+		} completion:^(BOOL finished) {
+			//fade in
+			[UIView animateWithDuration:0.1f animations:^{
+				CGRect label_frames[] = {
+					CGRectMake(20, self.appDescriptionLabel.frame.origin.y-12, self.tutorialBackgroundImageView.frame.size.width-40, 70),
+					CGRectMake(20, self.imageView.frame.size.height + 25, self.view.frame.size.width-40, 200),
+					CGRectMake(20, self.appDescriptionLabel.frame.origin.y-50, self.view.frame.size.width-40, 100),
+					CGRectMake(20, self.appTitleLabel.frame.origin.y-25, self.view.frame.size.width-40, 125),
+					CGRectMake(20, self.imageView.frame.origin.y+self.imageView.frame.size.height/2 - 30, self.view.frame.size.width-40, 100),
+					CGRectMake(20, self.imageView.frame.origin.y+self.imageView.frame.size.height/2 - 30, self.view.frame.size.width-40, 125),
+					CGRectMake(20, self.appDescriptionLabel.frame.origin.y, self.view.frame.size.width-40, 50),
+				};
+				int x_offset = self.view.frame.size.width/2 - (self.view.frame.size.width/2 - 50)/2;
+				CGRect button_frames[] = {
+					CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 100),
+					CGRectMake(0, self.view.frame.size.height, self.tutorialButton.frame.size.width, self.tutorialButton.frame.size.height),
+					CGRectMake(x_offset, self.appDescriptionLabel.frame.origin.y + 55, self.view.frame.size.width/2 - 50, 32),
+					CGRectMake(x_offset, self.appDescriptionLabel.frame.origin.y + 55, self.view.frame.size.width/2 - 50, 32),
+					CGRectMake(x_offset, self.view.frame.size.height/2 - 15, self.view.frame.size.width/2 - 50, 32),
+					CGRectMake(x_offset, self.view.frame.size.height/2 + 15, self.view.frame.size.width/2 - 50, 32),
+					CGRectMake(self.view.frame.size.width/2 - (self.view.frame.size.width/2 - 25)/2,  self.appDescriptionLabel.frame.origin.y + 75, self.view.frame.size.width/2 - 25, 32)
+				};
+				CGRect skip_frames[] = {
+					CGRectMake(x_offset, self.appDescriptionLabel.frame.origin.y + 75, self.view.frame.size.width/2 - 50, 32),
+					CGRectMake(x_offset, self.view.frame.size.height/2 + 125, self.view.frame.size.width/2 - 50, 32),
+					CGRectMake(x_offset, self.appDescriptionLabel.frame.origin.y + 95, self.view.frame.size.width/2 - 50, 32),
+					CGRectMake(x_offset, self.appDescriptionLabel.frame.origin.y + 95, self.view.frame.size.width/2 - 50, 32),
+					CGRectMake(x_offset, self.view.frame.size.height/2 + 25, self.view.frame.size.width/2 - 50, 32),
+					CGRectMake(x_offset, self.view.frame.size.height/2 + 55, self.view.frame.size.width/2 - 50, 32),
+					CGRectMake(self.view.frame.size.width + 100, self.view.frame.size.height/3 * 2 + 75, self.view.frame.size.width/2 - 50, 32)
+				};
+				CGRect arrow_frames[] = {
+					CGRectMake(10, self.leftArrow.frame.origin.y, self.view.frame.size.width-20, 100),
+					CGRectMake(10, self.imageView.frame.origin.y + self.imageView.frame.size.height/2, self.view.frame.size.width-20, 100),
+					CGRectMake(self.installButton.frame.origin.x/2, self.installButton.frame.origin.y, self.installButton.frame.size.width-20, 50),
+					CGRectMake(self.settingsButton.frame.origin.x+(self.settingsButton.frame.size.width*1.3), self.settingsButton.frame.origin.y-20, self.settingsButton.frame.size.width-20, 50),
+					CGRectMake(10, self.imageView.frame.origin.y, 50, 70),
+					CGRectMake(self.imageView.frame.origin.x+self.imageView.frame.size.width, self.imageView.frame.origin.y, 50, 70)
+				};
+				NSString *button_keys[] = {
+					@"", @"", @"awesome", @"ok", @"thanks", @"alright", @"cool_bye_bye"
+				};
+				NSString *arrow_names[] = {
+					@"double_arrows_pointed_up.png", @"arrow_up_thin.png", @"arrow_right_thin.png", @"arrow_left_thin.png", @"arrow_up_thin.png", @"arrow_up_thin_flipped.png"
+				};
+				
+				uint8_t fixedIndex = tutorialStage == 7 ? 6 : tutorialStage;
+				if(tutorialStage == -1){
+					fixedIndex = 6;
+				}
+				
+				self.tutorialLabel.frame = label_frames[fixedIndex];
+				NSString *key = [NSString stringWithFormat:@"tutorial_main_%d", fixedIndex];
+				self.tutorialLabel.text = NSLocalizedString(key, nil);
+				
+				self.skipButton.frame = skip_frames[fixedIndex];
+				
+				self.tutorialButton.frame = button_frames[tutorialStage];
+				[self.tutorialButton setTitle:NSLocalizedString(button_keys[fixedIndex], nil) forState:UIControlStateNormal];
+				
+				self.tutorialArrowImageView.frame = arrow_frames[fixedIndex];
+				self.tutorialArrowImageView.image = [UIImage imageNamed:arrow_names[fixedIndex]];
+				
+				self.imageView.userInteractionEnabled = NO;
+				self.tutorialBackgroundImageView.userInteractionEnabled = YES;
+				//self.sourceController.pageViewController.dataSource = nil;
+				if([[self.tutorialBackgroundImageView subviews] containsObject:self.leftArrow] && tutorialStage != 0){
+					[self.leftArrow removeFromSuperview];
+					[self.view addSubview:self.leftArrow];
+					[self.rightArrow removeFromSuperview];
+					[self.view addSubview:self.rightArrow];
+				}
+				if([[self.tutorialBackgroundImageView subviews] containsObject:self.imageView] && tutorialStage != 1){
+					[self.imageView removeFromSuperview];
+					[self.view addSubview:self.imageView];
+				}
+				if([[self.tutorialBackgroundImageView subviews] containsObject:self.installButton] && tutorialStage != 2){
+					[self.installButton removeFromSuperview];
+					[self.view addSubview:self.installButton];
+				}
+				if([[self.tutorialBackgroundImageView subviews] containsObject:self.settingsButton] && tutorialStage != 3){
+					[self.settingsButton removeFromSuperview];
+					[self.view addSubview:self.settingsButton];
+				}
+				
+				[self.tutorialBackgroundImageView removeFromSuperview];
+				[self.view addSubview:self.tutorialBackgroundImageView];
+				[self setScrollingEnabled:NO];
+				
+				switch(tutorialStage){
+					case 0:
+						[self setScrollingEnabled:YES];
+						[self.view addSubview:self.leftArrow];
+						[self.view addSubview:self.rightArrow];
+						break;
+					case 1:
+						self.imageView.userInteractionEnabled = YES;
+						[self.tutorialBackgroundImageView addSubview:self.imageView];
+						[self.tutorialBackgroundImageView addSubview:self.skipButton];
+						break;
+					case 2:
+						[self.view addSubview:self.installButton];
+						break;
+					case 3:
+						[self.view addSubview:self.settingsButton];
+						break;
+					case -1:
+						tutorialStage = 0;
+					case 7:
+						[UIView animateWithDuration:1.0f animations:^{
+							self.tutorialBackgroundImageView.frame = CGRectMake(0, self.view.frame.size.height, self.tutorialBackgroundImageView.frame.size.width, self.tutorialBackgroundImageView.frame.size.height);
+							tutorialRunning = NO;
+							self.imageView.userInteractionEnabled = YES;
+							self.appDescriptionLabel.userInteractionEnabled = YES;
+							self.appTitleLabel.userInteractionEnabled = YES;
+							self.settingsButton.userInteractionEnabled = YES;
+							self.installButton.userInteractionEnabled = YES;
+							tutorialStage = -1;
+							[self setScrollingEnabled:YES];
+							[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+						}];
+						break;
+				}
+			} completion:^(BOOL finished) {
+				
+				//fade in
+				[UIView animateWithDuration:0.3f animations:^{
+					
+					NSArray *views_array = [NSArray arrayWithObjects:self.skipButton, self.tutorialArrowImageView, self.tutorialButton, self.tutorialLabel, self.settingsButton, self.installButton, nil];
+					for(int i = 0; i < [views_array count]; i++){
+						UIView *view = [views_array objectAtIndex:i];
+						if((view == self.installButton && (tutorialStage < 2 || tutorialStage > 3)) || (view == self.settingsButton && (tutorialStage < 3 || tutorialStage > 4))){
+							goto skip_animate;
+						}
+						[view setAlpha:1.0f];
+					skip_animate:;
+					}
+					
+				} completion:nil];
+			}];}];
+}
+
+- (IBAction)tutorialNext:(id)sender {
+    tutorialRunning = YES;
+    tutorialStage++;
+    [self updateTutorial];
+}
+
+- (IBAction)tutorialEnd:(id)sender {
+	tutorialStage = 7;
+	[self updateTutorial];
+}
+
+- (void)safeFireTutorial {
+	if(tutorialRunning){
+		return;
+	}
+	if(self.currentType == 0 || self.currentType == APP_COUNT-1){
+		runTutorial = YES;
+		LNAppListController *controller = (LNAppListController*)self.sourceViewController;
+		[controller selectAnApp:APP_TYPE_COLOURS];
+		return;
+	}
+	else{
+		LNAppListController *controller = (LNAppListController*)self.sourceViewController;
+		[controller selectAnApp:self.currentType];
+	}
+	tutorialStage = 0;
+	[self fireTutorial];
+}
+
+- (void)fireTutorial {
+	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+
+	if(tutorialStage == -1){
+		tutorialStage = 0;
+	}
+    self.tutorialBackgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 0)];
+    [self.tutorialBackgroundImageView setImage:[UIImage imageNamed:@"tutorial_background.png"]];
+    
+    self.tutorialArrowImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, self.leftArrow.frame.origin.y, self.view.frame.size.width-20, 100)];
+    self.tutorialArrowImageView.contentMode = UIViewContentModeScaleAspectFit;
+	self.tutorialArrowImageView.image = [UIImage imageNamed:@"double_arrows.png"];
+    [self.tutorialBackgroundImageView addSubview:self.tutorialArrowImageView];
+    
+    self.tutorialLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, self.appDescriptionLabel.frame.origin.y, self.tutorialBackgroundImageView.frame.size.width-40, 50)];
+    self.tutorialLabel.text = NSLocalizedString(@"tutorial_main_0", nil);
+    self.tutorialLabel.numberOfLines = 0;
+    self.tutorialLabel.lineBreakMode = NSLineBreakByWordWrapping;
+	if(self.view.frame.size.height > 480){
+		self.tutorialLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18.0f];
+	}
+	else{
+		self.tutorialLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:14.0f];
+	}
+	self.tutorialLabel.textAlignment = NSTextAlignmentCenter;
+    [self.tutorialBackgroundImageView addSubview:self.tutorialLabel];
+    
+    self.tutorialButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width, -100, self.view.frame.size.width, 100)];
+    [self.tutorialButton setTitle:NSLocalizedString(@"ok_got_it", nil) forState:UIControlStateNormal];
+    [self.tutorialButton addTarget:self action:@selector(tutorialNext:) forControlEvents:UIControlEventTouchUpInside];
+	self.tutorialButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14.0f];
+    self.tutorialButton.userInteractionEnabled = YES;
+	self.tutorialButton.backgroundColor = [UIColor grayColor];
+	self.tutorialButton.titleLabel.textColor = [UIColor whiteColor];
+	self.tutorialButton.layer.masksToBounds = YES;
+	self.tutorialButton.layer.borderWidth = 1.0;
+	self.tutorialButton.layer.borderColor = self.tutorialButton.backgroundColor.CGColor;
+	self.tutorialButton.layer.cornerRadius = 5.0;
+    [self.tutorialBackgroundImageView addSubview:self.tutorialButton];
+	
+	int x_offset = self.view.frame.size.width/2 - (self.view.frame.size.width/2 - 50)/2;
+    self.skipButton = [[UIButton alloc]initWithFrame:CGRectMake(x_offset, self.appDescriptionLabel.frame.origin.y + 75, self.view.frame.size.width/2 - 50, 320)];
+    [self.skipButton setTitle:NSLocalizedString(@"end_tutorial", nil) forState:UIControlStateNormal];
+    [self.skipButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	[self.skipButton setBackgroundColor:[UIColor colorWithRed:0.81 green:0.81 blue:0.81 alpha:1.0]];
+    [self.skipButton addTarget:self action:@selector(tutorialEnd:) forControlEvents:UIControlEventTouchUpInside];
+	self.skipButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14.0f];
+    self.skipButton.userInteractionEnabled = YES;
+	self.skipButton.layer.masksToBounds = YES;
+	self.skipButton.layer.borderWidth = 1.0;
+	self.skipButton.layer.borderColor = self.skipButton.backgroundColor.CGColor;
+	self.skipButton.layer.cornerRadius = 5.0;
+    [self.tutorialBackgroundImageView addSubview:self.skipButton];
+	
+    self.imageView.userInteractionEnabled = NO;
+    self.appDescriptionLabel.userInteractionEnabled = NO;
+    self.appTitleLabel.userInteractionEnabled = NO;
+    self.settingsButton.userInteractionEnabled = NO;
+    self.installButton.userInteractionEnabled = NO;
+    
+    self.tutorialBackgroundImageView.userInteractionEnabled = YES;
+    
+    [self.view addSubview:self.tutorialBackgroundImageView];
+    
+    [self updateTutorial];
+    tutorialRunning = YES;
+	
+	[UIView animateWithDuration:1.0f animations:^{
+		self.tutorialBackgroundImageView.frame = self.view.frame;
+	}];
+}
+
+-(BOOL)prefersStatusBarHidden{
+	return NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if(![[self.view subviews] containsObject:self.tutorialBackgroundImageView] && tutorialRunning){
+        [self fireTutorial];
+    }
+    if(tutorialRunning || (tutorialStage == -1)){
+        [self updateTutorial];
+    }
+	[super viewDidAppear:animated];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+	
+	srand(time(NULL));
+	
+	if(!tutorialRunning){
+		[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+		[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+	}
+	
     CGRect viewFrame = self.view.frame;
     
-    self.appTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, (viewFrame.size.height/4)*2.3, viewFrame.size.width, 40)];
+    self.appTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, (viewFrame.size.height/4)*2.26, viewFrame.size.width, 40)];
     self.appTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:28.0f];
     self.appTitleLabel.text = @"App Title";
     self.appTitleLabel.textAlignment = NSTextAlignmentCenter;
@@ -338,29 +702,29 @@
     [self.settingsButton addTarget:self action:@selector(settingsButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.settingsButton];
     
-    self.appDescriptionLabel = [[UITextView alloc]initWithFrame:CGRectMake(10, (viewFrame.size.height/4)*2.6, viewFrame.size.width-20, (viewFrame.size.height - 70) - (viewFrame.size.height/4)*2.6 - 10)];
+    self.appDescriptionLabel = [[UITextView alloc]initWithFrame:CGRectMake(20, (viewFrame.size.height/4)*2.55, viewFrame.size.width-40, (viewFrame.size.height - 70) - (viewFrame.size.height/4)*2.6 - 3)];
     self.appDescriptionLabel.editable = NO;
     self.appDescriptionLabel.backgroundColor = [UIColor clearColor];
     self.appDescriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18.0f];
     [self.view addSubview:self.appDescriptionLabel];
     
-    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 80, viewFrame.size.width, (viewFrame.size.height/4)*2.3 - 80)];
+    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 80, viewFrame.size.width-120, (viewFrame.size.height/4)*2.3 - 80)];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.userInteractionEnabled = YES;
     [self.view addSubview:self.imageView];
     
     [NSUserDefaults setSecret:@"XqcOyp_yl2U"];
     
-    if([DataFramework getUsername].length != 6){
-        [DataFramework setUserBacker:NO];
+    if([LNDataFramework getUsername].length != 6){
+        [LNDataFramework setUserBacker:NO];
     }
     
-    if(![DataFramework isUserBacker]){
+    if(![LNDataFramework isUserBacker]){
         for(int i = 0; i < APP_COUNT; i++){
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             
             BOOL valid = NO;
-            BOOL registered = [defaults secureBoolForKey:[NSString stringWithFormat:@"owns-%@", [PebbleInfo getAppNameFromType:i]] valid:&valid];
+            BOOL registered = [defaults secureBoolForKey:[NSString stringWithFormat:@"owns-%@", [LNAppInfo getAppNameFromType:i]] valid:&valid];
             if (!valid) {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tampered_with", nil)
                                                                 message:NSLocalizedString(@"tampered_with_description", nil)
@@ -375,42 +739,53 @@
         }
     }
     
-#ifdef SKIP_PURCHASE
-    if(![DataFramework isUserLoggedIn]){
+#ifdef BUILD
+    if(![LNDataFramework isUserLoggedIn]){
         for(int i = 0; i < APP_COUNT; i++){
-            owns_app[i] = true;
+            self.owns_app = true;
             NSLog(@"Skipping purchases... You own everything. Congrats!");
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"PURCHASES SKIPPED"
-                                                        message:@"Let's not repeat the actions of August 7th... Remember to turn this off. Sorry for this Philipp"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Fuck that shit, thanks"
-                                              otherButtonTitles:nil];
-        [alert show];
+        UILabel *skipping = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, self.view.frame.size.width-40, 200)];
+        skipping.textAlignment = NSTextAlignmentCenter;
+        skipping.numberOfLines = 0;
+        skipping.text = [NSString stringWithFormat:@"Build %d %p - purchases skipped!", BUILD, skipping];
+        skipping.textColor = [UIColor colorWithRed:255 green:0 blue:0 alpha:50];
+        [self.view addSubview:skipping];
     }
 #endif
-        
+    
     self.imageTapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageGestureRecognizer:)];
     
     [self.imageView addGestureRecognizer:self.imageTapRecognizer];
         
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL result = [defaults boolForKey:@"key-ANSWERED"];
-    
-    if(!result){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"hello_there", nil)
-                                                        message:NSLocalizedString(@"are_you_a_backer", nil)
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"no", nil)
-                                              otherButtonTitles:NSLocalizedString(@"yes", nil), nil];
-        [alert show];
-        [DataFramework userAnsweredBackerQuestion:YES];
+	
+	BOOL tutorialResult = [defaults boolForKey:@"key-TUTORIAL"];
+	if(!tutorialResult){
+		self.tutorialAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tutorial", nil)
+														message:NSLocalizedString(@"would_you_like_tutorial", nil)
+													   delegate:self
+											  cancelButtonTitle:NSLocalizedString(@"no", nil)
+											  otherButtonTitles:NSLocalizedString(@"yes", nil), nil];
+		[self.tutorialAlert show];
+		[defaults setBool:YES forKey:@"key-TUTORIAL"];
+		[defaults synchronize];
+	}
+	
+    self.leftArrow = [[UIImageView alloc]initWithFrame:CGRectMake(24, self.imageView.frame.origin.y+self.imageView.frame.size.height/2.2, 10, 10)];
+    [self.leftArrow setImage:[UIImage imageNamed:@"arrow-active.png"]];
+    if(self.currentType == 0){
+        [self.leftArrow setImage:[UIImage imageNamed:@"arrow-inactive.png"]];
     }
+    [self.view addSubview:self.leftArrow];
     
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(fireBigList:)];
-    recognizer.direction = UISwipeGestureRecognizerDirectionUp;
-    self.view.userInteractionEnabled = YES;
-    [self.view addGestureRecognizer:recognizer];
+    self.rightArrow = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 40, self.imageView.frame.origin.y+self.imageView.frame.size.height/2.2, 10, 10)];
+    [self.rightArrow setImage:[UIImage imageNamed:@"arrow-active-right.png"]];
+    if(self.currentType == APP_COUNT-1){
+        [self.rightArrow setImage:[UIImage imageNamed:@"arrow-inactive-right.png"]];
+    }
+    [self.view addSubview:self.rightArrow];
+    
     
     /*
      LNSettingsViewController *view_controller = [[LNSettingsViewController alloc]initWithStyle:UITableViewStyleGrouped];
@@ -424,59 +799,47 @@
     self.navigationController.title = @"Lignite";
     self.navigationController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Hello" style:UIBarButtonItemStyleDone target:self action:@selector(actionButtonPushed:)];
     */
+    
+    if(self.currentType == APP_TYPE_TIMEDOCK){
+        self.owns_app = YES;
+    }
+    
     [self updateContentBasedOnType];
-    UIImageView *testView = [[UIImageView alloc] initWithFrame:self.view.frame];
-    [testView setImage:[UIImage imageNamed:@"tutorial.png"]];
-    
-    UILabel *logoutLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, -30, 150, 300)];
-    logoutLabel.text = NSLocalizedString(@"tutorial_logout", nil);
-    logoutLabel.numberOfLines = 0;
-    logoutLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    logoutLabel.font = [UIFont fontWithName:@"MarkerFelt-Thin" size:14.0f];
-    [testView addSubview:logoutLabel];
-    
-    UILabel *swipeLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 100, self.view.frame.size.width-40, 300)];
-    swipeLabel.text = NSLocalizedString(@"tutorial_swipe", nil);
-    swipeLabel.numberOfLines = 0;
-    swipeLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    swipeLabel.textAlignment = NSTextAlignmentCenter;
-    swipeLabel.font = [UIFont fontWithName:@"MarkerFelt-Thin" size:14.0f];
-    [testView addSubview:swipeLabel];
-    
-    UILabel *actionLabel = [[UILabel alloc]initWithFrame:CGRectMake(180, -10, 120, 300)];
-    actionLabel.text = NSLocalizedString(@"tutorial_action", nil);
-    actionLabel.numberOfLines = 0;
-    actionLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    actionLabel.font = [UIFont fontWithName:@"MarkerFelt-Thin" size:14.0f];
-    [testView addSubview:actionLabel];
-    
-    UILabel *installLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 300, 150, 300)];
-    installLabel.text = NSLocalizedString(@"tutorial_install", nil);
-    installLabel.numberOfLines = 0;
-    installLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    installLabel.font = [UIFont fontWithName:@"MarkerFelt-Thin" size:14.0f];
-    [testView addSubview:installLabel];
-    
-    UILabel *settingsLabel = [[UILabel alloc]initWithFrame:CGRectMake(170, 290, 140, 300)];
-    settingsLabel.text = NSLocalizedString(@"tutorial_purchase", nil);
-    settingsLabel.numberOfLines = 0;
-    settingsLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    settingsLabel.font = [UIFont fontWithName:@"MarkerFelt-Thin" size:14.0f];
-    [testView addSubview:settingsLabel];
-
-    //[self.view addSubview:testView];
+    if(tutorialRunning && tutorialStage == 0){
+        tutorialStage++;
+    }
+	if(runTutorial){
+		runTutorial = NO;
+		[self fireTutorial];
+	}
 }
 
 - (void)updatePebblePreview {
-    UIImage *toImage = [LNPreviewBuilderController imageForPebble:[UIImage imageNamed:[DataFramework defaultPebbleImage]] andScreenshot:[UIImage imageNamed:[NSString stringWithFormat:@"%@-%@-1.png", [PebbleInfo getAppNameFromType:self.currentType], [DataFramework pebbleImageIsTime:[DataFramework defaultPebbleImage]] ? @"basalt" : @"aplite"]]];
+    UIImage *toImage = [LNPreviewBuilderController imageForPebble:[UIImage imageNamed:[LNDataFramework defaultPebbleImage]] andScreenshot:[UIImage imageNamed:[NSString stringWithFormat:@"%@-%@-1.png", [LNAppInfo getAppNameFromType:self.currentType], [LNDataFramework pebbleImageIsTime:[LNDataFramework defaultPebbleImage]] ? @"basalt" : @"aplite"]]];
+	if(toImage == nil){
+		NSLog(@"is nil mate");
+		toImage = [LNPreviewBuilderController imageForPebble:[UIImage imageNamed:@"snowy-black.png"] andScreenshot:[UIImage imageNamed:[NSString stringWithFormat:@"%@-%@-1.png", [LNAppInfo getAppNameFromType:self.currentType], [LNDataFramework pebbleImageIsTime:[LNDataFramework defaultPebbleImage]] ? @"basalt" : @"aplite"]]];
+		[LNDataFramework setDefaultPebbleImage:@"snowy-black.png"];
+		[self updatePebblePreview];
+		return;
+	}
     self.imageView.image = toImage;
 }
 
 - (void)tapImageGestureRecognizer:(UITapGestureRecognizer*)rec {
     LNPreviewBuilderController *editController = [self.storyboard instantiateViewControllerWithIdentifier:@"EditController"];
     editController.appType = self.currentType;
-    [self showViewController:editController sender:self];
+    editController.isTutorial = tutorialStage > 0;
+    if(editController.isTutorial){
+        [self presentViewController:editController animated:YES completion:nil];
+    }
+    else{
+        [self showViewController:editController sender:self];
+    }
     editController.sourceController = self;
+    if(tutorialStage > 0){
+        [self tutorialNext:self];
+    }
 }
 
 - (IBAction)fireTimer:(id)sender {
@@ -484,14 +847,14 @@
 }
 
 - (void)updateContentBasedOnType {
-    self.appTitleLabel.text = [[PebbleInfo getAppNameFromType:self.currentType] capitalizedString];
+    self.appTitleLabel.text = [[LNAppInfo getAppNameFromType:self.currentType] capitalizedString];
     [self updatePebblePreview];
-    self.appDescriptionLabel.text = [PebbleInfo getAppDescriptionFromType:self.currentType];
+    self.appDescriptionLabel.text = [LNAppInfo getAppDescriptionFromType:self.currentType];
     if(self.currentType == APP_TYPE_KNIGHTRIDER){
         self.appTitleLabel.text = @"RightNighter";
     }
     self.appDescriptionLabel.font = [UIFont fontWithName:@"helvetica neue" size:14.0];
-    self.settingsButton.enabled = [PebbleInfo settingsEnabled:self.currentType];
+    self.settingsButton.enabled = [LNAppInfo settingsEnabled:self.currentType];
     if(!self.owns_app){
         [self.settingsButton setImage:[UIImage imageNamed:@"purchase-button.png"] forState:UIControlStateNormal];
     }
@@ -499,60 +862,16 @@
         [self.settingsButton setImage:[UIImage imageNamed:@"settings-button.png"] forState:UIControlStateNormal];
     }
 }
+
 /*
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([keyPath isEqual:@"currentType"]) {
-        [self updateContentBasedOnType];
+    NSLog(@"got key path %@", keyPath);
+    if ([keyPath isEqual:@"tutorialStage"]) {
+        NSLog(@"updating tutorial");
+        [self updateTutorial];
     }
-}
-*/
-- (void)swipeRight {
-    self.usingTimeImage = YES;
-    
-    UIView *theParentView = [self.view superview];
-    
-    CATransition *animation = [CATransition animation];
-    [animation setDuration:0.3];
-    [animation setType:kCATransitionMoveIn];
-    [animation setSubtype:kCATransitionFromLeft];
-    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-    
-    [theParentView addSubview:self.view];
-    if((self.currentType-1) < 0){
-        self.currentType = APP_COUNT-1;
-    }
-    else{
-        self.currentType--;
-    }
-    
-    [[theParentView layer] addAnimation:animation forKey:@"showSecondViewController"];
-    
-    [DataFramework setPreviousAppType:self.currentType];
 }
 
-- (void)swipeLeft {
-    self.usingTimeImage = YES;
-    
-    UIView *theParentView = [self.view superview];
-    
-    CATransition *animation = [CATransition animation];
-    [animation setDuration:0.3];
-    [animation setType:kCATransitionMoveIn];
-    [animation setSubtype:kCATransitionFromRight];
-    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-    
-    [theParentView addSubview:self.view];
-    if((self.currentType+1) > APP_COUNT-1){
-        self.currentType = 0;
-    }
-    else{
-        self.currentType++;
-    }
-    
-    [[theParentView layer] addAnimation:animation forKey:@"showSecondViewController"];
-    
-    [DataFramework setPreviousAppType:self.currentType];
-}
 
 - (IBAction)leftButtonPush:(id)sender {
     [self swipeRight];
@@ -575,7 +894,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

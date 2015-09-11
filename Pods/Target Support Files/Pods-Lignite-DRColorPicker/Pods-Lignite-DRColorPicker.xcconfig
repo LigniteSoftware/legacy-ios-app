@@ -1,1 +1,0 @@
-PODS_LIGNITE_DRCOLORPICKER_OTHER_LDFLAGS = -framework "ImageIO" -framework "QuartzCore" -framework "UIKit"

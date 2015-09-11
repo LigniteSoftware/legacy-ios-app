@@ -10,6 +10,10 @@
 
 @interface CreditsViewController : UIViewController
 
+/*
+ For credits
+ */
+
 @property IBOutlet UIImageView *titleView;
 @property IBOutlet UITextView *creditsView;
 

@@ -7,7 +7,7 @@
 //
 
 #import "FeedbackViewController.h"
-#import "LNCommunicationLayer.h"
+#import "LNDataFramework.h"
 #import "UIView+Toast.h"
 
 @interface FeedbackViewController ()
@@ -18,11 +18,13 @@
 
 @implementation FeedbackViewController
 
+//To dismiss the keyboard
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
 
+//Calls to dismiss keyboard
 - (IBAction)makeKeyboardDisappear:(id)sender {
     [self textFieldShouldReturn:self.detailsValueTextField];
 }
@@ -33,7 +35,8 @@
     [self.howImportantValueSlider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     [self textFieldShouldReturn:self.detailsValueTextField];
     self.detailsValueTextField.delegate = self;
-    
+	
+	//Recognizer for dismissing keyboard
     UITapGestureRecognizer *keyboardGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(makeKeyboardDisappear:)];
     [self.view addGestureRecognizer:keyboardGestureRecognizer];
 
@@ -46,6 +49,10 @@
     self.whatTypeData = [NSArray arrayWithObjects:NSLocalizedString(@"type_crash", nil), NSLocalizedString(@"type_bug", nil), NSLocalizedString(@"type_design", nil), NSLocalizedString(@"type_feature", nil), NSLocalizedString(@"type_other", nil), nil];
     self.whatTypeValuePicker.delegate = self;
     self.whatTypeValuePicker.dataSource = self;
+	
+	[self.disclaimerView scrollRangeToVisible:NSMakeRange(0, 0)];
+	
+	self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"send", nil);
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView*)pickerView {
@@ -69,34 +76,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+//When send button is pressed
 - (IBAction)saveButtonPressed:(id)sender {
+	//Get rid of the stupid ' that was causing errors
     NSString *encodedString = [self.detailsValueTextField.text stringByReplacingOccurrencesOfString:@"'" withString:@""];
-    NSString *post = [NSString stringWithFormat:@"username=%@&currentDevice=%@&accessToken=%@&type=%@&details=%@&importance=%d", [DataFramework getUsername], [DataFramework getCurrentDevice], [DataFramework getUserToken], self.whatTypeData[[self.whatTypeValuePicker selectedRowInComponent:0]], encodedString, (int)floor(self.howImportantValueSlider.value)];
+	//Setup the post string
+    NSString *post = [NSString stringWithFormat:@"username=%@&currentDevice=%@&accessToken=%@&type=%@&details=%@&importance=%d", [LNDataFramework getUsername], [LNDataFramework getCurrentDevice], [LNDataFramework getUserToken], self.whatTypeData[[self.whatTypeValuePicker selectedRowInComponent:0]], encodedString, (int)floor(self.howImportantValueSlider.value)];
 
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
-    
+    //Send her off
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:@"https://api.lignite.me/v2/feedback/index.php"]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
-    
-    [self.view makeToast:@"Sending..." duration:0.7f position:nil];
-    
+	
+	//Start connection
     NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
     [connection start];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"Error %@", [error localizedDescription]);
-    NSString *failedDescription = [[NSString alloc]initWithFormat:@"Your feedback failed to even send, sorry! Error: %@", [error localizedDescription]];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failed"
+	//If it failed let the user know that it didn't even try
+    NSString *failedDescription = [[NSString alloc]initWithFormat:NSLocalizedString(@"feedback_failed_send", nil), [error localizedDescription]];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"failed", nil)
                                                     message:failedDescription
                                                    delegate:nil
-                                          cancelButtonTitle:@"Okay"
+										  cancelButtonTitle:NSLocalizedString(@"okay", nil)
                                           otherButtonTitles:nil];
     [alert show];
 }
@@ -106,20 +116,22 @@
     NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     NSNumber *status = [jsonResult objectForKey:@"status"];
     if([status isEqual:@200]){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
-                                                        message:@"Your feedback hit the server successfully. Thanks! Feel free to post more feedback, or go back to the main screen."
+		//If the server loved it, let'em know
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"success", nil)
+                                                        message:NSLocalizedString(@"feedback_success", nil)
                                                        delegate:nil
-                                              cancelButtonTitle:@"Awesome"
+                                              cancelButtonTitle:NSLocalizedString(@"awesome", nil)
                                               otherButtonTitles:nil];
         [alert show];
     }
     else{
+		//If the server hated it, let'em know
         NSString *localizedError = [jsonResult objectForKey:@"localized_message"];
-        NSString *failedDescription = [[NSString alloc]initWithFormat:@"Your feedback failed to hit the server. Response: %@. Feel free to try again.", localizedError];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failed"
+        NSString *failedDescription = [[NSString alloc]initWithFormat:NSLocalizedString(@"feedback_failed_to_hit_server", nil), localizedError];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"failed", nil)
                                                         message:failedDescription
                                                        delegate:nil
-                                              cancelButtonTitle:@"Okay"
+                                              cancelButtonTitle:NSLocalizedString(@"okay", nil)
                                               otherButtonTitles:nil];
         [alert show];
     }

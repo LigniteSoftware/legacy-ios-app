@@ -1,16 +1,13 @@
 PODS:
-  - DRColorPicker (1.0.11)
   - PebbleKit (2.4)
-  - UICKeyChainStore (2.0.4)
+  - UICKeyChainStore (2.0.6)
 
 DEPENDENCIES:
-  - DRColorPicker (~> 1.0.11)
   - PebbleKit
   - UICKeyChainStore
 
 SPEC CHECKSUMS:
-  DRColorPicker: d4291e8ac469f5762b1f1f6a98e8e1b3bf230ad6
   PebbleKit: e8650801927bd7272da83c8a21fb94d2af24465b
-  UICKeyChainStore: 69eb0c3a6f669bccf16ba88de3b9069b71501361
+  UICKeyChainStore: c5719c814e8bd69e74e4a0fc09daf8f4d6257a59
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.38.2

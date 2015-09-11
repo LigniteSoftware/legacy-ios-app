@@ -52,13 +52,28 @@
 
 #pragma mark - Actions
 
-- (IBAction)cancelPressed:(id)sender
-{
+- (IBAction)cancelPressed:(id)sender{
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"cancel", nil) style:UIBarButtonItemStyleDone target:self action:@selector(cancelPressed:)];
+	/*
+	if([[self.tableData objectAtIndex:0] containsString:@"/"]){
+		NSLog(@"Is timezones");
+		for(int i = 0; i < [self.tableData count]; i++){
+			NSString *tableString = [self.tableData objectAtIndex:i];
+					NSRange range = [string rangeOfString:searchKeyword];
+					if (range.location == NSNotFound) {
+			NSLog(@"string was not found");
+					} else {
+			NSLog(@"position %lu", (unsigned long)range.location);
+					}
+			NSString *location = [tableString substringFromIndex:[tableString string]]
+		}
+	}
+	 */
 }
 
 @end

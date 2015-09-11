@@ -7,11 +7,12 @@
 //
 
 #import "LNColourPicker.h"
-#import "LNCommunicationLayer.h"
+#import "LNDataFramework.h"
 #import "LNLabel.h"
 #import "LNAppInfo.h"
+#import "LNAlertView.h"
 
-@interface LNColourPicker ()
+@interface LNColourPicker () <UIAlertViewDelegate>
 
 @property NSDictionary *colours, *colours_corrected;
 @property UILabel *selectedLabel;
@@ -25,12 +26,30 @@
 
 @implementation LNColourPicker
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"button index %ld called", (long)buttonIndex);
+    LNAlertView *alert = (LNAlertView*)alertView;
+    
+    if(0 == buttonIndex){ //cancel button
+        [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
+    }
+    else if (1 == buttonIndex){
+        LNSettingsViewController *failSettings = [[LNSettingsViewController alloc]initWithStyle:UITableViewStyleGrouped];
+        [failSettings setAsAlertSettings];
+        [self showViewController:failSettings sender:self];
+        
+    }
+    else if(buttonIndex == 2){
+        [LNDataFramework sendDictionaryToPebble:alert.dictionary forApp:alert.app withSettingsController:self];
+    }
+}
+
 - (void)colourLabelTapped:(UITapGestureRecognizer*)recognizer {
     LNLabel *label = (LNLabel*)[recognizer view];
     self.selectedColour = label.backgroundColor;
     self.selectedLabel.backgroundColor = self.selectedColour;
     self.selectedLabel.layer.borderColor = self.selectedColour.CGColor;
-    self.selectedLabel.text = [[[self.colours objectForKey:[[label.json_object objectForKey:@"hex_value"] uppercaseString]] objectForKey:@"closest"] objectForKey:@"name"];
+    self.selectedLabel.text = NSLocalizedString([[[self.colours objectForKey:[[label.json_object objectForKey:@"hex_value"] uppercaseString]] objectForKey:@"closest"] objectForKey:@"name"], nil);
     
     if([self.colourLabels indexOfObject:label] > 59){
         self.selectedLabel.textColor = [UIColor lightGrayColor];
@@ -38,6 +57,8 @@
     else{
         self.selectedLabel.textColor = [UIColor whiteColor];
     }
+	
+	NSLog(@"label %p", label);
     
     CGRect getRect = self.view.frame;
     int i = (int)[self.colourLabels indexOfObject:self.currentLabel];
@@ -49,11 +70,13 @@
         label.frame = CGRectMake((i1 % 8)*getRect.size.width/8 + getRect.size.width/12/2/2 - 4, ((i1/8)*getRect.size.height/12) + 114 + vertDifference - 4, getRect.size.width/12 + 8, getRect.size.width/12 + 8);
         
         self.currentLabel = label;
+		
+		NSLog(@"label1 %p", label);
     }];
-    
+	
     LNLabel *sourceLabel = self.sourceLabel;
-    [DataFramework sendColourToPebble:[[label.json_object objectForKey:@"hex_value"] substringFromIndex:1] :[[sourceLabel.json_object objectForKey:@"pebble_key"] integerValue] :[sourceLabel.json_object objectForKey:@"storage_key"] :[PebbleInfo getAppUUID:self.appType]];
-    
+	NSLog(@"label2 %p", sourceLabel);
+    [LNDataFramework sendStringToPebble:[[label.json_object objectForKey:@"hex_value"] substringFromIndex:1] pebbleKey:[[sourceLabel.json_object objectForKey:@"pebble_key"] integerValue] storageKey:[sourceLabel.json_object objectForKey:@"storage_key"] appUUID:[LNAppInfo getAppUUID:self.appType] fromController:self];
     self.sourceLabel.backgroundColor = self.currentLabel.backgroundColor;
 }
 
@@ -72,14 +95,18 @@
     if(index > 63){
         return;
     }
+    if([self.colourLabels count] < 1){
+        NSLog(@"No labels in array... returning.");
+        return;
+    }
     LNLabel *sourceLabel = [self.colourLabels objectAtIndex:index];
-    UIColor *colour = [DataFramework colorFromHexString:[current substringFromIndex:1]];
+    UIColor *colour = [LNDataFramework colorFromHexString:[current substringFromIndex:1]];
     self.selectedColour = colour;
     sourceLabel.backgroundColor = colour;
     self.selectedLabel.backgroundColor = colour;
     self.selectedLabel.layer.borderColor = self.selectedColour.CGColor;
     
-    self.selectedLabel.text = [[[self.colours objectForKey:[current uppercaseString]] objectForKey:@"closest"] objectForKey:@"name"];
+    self.selectedLabel.text = NSLocalizedString([[[self.colours objectForKey:[current uppercaseString]] objectForKey:@"closest"] objectForKey:@"name"], nil);
     
     if([self.colourLabels indexOfObject:sourceLabel] > 59){
         self.selectedLabel.textColor = [UIColor lightGrayColor];
@@ -111,10 +138,10 @@
     BOOL corrected = segment.selectedSegmentIndex == 0;
     
     for(int i = 0; i < [self.allkeys count]; i++){
-        UIColor *colour = [DataFramework colorFromHexString:[[[self.allkeys objectAtIndex:i] substringFromIndex:1] lowercaseString]];
+        UIColor *colour = [LNDataFramework colorFromHexString:[[[self.allkeys objectAtIndex:i] substringFromIndex:1] lowercaseString]];
         if(corrected){
             NSString *string = [self.colours_corrected objectForKey:[[self.allkeys objectAtIndex:i] lowercaseString]];
-            colour = [DataFramework colorFromHexString:[string substringFromIndex:1]];
+            colour = [LNDataFramework colorFromHexString:[string substringFromIndex:1]];
         }
         LNLabel *label = [self.colourLabels objectAtIndex:i];
         label.layer.borderColor = colour.CGColor;
@@ -134,16 +161,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setTitle:@"Colour Picker"];
+    [self setTitle:NSLocalizedString(@"colour_picker", nil)];
     
-    NSData *colourData = [[NSData alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"colours" ofType:@"json"]];
+    NSData *colourData = [[NSData alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"colours_uncorrected" ofType:@"json"]];
     NSError *colourError;
     self.colours = [NSJSONSerialization JSONObjectWithData:colourData options:NSJSONReadingMutableContainers error:&colourError];
     
     NSData *correctedColourData = [[NSData alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"colours_corrected" ofType:@"json"]];
     NSError *correctedColourError;
     self.colours_corrected = [NSJSONSerialization JSONObjectWithData:correctedColourData options:NSJSONReadingMutableContainers error:&correctedColourError];
-    
+	
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.colourLabels = [[NSMutableArray alloc]init];
@@ -154,7 +181,7 @@
     CGRect getRect = [self.view frame];
     int vertDifference = 0;
     for(int i = 0; i < [self.allkeys count]; i++){
-        UIColor *colour = [DataFramework colorFromHexString:[[self.allkeys objectAtIndex:i] substringFromIndex:1]];
+        UIColor *colour = [LNDataFramework colorFromHexString:[[self.allkeys objectAtIndex:i] substringFromIndex:1]];
         vertDifference = (getRect.size.height-80-(((getRect.size.height/12)*8)+getRect.size.width/12))/6;
         LNLabel *label = [[LNLabel alloc]initWithFrame:CGRectMake((i % 8)*getRect.size.width/8 + getRect.size.width/12/2/2, ((i/8)*getRect.size.height/12) + 114 + vertDifference, getRect.size.width/12, getRect.size.width/12)];
         label.layer.borderColor = colour.CGColor;
@@ -172,13 +199,13 @@
         [label addGestureRecognizer:tap_recognizer];
         
         label.json_object = [[NSDictionary alloc]initWithObjects:@[[self.allkeys objectAtIndex:i]] forKeys:@[@"hex_value"]];
-        
+		NSLog(@"%@", [[self.colours objectForKey:[self.allkeys objectAtIndex:i]] objectForKey:@"name"]);
         [self.view addSubview:label];
         [self.colourLabels addObject:label];
     }
     UILabel *selectedTitle = [[UILabel alloc]initWithFrame:CGRectMake(20, getRect.size.height-80, getRect.size.width-40, 30)];
     selectedTitle.textAlignment = NSTextAlignmentCenter;
-    selectedTitle.text = @"Selected colour:";
+    selectedTitle.text = NSLocalizedString(@"selected_colour", nil);
     selectedTitle.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:14.0];
     NSLog(@"%f", getRect.size.height);
     if(getRect.size.height > 480){
@@ -197,7 +224,7 @@
     self.selectedLabel.text = @"Red";
     [self.view addSubview:self.selectedLabel];
     
-    NSArray *itemArray = [NSArray arrayWithObjects: @"Corrected", @"Uncorrected", nil];
+    NSArray *itemArray = [NSArray arrayWithObjects: NSLocalizedString(@"corrected", nil), NSLocalizedString(@"uncorrected", nil), nil];
     self.segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
     int difference = ((0/8)*getRect.size.height/12) + 114 + vertDifference - 74;
     self.segmentedControl.frame = CGRectMake((getRect.size.width-250)/2, 70 + difference/6, 250, 30);

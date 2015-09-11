@@ -12,12 +12,13 @@
 
 @interface LNPreviewBuilderController : UIViewController
 
-@property IBOutlet UILabel *pebbleLabel, *screenshotLabel;
-@property IBOutlet UIButton *pebbleNextButton, *pebblePreviousButton, *screenshotNextButton, *screenshotPreviousButton, *defaultButton;
-@property IBOutlet UIImageView *pebbleView, *screenshotView;
+@property UILabel *pebbleLabel, *screenshotLabel;
+@property UIButton *pebbleNextButton, *pebblePreviousButton, *screenshotNextButton, *screenshotPreviousButton, *defaultButton;
+@property UIImageView *pebbleView, *screenshotView;
 
 @property LNAppListViewController *sourceController;
 @property AppTypeCode appType;
+@property BOOL isTutorial;
 
 enum PebbleModel {
     PEBBLE_MODEL_NOT_FOUND = -1,

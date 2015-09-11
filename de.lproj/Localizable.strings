@@ -1,0 +1,389 @@
+/*
+ Localizable.strings
+ Lignite
+ 
+ Created by Edwin Finch on 8/12/15.
+ Copyright (c) 2015 Edwin Finch. All rights reserved.
+ */
+
+/*
+ Settings
+ */
+
+"pref_header_general" = "Allgemein";
+"pref_header_lookandfeel" = "Aussehen";
+"pref_title_lookandfeel" = "Aussehen";
+"pref_header_colours" = "Farben";
+"pref_header_othercolours" = "Andere Farben";
+
+"pref_btdisalert" = "Abbruch der Verbindung";
+"pref_btrealert" = "Wiederherstellung";
+
+//Speedometer
+"pref_title_invert" = "Farben invertieren";
+"show_borders" = "Rahmen zeigen";
+"pref_boot_animation" = "Startanimation";
+"pref_bluetooth_icon" = "Bluetooth Anzeige";
+"pref_title_1_colour" = "Äussere Farbe";
+"pref_title_2_colour" = "Mittlere Farbe";
+"pref_title_3_colour" = "Innere Farbe";
+"pref_antialiased" = "Antialiasing";
+
+//RightNighter
+"pref_constant_anim" = "Konstante Animation";
+
+//Chunky
+"battery_bar" = "Batterie Anzeige";
+"minute_colour" = "Minute";
+"hour_colour" = "Stunde";
+
+//Lines
+"alt_date_format" = "Alternatives Datumsformat";
+"date_colour" = "Datum";
+"bar_only" = "Nur Batteriebalken";
+
+//Colours
+"outline_numbers" = "Nummern schwarz umrandet";
+"organize_colours" = "Farben organisieren";
+"randomize_width" = "Zufällige Breite (BETA)";
+"default_width" = "Breite";
+
+//TimeDock
+"reduced" = "Reduziert";
+"weather_format" = "Wetterformat";
+"open_on_charging" = "Öffnen beim Laden";
+"pref_header_animations" = "Animationen";
+
+//Tree of Colours
+"randomize_colours" = "Zufällige Farben";
+"custom_colour_1" = "Eigene Farbe 1";
+"custom_colour_2" = "Eigene Farbe 2";
+"custom_colour_3" = "Eigene Farbe 3";
+"circle_colour" = "Kreis";
+
+//Timezones
+"your_time" = "Deine Zeitzone";
+"colour" = "Farbe";
+"analogue" = "Analog";
+"subtract_hour" = "Stunde abziehen";
+"timezone" = "Zeitzone";
+"timezones" = "Zeitzonen";
+"other_time" = "Zweite Zeitzone";
+"time" = "Time";
+"none" = "(keine)";
+
+//Slot Machine
+"secondly_updates" = "Sekündliche Aktualisierung";
+"date" = "Datum";
+"time" = "Zeit";
+
+//Simplified Analogue
+"weekday" = "Wochentag";
+"advanced_date" = "Erweiterte Datumsanzeige";
+"digital_time" = "Digitale Zeit";
+"minute_analogue" = "Minute im analogen Kreis";
+"hour_analogue" = "Stunde im analogen Kreis";
+
+//Personal
+"compressed_date_format" = "Kurzes Datumsformat";
+"accent" = "Akzent";
+"date_format" = "Datumsformat";
+"bar_only" = "Nur Batteriebalken";
+
+//Pulse
+
+"pref_header_animations" = "Animation";
+"constant_anim" = "Konstante Animation";
+"shake_to_anim" = "Animation durch Schütteln";
+"grow" = "Wachsen";
+"pref_header_colours" = "Farben";
+"date" = "Datumsformat";
+
+//Beat
+"shake_to_animate" = "Animation durch Schütteln";
+"beatline_data" = "Beatline Daten";
+"animation_type" = "Animationsart";
+"show_date" = "Datum anzeigen";
+"show_battery" = "Batterie anzeigen";
+"time_colour" = "Zeit";
+"background_colour" = "Hintergrund";
+"front_colour" = "Vordere Farbe";
+"back_colour" = "Hintere Farbe";
+
+"battery" = "Batterie";
+"bluetooth" = "Bluetooth";
+"random" = "Zufällig";
+
+"animation_type" = "Animationsart";
+"apple_watch_mode" = "Akkuschlürfer (sekündlich!)";
+"minutely" = "Minütlich";
+"on_change" = "Bei einer Änderung";
+
+//Equalizer
+"minute_dependant" = "Anzahl Balken = Minuten";
+"organize_colours" = "Farben organisieren";
+"show_day" = "Tag anzeigen";
+"equalizer_animation_mode" = "Animationsart des Equalizers";
+"animation_roll" = "Welle";
+"animation_music" = "Musik";
+"animation_expand_and_slam" = "Expandieren und zusammenfallen";
+"battery_bar_colour" = "Farbe der Batterieanzeige";
+
+//Pulse
+"animation_mode" = "Animationsmodus";
+"organize_colours" = "Farben organisieren";
+
+/*
+ JSON
+ */
+
+"battery_bar_mode" = "Batterieanzeige";
+"date" = "Datum";
+"date_format" = "Datumsformat";
+"mode" = "Modus";
+"secondly" = "Sekündlich";
+"apple_watch_mode" = "Sekündlich";
+"minutely" = "Minütlich";
+"on_change" = "Bei einer Änderung";
+"battery" = "Batterie";
+"bluetooth" = "Bluetooth";
+"random" = "Zufällig";
+"no_battery" = "Keine Batterieanzeige";
+"bar_only" = "Nur Balken";
+"text_only" = "Nur Text";
+"bar_and_text" = "Balken und Text";
+"Mo. day, year" = "Mo. Tag, Jahr";
+"mm dd yy Week: ww" = "MM TT JJ Woche: ww";
+"dd mm yy Week: ww" = "TT MM JJ Woche: ww";
+"%A\\n%D" = "Wochentag MM/TT/JJ";
+"%A\\n%d/%m/%y" = "Wochentag DD/MM/JJ";
+"%A" = "Wochentag";
+"grow" = "Wachsen";
+"flower" = "Blume";
+"%B %d, %Y" = "Monat TT, JJJJ";
+"%a - %D" = "Tag - MM/TT/JJ";
+"%a - %d/%m/%y" = "Tag - TT/MM/JJ";
+"%D - CW: %W" = "MM/TT/JJ";
+"animation_roll" = "Rollen";
+"animation_music" = "Musik";
+"animation_expand_and_slam" = "Erweitern und zusammenfallen";
+
+
+/*
+ App Descriptions
+ */
+
+"speedometer_description" = "Speedometer ist ein Watchface, welches sich das Farbdisplay sehr gut zunutzen macht!\n\nEs besteht aus Balken, die sich mit der Zeit oder durch andere Daten (bspw. den Wochentag, Minuten und Akkurestkapazität).";
+
+"rightnighter_description" = "Kinder der 80-er Jahre wissen genau, was sie hier vor sich haben: Die \"Voice Box\" aus der wohl jedem bekannten Serie inkl. einer Sprechanimation, wenn die Zeit sich ändert...\n\nAuf der linken Seite ist das Datum und der Bluetooth Verbindungsstatus und auf der gegenüberliegenden Seite die verbleibende Akkukapazität abzulesen.";
+
+"chunky_description" = "Ein simples, aber ansprechendes eckiges Design, wo du die Farben frei wählen und die Zeit in einer angenehm lesbaren Grösse sehen kannst.\n\nSelbstverständlich gibt es auch hier Einstellungen und du kannst das Watchface farbtechnisch deiner Kleidung anpassen.";
+
+"lines_description" = "Ein sehr simples, aber doch stylisches Watchface, welches nichts ausser der Zeit und dem Datum anzeigt.\n\nEs gibt einige Optionen, die man einstellen kann und natürlich: Eigene Farben. Dieses Watchface wird bald mit einer grösseren Zeitanzeige ausgestattet!";
+
+"colours_description" = "Dieses Watchface bringt das Display deiner Pebble Time / Pebble Time Steel zum Leuchten, indem es minütlich die Farben im Hintergrund wechselt.\n\nIn den Einstellungen gibt es die Möglichkeit, die Breite der Farbbalken und weitere Aspekte dieses Watchfaces deinen Vorstellungen anzupassen.";
+
+"timedock_description" = "Das offizielle Watchface für das TimeDock von Engineerable! Verfügbar im AppStore. \n\nDie Einstellungen umfassen die Option, das Watchface anzuzeigen, sobald die Uhr geladen wird, Animationen und mehr. Probier's aus, es ist kostenlos!";
+
+"tree of colours_description" = "Hiermit wird dein Farbdisplay definitiv zum Leben erweckt! Jede Minute wächst ein 'Ast' in einer zufälligen Farbe und Form aus der Mitte - wie der Ast eines Baumes (deswegen der Name).\n\nDer Baum wird jede Stunde zurückgesetzt und beginnt wieder von vorne zu wachsen. Durch die zufälligen Farben sieht es immer anders aus...";
+
+"timezones_description" = "Unsere Version eines Watchfaces mit 2 Zeitzonen mit vielen Personalisierungs\noptionen!\n\nDer innere Kreis zeigt die erste Zeitzone (im oben zu sehenden Beispiel Philipp's Zeitzone) und der äussere Kreis die zweite Zeitzone (Edwin, im oben zu sehenden Beispiel).";
+
+"slot machine_description" = "Ein einzigartiges Design, welches einen einarmigen Banditen emuliert. Sieh zu, wie die Nummern jede Minute neu gemischt werden!\n\nSlot Machine kommt mit ein paar weiteren praktischen Features wie die Anzeige der verbleibenden Batteriekapazität und einem 'Shake to Animate'-Feature, für den Fall der Fälle.";
+
+"pulse_description" = "Dieses Watchface lebt durch die Animationen. In den Einstellungen kann festgelegt werden, ob der Kreis minütlich wachsen oder jede Minute eine pulsähnliche Animation ablaufen soll, welche minütlich die Hintergrundfarbe ändert. .\n\nDas Display deiner Pebble Time / Pebble Time Steel wird scheinen!";
+
+"simplified analogue_description" = "Einfachheit trifft auf klassisches Design.\n\nWir haben dieses Watchface aufgrund eurer Wünsche erstellt. Es besteht aus einer digitalen wie auch analogen Zeitanzeige und erlaubt dir, so ziemlich alles deinen Wunschfarben anzupassen.";
+
+"personal_description" = "Personal ist - wie es der Name bereits vermuten lässt - persönlich.\n\nIn den Einstellungen kannst du deinen Namen eingeben und das Watchface grüsst dich tageszeitabhängig. Wunderschön für das Pebble Time- / Pebble Time Steel-Display optimiert.";
+
+"beat_description" = "Beat ist ein attraktives Watchface mit mehr als genug Animationen, welche die einzigartige 'Beatline' nutzen, um die verbleibende Batteriekapazität oder den Bluetooth Verbindungsstatus anzuzeigen. Oder du lässt es zufällig eine Beatline anzeigen - deine Entscheidung!\n\nEs gibt sehr coole Animationen, welche den Eindruck erwecken, als würde die Uhr euren Puls messen / anzeigen. Natürlich lassen sich auch hier die Farben und andere Dinge in den Einstellungen anpassen.";
+
+"equalizer_description" = "Ein Watchface, welches dein Display zum Leben erweckt! \n\nDie Balken haben viele verschiedene Animationsarten, wie rollen, Welle, Musik und mehr! In den Einstellungen lässt sich einstellen, wie oft animiert werden soll und vieles mehr. Die Batterieanzeige agiert als Trennstrich. Desweiteren werden die Zeit, der Wochentag und das Datum angezeigt.";
+
+/*
+ Colour Picker
+ */
+
+"colour_picker" = "Farbauswahl";
+"corrected" = "korrigiert";
+"uncorrected" = "unkorrigiert";
+"selected_colour" = "Ausgewählte Farbe";
+
+/*
+ Login Screen
+ */
+"username" = "E-Mailadresse";
+"password" = "Passwort";
+"enter_details" = "Tippe bitte deine Lignite Benutzerdaten ein";
+"check" = "Prüfen";
+"login" = "Einloggen";
+"cant_login" = "Du kannst nicht einloggen? Setze dein Konto hier zurück.";
+"no_account" = "Kein Konto? Klicke hier, um ohne Konto fortzufahren.";
+"no_password" = "Passwort vergessen? Klick hier, um es erneut zu erhalten.";
+"welcome_back" = "Willkommen zurück, %@!";
+
+/*
+ Main app
+ */
+
+"restore" = "Einkäufe";
+"install" = "Installieren";
+"purchase_bundles" = "Bundles kaufen";
+"purchase" = "Kaufen";
+"settings" = "Einstellungen";
+"credits" = "Danksagung";
+"cancel" = "Abbrechen";
+"kickstarter_backer" = "Kickstarter Backer Login";
+"are_you_a_backer" = "Bist du ein Kickstarter Backer?";
+"restoring_purchases" = "Einkäufe wiederherstellen...";
+"restored_purchases" = "Einkäufe wiederhergestellt";
+"restored_purchases_description" = "All deine bisher getätigten %d Einkäufe wurden wiederhergestellt. Vielen Dank für deine Unterstützung!";
+"logout" = "Abmelden";
+"send_feedback" = "Feedback senden";
+"send" = "Senden";
+"logging_out" = "Du wirst abgemeldet...";
+"pick_an_app" = "Wähle ein Watchface / eine App";
+
+/*
+ Tutorial
+ */
+
+"tutorial" = "Einführung";
+"would_you_like_tutorial" = "Möchtest du eine kurze Einführung zu dieser App erhalten?";
+
+"tutorial_main_0" = "Wische links und rechts um zwischen den einzelnen Watchfaces und Apps zu wechseln";
+"tutorial_main_1" = "Gut gemacht! Nun tippe auf die Pebble Smartwatch oben.";
+"tutorial_main_2" = "Cool, nicht wahr? Du kannst diesen Button zum Installieren des gerade angezeigten Watchfaces oder der Watchapp antippen.";
+"tutorial_main_3" = "Dir gefällt, was du siehst? Tippe auf diesen Kaufbutton, um das Watchface herunterzuladen, freizuschalten und die Einstellungen aufzurufen.";
+"tutorial_main_4" = "Sehr schön. Hier kannst du allfällig zuvor getätigte Käufe wiederherstellen.";
+"tutorial_main_5" = "Hier tippen für: Kickstarter Backer Login (du weisst, was das bedeutet), und andere Dinge.";
+"tutorial_main_6" = "Das wärs schon! Wir hoffen sehr, dass dir Lignite gefällt.";
+
+"tutorial_preview_0" = "Der Vorschau-Baukasten erlaubt es dir, mehrere Screenshots des ausgewählten Watchfaces oder der Watchapp zu sehen. Desweiteren kannst du hier dein Pebble Modell auswählen und anschliessend als Standard setzen.";
+"tutorial_preview_1" = "Wische links oder rechts auf der Vorschau Pebble, um zwischen allen 9 Modellen hin- und herzuwechseln.";
+"tutorial_preview_2" = "Ist das deine favorisierte Pebble? Hier tippen, um sie als Standard zu speichern.";
+"tutorial_preview_3" = "Wische links oder rechts, um zwischen den vorhandenen Screenshots zu wechseln.";
+
+"replay_tutorial" = "Einführung erneut abspielen";
+"awesome" = "Hervorragend!";
+"nice" = "Sehr schön!";
+"alright_thanks" = "Ok, danke!";
+"ok" = "Okay";
+"thanks" = "Danke!";
+"alright" = "Okay";
+"cool_bye_bye" = "Cool & tschüss!";
+"show_me" = "Ok, gerne!";
+"end_tutorial" = "Abbrechen";
+
+/*
+ Preview Builder
+ */
+
+"build_a_preview" = "Wähle deine Uhr";
+"screenshot" = "Screenshot";
+"set_as_default_pebble" = "Als Standard setzen";
+
+"bianca-black" = "Pebble Steel - Black";
+"bianca-silver" = "Pebble Steel - Silver";
+"bobby-black" = "Time Steel - Black";
+"bobby-silver" = "Time Steel - Silver";
+"bobby-gold" = "Time Steel - Gold";
+"snowy-black" = "Pebble Time - Black";
+"snowy-red" = "Pebble Time - Red";
+"snowy-white" = "Pebble Time - White";
+"tintin-black" = "Pebble - Black";
+"tintin-red" = "Pebble - Red";
+"tintin-white" = "Pebble - White";
+
+/*
+ Feedback Submitter
+ */
+
+"description" = "Beschreibung";
+"type" = "Art";
+"type_crash" = "Absturz";
+"type_bug" = "Fehler";
+"type_design" = "Design-betreffend";
+"type_feature" = "Feature-betreffend";
+"type_other" = "Anderes";
+"importance" = "Wichtigkeit";
+"send" = "Senden";
+"feedback_disclaimer" = "Dein Feedback geht direkt an Edwin's Server. Deine User-ID (Access Code) wird mitgesendet. Unsere Datenschutz-\nbestimmungen kannst du hier einsehen: http://lignite.io/policy. Wir nutzen dein Feedback, um die Lignite Collection zu verbessern und weitere atemberaubende Watchfaces und -apps zu erstellen.";
+
+/*
+ Errors
+ */
+
+"login_failed_taken" = "Netter Versuch. Jemand anderes hat sich bereits mit diesem Account eingeloggt. Falls es sich hierbei um deinen Account handelt, kannst du deinen Zugang mittels dem nachfolgenden Link zurücksetzen.";
+"now_now" = "Moment, Mooooment..";
+"login_failed_404" = "Es konnte kein Lignite Account mit diesem Benutzernamen und Passwort gefunden werden, sorry! Stelle bitte sicher, dass du alles korrekt eingetippt hast und verwende bitte kein Copy & Paste (Fehler 404)";
+"silly_goose" = "Ups, Flötenschlumpf!";
+"login_not_sure" = "Ich bin mir nicht sicher, was ich hiermit machen soll: %@";
+"well_thats_embarassing" = "Huch, wie peinlich.";
+"my_friend" = "Mein Freund";
+
+"failed" = "Abgebrochen";
+"failed_to_logout" = "Du konntest nicht abgemeldet werden, sorry! Fehler: %@";
+"illegal_account" = "Unerlaubtes Konto";
+"illegal_account_description" = "Du hast dich unerlaubterweise angemeldet. Vermutlich wurde dein Konto mit dem Account resetter zurückgesetzt. Du wurdest aufgrund dessen abgemeldet!";
+"damn_okay" = "mmkay";
+"tampered_with" = "Herumdoktern";
+"tampered_with_description" = "Was denkst du eigentlich, wer du bist? 1337 Leet Haxor? Du hast eindeutig an den NSUserDefaults herumgedoktert, um unsere Apps und Watchfaces kostenlos zu erhalten. Weshalb zahlst du nicht einfach wie alle anderen und hilfst uns damit?";
+"freeloader" = "Ok, ich bin kein guter Trittbrettfahrer und bezahle den Preis!";
+"cant_pay_title" = "Kann die Zahlung nicht ausführen :(";
+"cant_pay_description" = "Leider sieht es so aus als ob du keine Einkäufe tätigen kannst.\n\nDas könnte u.a. an einer aktivierten Kindersicherung liegen oder einer sonst irgendwie kontrollierten Umgebung. Sorry!";
+
+"feedback_failed_to_send" = "Dein Feedback konnte leider nicht übermittelt werden, sorry! Fehler: %@";
+"feedback_failed_to_hit_server" = "Dein Feedback kam beim Server leider nicht an. Antwort: %@. Versuche es bitte noch einmal.";
+
+"different_app" = "Wähle bitte ein anderes Watchface, um die Einführung abzuspielen.";
+
+"error_sending_trial" = "Demo-Version konnte nicht entsperrt werden";
+"error_sending_setting" = "Einstellungen wurden nicht übertragen";
+"error_sending_description" = "%@ (%ld)";
+"retry" = "Noch einmal versuchen";
+"ignore" = "Ignorieren";
+"timed_out" = "Tut mir leid, es scheint ein Timeout gegeben zu haben. Normalerweise bedeutet das, dass deine Pebble nicht verbunden ist. Bitte überprüfe das bitte rasch, vielen Dank!";
+"rejected_update" = "Sorry! Die Watchapp hat die neuen Einstellungen frecherweise abgewiesen. Normalerweise passiert dies, wenn das falsche Watchface auf deiner Pebble aktiv ist. Aktiviere bitte das korrekte Watchface und versuche es noch einmal.";
+"failed_to_ack" = "Sorry! Die Watchapp scheint deinen Request ignoriert zu haben. Versuche es bitte noch einmal.";
+"unknown_error" = "Ups, das ist peinlich. Unbekannter Fehler: %@. Maile mir bitte auf contact@edwinfinch.com falls das Problem weiterhin besteht.";
+
+/*
+ Manage Alerts and Lignite Settings
+ */
+
+"pref_header_alerts" = "Hinweis für:";
+"pref_header_on_fail" = "Wenn die Übermittlung fehlschlägt:";
+"pref_header_open_pebble_app" = "Zu benutzende Pebble App";
+"trial_alerts" = "Freischalten fehlgeschlagen";
+"setting_alerts" = "Einstellungen nicht gesendet";
+"play_sound" = "Ton abspielen / vibrieren";
+"manage_alerts" = "Benachrichtigungen einstellen";
+"lignite_settings" = "Einstellungen";
+"manage_settings" = "Einstellungen";
+"pebble_app_original" = "Original Pebble";
+"pebble_app_time" = "Pebble Time";
+"pebble_app_ask_me" = "Jedes Mal fragen";
+"what_pebble_app" = "Welche App?";
+"what_pebble_app_description" = "Welche Pebble App soll verwendet werden?\n\nFür die schwarz/weisse Pebble, tippe bitte auf \"Original Pebble\". Für die farbige Pebble, bitte auf \"Pebble Time\".\n\nDiese Frage kann in den Einstellungen (tippe auf \"Einstellungen\") deaktiviert werden.";
+
+
+/*
+ General/Miscellanious
+ */
+
+"okay" = "Okay";
+"okay_thanks" = "Okay, danke!";
+"please_wait" = "Bitte warten...";
+"hello_there" = "Hallo!";
+"no" = "Nein";
+"yes" = "Ja";
+
+/*
+ Credits
+ */
+"credits" = "Danksagung";
+"full_credits" = "Wir danken jedem einzelnen von euch, von unseren Familien bis zu jeder einzelnen Backer, der/die mitgeholfen hat, dieses Projekt zum Leben zu erwecken.\n\nAls Philipp und ich im März 2015 ursprünglich die Kickstarter Kampagne lanciert haben, hätten wir nie und nimmer 1'176 Backers oder CAD $7,177.-- erwartet. Ihr habt uns mit eurer Unterstützung sprichtwörtlich umgehauen und wir hoffen sehr, euch mit einer tollen Kollektion etwas zurückgeben zu können.\n\nFür uns ist ein Traum wahr geworden.\n\nNachfolgend die Liste der Personen, die mitgeholfen haben, unser Projekt zu realisieren.\n\nCompanion App Entwickler, Pebble App/Watchface Entwickler und Serverbackend Entwickler:\n\nEdwin Finch (edwinfinch.com)\n\nDesigner der Compagnion App und jedes einzelnen Watchfaces und jeder App, Website und jegliche sonstige Grafiken:\n\nPhilipp Weder (iphibse.ch)\n\nIch, Edwin, danke speziell auch:\n\n-Meiner Mutter, Tara Bauer, dafür, dass sie unglaublich unterstützend ist und mich stets motiviert :)\n-Meinem Vater, AJ Finch, der mir immer eine vernünftige und ruhige Sicht auf alles vermittelt und mir eine eine bessere Perspektive aufs Leben gibt.\n-Meinem Bruder, Tucker Finch, dafür, dass er mein bester Freund und die Person ist, der ich alles alles anvertrauen kann und der ich vollends vertraue.\n-Der Rest meiner Familie und meiner Freunde, dafür, dass sie die Besten sind.\n-Arrested Development, Community und Chuck weil sie geniale Serien sind, bei denen ich etwas Dampf ablassen und herzlich lachen kann.\n\nEin grosses Dankeschön geht ebenfalls an unser Lignite Translation Team!\n\nMartijn - Dutch\nBerkay Oğulcan TUTAL - Turkish\nSam Zhang - Simplified Chinese\nJan Jalbert - French\nMarco Vasta - Italian\nMonika Mangs - Finnish and Swedish\nPeter Davidson - Spanish\nPhilipp Weder - German\nPaulo Martins - Portuguese\n\n$120.00+ Backers\n\nShaun Newman, Pebble Technology ($500!), Daniel Bauen + Microfacturing, Hans D, Trevor Lyman, Ed Pegg\n\n$15.00+ Backers\n\nJon Barlow, Mubashir Razvi, Mattia Piola, Martin Frank, Ilkka Vuorenmaa, Donald D. Parker, Gary Funk, Thorne - Erin,Benoit Serra, Gerhard Wesch, Paul, Mangesh Thombare, Bruce Greenfield, Kannika Garcia, leechohan,You Can Sleep When You're Dead, Lupin, Scott Miller, Neil Poultney, Karsten Poppe, Nick Hahn, Mike Corsten, Stephen Miller, Lee Boychuk, Sean McLeod, Linn Htun, Brian Wolfe, Thomas Abbott, Faye Salwin, Bengster, Sonia Koval, Maria Teresa Paton Arevalo\n\n$11.00+ Backers\n\nCody Dean, Randy Morris, Rick, Anastriel, Arvinder Ahuja, Jennifer Meadows, Hector, Takiko Momokuri,Ashley Dew, Kartik Gaje, Eric Zillmann, PK, Andrew Witte, Miguel A., Chonnawat Eklapphaibun, Derek Fenwick, Benjamin Vetter, Scotty Bryant, Prioux Nicolas, Alex, Paolo Grassi, Andrea Hennessee, M. van Leeuwen, Cody, Kale Miller, Mark Thompson, Bart Van de Wijdeven, Hello World\n\n$7.00+ Backers\n\nPenguwin, TraceStar, Jivy Chhatwal, Stephen Boyd, Marckosvl, Piotr Szewczyk, Mohamed Faisal, Colinlamb,Bob Pfeifer, Daniel Egger, Noah Thompson, Paulino Lopez, RonF, Molly Nakao, Niko-chan, Bogdan, Mindy Tan,Alan Watson, Pakorn Jaruspanavasan, Lee Lin Jun, P, Koh Kah Hoe, Lai Chun Hei Hayley, Muhammad, mboirsbeek,Dave North, Ross R, Wan Ha, Peter Clay, Neil, David Menzel, William, Aditya Banerjee, Jae, Vincent Cutillas,Francis Espinola, Jessica Salyer, Mike Edwards, Brian, Kim Lanc, Gerhard Haider, Xavius Mcclure, Duncan J Ward, Samuele Bellagamba, Martin Bates, Chris Clark, Alfonso, Iek Sam Cheong, Gerhard Langer, Greg Harry, Donald Morrison, Gerhard Zelenka, Kaden Kirkham, Phillip E. Murray, Damian Ng, Joshua Clark, jw, Tom Malone, David, Marc Roselló Van Schoor, Michele, Johan Miltenburg, Florian Rangl, Reinald Castillo, Kevin Wudtke, Steve Crowley, Ian Marsh, Dondi Balisalisa, Inda Aziz, Łukasz Korecki, Andrew Boyett, Michael A. Capps, Pablo Ignacio Rodríguez Skaric, michelle mathieson, Nebbie, Kelvin Tong, Michael Mussington, Geraud Cruz, Valerie Guzman, Michelle Lowe, Joe Amuso, Jochen D., Vince Farrell, Tom Ove Brenden, Howard Lince III, patricia runnion, Joerg Hohn, jonathan belinsky, Guido Landgraf, Andrew Vine, Hans Bennink, Eric Pierrot, Willie, Paul Akterstam, Eirik Mikkelsen, William Romano, marc@borgers.net, Joshua Gill, Kreeta Soontornwipart, Vivek Krishnan, David, clapdady, Mohd Suffian Mohd Rousdin, William Garrido, Jurgen Wagenhauser, Aaron Sorrell, MyTruSkillz, Mike F, Bill Gimbel\n\n$6.00+ Backers\n\nOwen D'Aprile, CaffeineJunkie, Yuriy Galanter, Laura Meier, Phil Gastwirth, John Winstanley, Jon, David magallon, Berkay Oğulcan Tutal, Andrew McFarland, Hunter, Mike Wadsten, Matt Caves, Marco Santos, Zoe Hendrickse, Ronald Hudson, Phil Cooper, KJ, Phil Karn, Stephen Smith, Dave Peddle, Haris Shahid, Derek Kuhnline, Christoph Kehl, Jacob Dagenais, taylor charles gracie, George Hussey, Craig Paterson, Richard Turner, Pieter Danckaert, Martin Cohen, Andrew Givens, Leesa, Dom Wakeling, Merch DeGrasse, Tim Shrimpton, Jens Bocklage, Guarionex Alvarado, Justin Cobb, Marie-Andree Poisson, Jerrid White, William Featherstone, Michael Jones, Joshua Stewart Ray, John Waugaman, Chris Ganas, Amel, Jenny-Lynn Lascano, Mark Reed, Tobias Birth, Đominic Tăn, Paul stevens, Duc Le, Rick Peters, LODS, Ashley Strutt, Benjamin Buch, Loren Statema, Mark Ciavarella, Jeff A, Jérémy Taine, NoErrX, Brian, Chad McGee, Jitesh, Vincent Aarsbergen, Adam S, Steve Smith, Don Chen, Andrew W Helgeson, Colin Prudhoe, Elmar Uttenreuther, Nahum, Justin Dawson, John White, Jdgeis, Andrey, Alexander Nilsen, Tuan, ajomo, Mance, John, Matthias Thimm, Ryan Ceurvorst, Marvin Calice, Lloyd Hannesson, Sportinger, Nathaniel Davis, J Grab, Malcolm Dennis, Timo Spiekermann, ethertect, Stephen Africa Moore, Hugh Leoidsson, Alberto Alvarez-Perea, Jens Lißner, Dennis Shelton, Kristenculp, Jason Priest, Ben Crago-Schneider, Keanen Wold, Rick Silver, Jason Auffant, Nick Martin, Dana Charter, Alexander Eilers, Adam Kelly, Steven Webb, Brian Proctor, Venkatesh Subramanian, Andrew, Mick K, Robert Michael Zaccano, Bobby Graese, Nev Rawlins, Christian Emmer, Thomas, Jay Onisch, Brian Budzinski, BergischNRW, Daniel Colosie, Robert Colburn, Paul Selby, Jessica, Sarne Hutcherson, Christian Bootz, Robert Mueller, Ken Bynell, Michael Drake, Stuart Stringer, Teresa Hull, AlexEremenko, Jonpaul, Tabitha Kowitz, Joost Duivenvoorden, Gregory Latimer, Chris Decker, Daniel Gonçalves, Mike Tree, Brian Saccente-Kennedy, David Patterson, Kevin A Pearson, ChunkMunk01, Eoin Morgan, Michael Moore, Serge Stepanov, Robert, Kenneth Elliott, IceCarpediem, cypher, Se4oth, David Castro, Guin, Carsten Manz, Andre Schlüter, Sam Lyon, Niclas Eriksson, Jehad Maher, Robby Witte, Simon Munck, imehesz, Elisa Kagelmaker, Simon Kronberg, Drew Britten, Darrow Nemecek-Gulack, Jeff Iles, Will Moore, Ethan Delaney, Cody Austrie, Alexander Fligel, Craig D\'Amelio, Rajendra, Pawel Martin, gongju00, Neil Forsyth, Ryan Riddle, Gabi fiz, Silvan Röthlisberger, Stuart Lowe, Thomee Wright, Jeff Newfeld, Francois Malherbe, Cindy Cipriano, Alex den Haan, Asbjørn Baagø, rohbaert, James Shannon, Mike Burgoon, Matthew Goodchild, Jean-Francois Messier, Malcolm Hare, James Sawle, Sami Kakko, Geoff Brown, Jason Ellis, Britt Head, Dorothy Strassner, Stefan Hawel, Dennis Rasch, Sebastian Paul, K. David Woolley, Michael Weyershäuser, Jorge Sanz Sanfructuoso, Andrea Scambia, RelakS, Zach Burnham, John Ryan, Rui Sacadura Botte, Kira Lim, Jeremy Wan, Linden Wilson, Spencer Owen, Mats Thell, Chris Trocano, Scott Kuma Pettigrew, Sumayya Tai, Ranjit, Ricky Brincat, neil whitten, ZF, Ruben Pedro, MikeInIdaho, Jaer, Nightfire, Felipe Lucero\n\n$4.00+ Backers\n\nStephen C Hokonson, Dean Barrett, Jari Kinnunen, Alf Moens, Steve Gregory, Richard Jones, Christopher Davis, Justin G,Brian Herskovitz,  Martijn Janssen, John Kelly, David Silvernail, Andrew Richter, Meta Meulenbelt, Nathan Blieschke, Pupdog, Michael Arnold, Sebastian Rajzer, Mar-Iolus Do Urden, maximilian, Alexander Luck, Bryan Green, Jeremy Lambert, Philipp H., Sandra González, Nicolas Himbert, Roger O\'Regan, Tony McHugh, Robert Setiadi, Arnaud BECKER, J. McKeever, Francis Q., Eck, Susan Dowling, kellyk413, Dave Sandham, Philip Spaar, Wong Choon Jie, Marcin Steckiewicz, Chris Peterson, Suzanne Schiller, Kenneth Simpson, Holley Hawthorn, Daniel Wiget, Charlie Poole, Steven Hurowitz, Otilia Damian, Jakub Geri, Steve P., Rich Schiller, Andrew Chapman, David Rodríguez Rincón, tanukisan, David Yonug, Steve Michaelis, Stephen Ohno, Paddy Mosse, Chew Shiun Han, Wim Vergult, Neil Pagay, Claire Yu Tiamco, Deep Tanwar, Lam Patrick, Denis Shelston, mmarko, Dale Drechsler, Mr. PACG, Luke Odom, Scott Jennings, Shaun Reece, Jon Pielaet, Mauricio Archila, Matt F., Azneel Izzuan, Micah Maziar, Jarrod, Jeremy Ackerman, JoePalko, Edward Yee Kwan-Shuen, Jerome Kuah, Jochen Schmid, Derek Simpson, Christian Arnold, Ronald Distor, Max, Ollii, Adam Vannatta, Kenneth Jaffe, Alex Peralta, Rajiv Ramchandani, Scott Harvey, Gal Tidhar, Nanda Rizky, Habbie, David Landais, Miguel Aguado, Ezrein Shah, Adam Zovits, samstgt, Mathias Fischer, Gini Westera, Torsten Schmitt, Craciunica Cezar-Victor, Steffen Poehler, Michael Burt, Carel Steensma, Matthew David Glanfield, Christof Bonnkirch, Gerald Sorko, Andre Heeren, Urmas Pail, Fadhli, Tomas, Paul Champion, Luis Carlos Barco, Stefano Casasola, Daniel Johnsen, Carl Boulding, Manuel Dornbusch, Thepchalit Ohnaree, Stefan Baumann, Joseph DiAngelo, David Hardy, Gingi Romano, Glenn Sønderskov, Rodney Dunn, Omar Torres, Darren Suan, Kenny Hoi, keno Weßels, René Jr Purcell, Paul Luchini, scott, Aaron Teets, Gordon Bedford, Angus C, Yunan Fatoni, N.H., Rana Ratanakovit, Brian Tartell, Kliwonz, Chelsea Auld, Pavlo Dudnytskyi, Brian Wechtenhiser, Calvin, Michal Cebera, Benjamin White, Christian Salle, Mikko Leskinen, Mikhail, AHMED N. ALNASSER, Fabian Wolf, Thomas Liden, Paul, Sven C., Steve Tanner, Davis, Roger, Takayama Manabu, David Burgess, Louis Anderson, Steven Day, neoprime33, Robert Hughs, Mikhail Bobkov, Eric Holzhueter, Prinice, Nirmal Ramjee, panustas, Jaewoo Jung, Neil Faulkner, Kenneth Thye Ellenton, Jon Chinnery, Michele Giuliani, Alleyoop, Tim Butler, Gibson Chiew, Patrick Brose, Flavio Oshiro, FedDia, MWoody, Taisia, Justin Green, JDZ, Goran Atanasovski, haidyll amin, Chuck Stewart, Sarah Surzyn, Donald Cowan, Nick Baum, Joel Balboa Martinez, Jeff, Adi Julianloo, Thorsten Gabel, Courtaut Christophe, Mohd Nuraimi, Joran Stegner, Heartnet, Harrie de Leeuw, Ian Jakeman, Eric Henderson, Brenda Ramey, William Marshall, T.Lin, Tim Vogler, Hidetoshi Toya, Xavier Barton, Brandon McCutcheon, Sean S. Fisher, Evelien devinck, Henry Siu Ming Chow, Eric Eshleman, Eamon, Thomas Wan, Peter Sloan, Robert Gattung, Matthew Brown, Gabor Jenei, Michael Pyle, Rupesh Talageri, Nathan Strich, 周朔, Kaushal Bondada, Adam Barnwell, Mirko Krause, Bradley F., Stephane, David McFarlane, Kevin Blake, FRICHE, Dale Kjerulff, Humza, Tymer, Carolyn Meier, Dallas Martin, Joseph Maiorana, BJ Balegar, Justin, Thomas Schwarz, Jonathan Willmer, Simon Vindevåg, Diego Kirsch, TechGuyNJ72, idewaki, Betty Pok Yee LEE, William Osborne, Rebecca Messenger, Leon Koppen, Pavel Boldyrev, Abdulshaheed Salman, maeltj, Anthony Lifrieri, henrik lunder, Harold, Scott Crew, Thomas W, Darren Kelly, Bradley, Eric Sorensen, Aniket Sainani, Robert Roll, Andrew Schmidt, Ocid, CHIN KET MING, Russell Ho-Aitken, XDrz, Eric Lewandowski, Timothy Low, Eloisa Labao,Thomas O\'Hair, acedcibi, l-vizz, Joe Curia, Mario Sarno, Marlon, Adam Carter, Todd, Gem, Chan WengKhong, Lucas Stewart, Christian Hintze, Mark Burston, Christian Fasold, Victor Jacobs, Jared Cronk, Michael, Andrew, John Christensen, Tan Ping Yang, Jonathan P Twine, Palmax, Hasnah Najla, Tomas, Leigh Hotz, Adam Lucas, James Davidson, patchie patch, Jonathon Stevenson, Jang Chau Chie, mark Sangwin, Matt Mayatt, Daniel Ferris, Joshua Lewis, Jarrad Hill, Dirk Disch, Alexander Otte, Erwan Le Guern, Thanh Quan, walt sullivan, Leong Kum Hoo, Meg Gallacher, Peter, James Hardison, Steve, Eduardo Assunção, Benjamin, Xkorter, Jennifer Caitlin Welsh, Lyumin Lee, akmal, Joost Huisman, Lim Kelvin, Erik Cortes, Tucker Rowlinson, JoshOnTech, Michael In-Tune Zetune, Christophe MAUNIER, Jan Jalbert, Sigifredo Hernandez, Taildeman S., Witherbucket, William Chen, Paul de Weerd, Stefan Dettmers, Scott Kendall, Wong Wen Hao, Kin, Crayden Arcand, Cristian Carreon, CHIEN-KAI LIAO, Александр Митрофанов, Yos Sumarjono, Jeffrey Evanko, Andrew Graham, Brian, Kaniawati Zainal Abidin, Philip Rosing, Caleb Woodbine, Mark Lewin, Samuel, John Archibald, Conner Wissmann, Sam Hainsworth, Holger Merk, NS, Phyoe Wai, Robert, MFeisal Nazarudin, Wally Garza, Olaf Eikelenboom, Jesus Lopez, Rafael Mejia, Dino Frangos, Robbie Gorman, Rene Schlechter, Wonggs, Will, Blizzard3001, Puki, Cord Holste, Albert Zandvoort, Hector Gervacci, Brenda Boda Klenke, stanlee lipkin, Shawn Motes, Richard Erdey, Ronald Sutton, John Ellis, Michael, David Berezin, Pankaj Gupta, Susan, jason hutchings, Stefan Tarvis, Arturo Woodward-Montes, Altan, Boaz van Veen, Theodore Swanson, How long can this name be anyways?When d, Noam, Jose Luis, kevin k., Javier Mora, Richard Alter, Julieanne Faas, Brian Levinsen, Alex Kirkland, Tom Morgan, Alexandra herzog, Sam Messick, Richie Gurdler, Corey, Andru Keel, Rebecca, Scott Proctor, Kathy Ford, Bryan Wright, Nathan, Kimon Socrates Inglessis ~ Amsterdamman, Milan Patel, Jonathan, Max Sewesky, Eliot Podgorsky, Nick, Jeramy Freckleton, Jean-Sebastien Duchesne, Marko Samuli Kirves, Gaurav Jain, Con IA, chris, Andrew Do, Shu, Patrick Boos, Will Wong, Jason Clark, Carter Diastika, Eric Mulder, Todd Schwarzmann, 王小路, Olalekan Otubu, Chemilogo, Daniel, Tim Elwell, Magnus Dahl Hegge, Anders, Sébastien Tais, Jeroen Huylebroeck, Carbo Lab, Gus Macdonald, RosyRazly, Keith Miller, Allen Crimmins, Laura, Joost Koehoorn, Steve Petersen, Nicholas Quarrier, Jonathan Andreas Rawung, Christopher Lilly, Marcus Hermansson, Matt Richardi, Sean Ullyatt, Robert Fraser, Ben Cohen, René Verbeek, G.D., Hansi Kneringer, Christian Rieder, Josh Gampp, Alex Taylor, Nathanail Georgiou, Laurie Ralphs, Steven Steckler, J Okutsu, Sarah, varinder singh bal, Eric Lambert, Frank Nienhaus, James Yap Yi Chern, Ospel, Jorge Sanz, Pedro-Juan Ferrer, chincabomber, Balder Lingegård, Marvin Bürkner, Gary T Smith, Demian Hartmann, Eric Pai, landhopi, Patrick Cuyegkeng, Francis Tsen, anonymous, Adam Olivero, Rick Kier, AnnMarie Bartholomaeus, LegendaryTeeth, Mahesh C Patel, Kevin.H, Michael Mrozek, Ando, Gideon, Lex Nguyen, Lydia Perry, Nox Nostic, Jimmy Sawczuk, neuenchr, Robert Gaimari, Madeline Nunnally, Wilson Ngu, Kyp Teh, Ásgeir Gíslason, hillslin, mohamed, Kathryn Bartels, Javier Luna Molina, Aaron B, Nick Wrightson, Matthew Mausbach, Jose gutierrez, Rich Weaver, John Björnholm, Gerardo Romo Nuñez, Marwan, Chepo Ramos, Ly Minh Phuong, Jayakara Kini, RavenMaster, Oliver Carson, Shawn Altman, Sarah, Dipesh, Iman Khan, Sam Gabriel, Pramith Fonseka, Michael Wan, Lee Foster, Steven Chao, Adrian Schärli, Larry Metzger, Andrew Chow, Rich Morgan, Garrett Zeigler, John Elijah Tan, greg, Frank Seebach, James Cowin, Thomas Galipean, VarkoM, Daarsh Gandhi, ricktix1@gmail.com, Mauro Perez, Carlton Russell, KP, Var Hopkns, Alex Maund, Daniel Renner, Jörg Hartmann, Michael Goldberg, Christopher Yip, Ali Al-Shaikhli, walkdifferent, Rachel Chamberlain, Edwin, Patrick Sklenar, Paulo Lama, Greg Steinberger, Benjamin Neff, Guido Rhinow, Mark Watson, James Bray, Andrew Morrow, matriox, Costa, KMMoore, Jaimie Frances Gibson, Ronald Hedlund, John van Gurp, Nate K., Guilherme Schmitt, Tim, Lauren V., Martin N., Balázs Boda, Daniel Leonard, ELIGIO CASTILLO, Ivor Cleine, Balasubramani s, Brandon Barney, Erik, Marc Whiteley, MissYourMark, white.moon, Tobias Peters, Monika, Pierre Boulet, Jessica Mendelsohn, Markus Arnold, De Innovatiefabriek bv, Albert Vidal, Rui Miguel Martins Inacio, Jiri Rozsival, Farbod Saraf, Chad Eichele, K.C. Marsh, Me, Brunche, Keith Colton, Grjrjr, Daniel, David Wilson, Orillian, Jody Walker, Boris Lianto, Florent, Juan E Zuluaga, Aymerick Dupouey, Thomas Regner, Muhammad Hanafi Mohd Sam, Paul Walder, Takis van der Wijngaard, Daniel Prumbaum, Edi Budimilic, Dennis Rundin, Jan van de Wouw, Kyle Bonner, Fabien LOISON, Markus Dick, Neil Thompson, rob de kroon, Neil Crosby, Unai, Sreekkanth, Kris, Ren Shredder - 2015: ARKYD - Spaaaaaace!, Mikel Darnell Boyd, Simon Pereira-Shorey, Sean Closson, Hoder Jensen, Holger Diedert, Kaitlyn Brady, Rens, Jeff McLean, VictorJ, bobzer, Duane Learning, David Fabian, Thomas Hennecke, Philipp Wuestner, Gareth, Sean Scott, Brendo, Jason A. Adams, Alan Quah, Jonathan Sheppard, Rick Langley, Tomoya Tanaka, 이찬진, Joeun Ha, Ron Jacobson, SeokJo Lee, Yves, Rob Ellis, David Vasquez, Kathy, Gautami Arumugam, Ali Mohammed, David Ellis, Pierre Große, Stevie Numbers, David Bresson, Kyle Ingram, Chris Cahill, Poorak, Ong Jun Sheng, Erik Bråhammar, Frank, Benjamin Silver, BuKTop, Nick, K. David Cheng, Todd, kokobin, David Viola, Hector, Krishnamurthy Js, Horatiu Rus, TRAN Loic, Adam, Linda Barkin, Aqasyah, Stephen Esposito, Justin Jefferson, Nicole DiGiambattista, Jacques Simard, Carmine, Dave Levin, Melissa Tan, James Kato, John Sakkas, Akri, Marcus Steinbauer, Adiplin Panupong, JCG, Shawn, Ravipart Lee, Jim Tipton, Ken Heinemann, Joseph Widener, Aaron, Jean-Baptiste RICHARD, Larry Tan, Erin Alease\n\n$3.00+ Backers\n\nDeanna Stanley, Keith, Sam-Sung Kwon, Percussionist, Gary Stadter, GSReliableISS, Bruno Garcia, SReliableISS, Ben Huson, Markus Weber, Javier, Norman Hill, Matthew Morris, E Joseph B., Gagu, Simon Roberts, Nick Twigg, Chris Harings, Samy, TAKASHI OMURA, Jamie McAdams, Joe Pettit, Dave Effertz, Matt Jones, Will, Carl-Fredrik Fridén, Pierluc Thibodeau, Ioannis Seitanidis, elmshoernchen, Mike, Steven Devlin, Philip Khaled Brennan, Glenn Dwyer, Amr Tamimi, Christoph W., Daniel Snor, Jeroen Horlings, Amr Ismail Gawish, Sarah Baskerville, Tom, Ahmed Mohsen, Michele De Paola, Lee Zerrilla, Blegueni, Ian Sanderson, Emjay, Mike Roberts, Lukas Maurer, PHAM NHAT CUONG, Rohit\n\n$1.00+ CAD backers\n\nKyle Piotrowski, Mathieu Seguin, Ernest Studios LLC, Tim Johnstone, Brett Levy, Fredrik Seglem\n\nAndere Danksagungen:\n\nEinstellungsicon von Egor Rumyantsev (http://www.behance.com/pio-5) von www.flaticon.com und lizenziert unter CC BY 3.0.";
+
+//Thanks a lot for translating Lignite :)
