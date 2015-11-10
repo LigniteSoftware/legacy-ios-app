@@ -1,0 +1,30 @@
+{
+	"name":"Upside Down",
+	"sku":"ind_face_upsidedown",
+	"appstore_location":"5634363f396cf4a5da00004c",
+	"uuid":"0833976a-317b-45b5-b0c3-11b0d9e84e88",
+	"target_platforms":[
+		"aplite", "basalt", "chalk"
+	],
+	"capabilities":[
+		"weather"
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":true,
+		"internationalized":true,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":true,
+		"kickstarter":false
+	},
+	"bundles":{
+		"the_essentials_bundle":true,
+		"the_weather_bundle":true,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":false
+	}
+}

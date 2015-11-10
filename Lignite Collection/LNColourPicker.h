@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "LNLabel.h"
-#import "LNAppInfo.h"
+#import "LNPebbleApp.h"
 
 @interface LNColourPicker : UIViewController
 
 @property LNLabel *sourceLabel;
-@property AppTypeCode appType;
+@property LNPebbleApp *watchApp;
 @property NSString *loadColour;
 
 - (void)setCurrentColour:(NSString*)current;

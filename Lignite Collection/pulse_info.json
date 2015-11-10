@@ -1,0 +1,30 @@
+{
+	"name":"Pulse",
+	"sku":"ind_face_pulse",
+	"appstore_location":"559c5602b703a68da9000089",
+	"uuid":"de92cc22-eb6b-4229-9665-1d6b111b1e26",
+	"target_platforms":[
+		"basalt"
+	],
+	"capabilities":[
+	
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":false,
+		"animations":true,
+		"internationalized":false,
+		"watch_battery":false,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":false,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":true
+	}
+}

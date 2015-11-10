@@ -1,0 +1,30 @@
+{
+	"name":"Personal",
+	"sku":"ind_face_personal",
+	"appstore_location":"55c05b70718511a83a00000b",
+	"uuid":"0bf39622-a77b-42b8-846a-2a21ac9d2bec",
+	"target_platforms":[
+		"aplite", "basalt"
+	],
+	"capabilities":[
+	
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":true,
+		"internationalized":true,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":true,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":false
+	}
+}

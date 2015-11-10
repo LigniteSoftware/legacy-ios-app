@@ -1,0 +1,30 @@
+{
+	"name":"Lines",
+	"sku":"ind_face_lines",
+	"appstore_location":"5588410449c1d102cd000114",
+	"uuid":"e1fe3595-cb81-45c3-9720-302fdd6316da",
+	"target_platforms":[
+		"aplite", "basalt"
+	],
+	"capabilities":[
+		"phone_battery"
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":false,
+		"animations":false,
+		"internationalized":false,
+		"watch_battery":true,
+		"phone_battery":true,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":true,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":false
+	}
+}

@@ -21,7 +21,11 @@
 @implementation LoginViewController
 
 - (IBAction)checkcodeButtonHit:(id)sender {    
-    [LNDataFramework setUsername:self.passwordTextField.text];
+    [LNDataFramework setUsername:[self.passwordTextField.text uppercaseString]];
+	
+	self.checkcodeButton.enabled = NO;
+	self.checkcodeButton.backgroundColor = [UIColor colorWithRed:0.81 green:0.81 blue:0.81 alpha:1.0];
+	self.descriptionLabel.text = NSLocalizedString(@"please_wait", nil);
 	
 	//Set up the post request, containing the email and password for account and current device for support and analytics.
     NSString *post = [NSString stringWithFormat:@"email=%@&password=%@&currentDevice=%@", self.usernameTextField.text, [self.passwordTextField.text uppercaseString], [LNDataFramework getCurrentDevice]];
@@ -96,7 +100,8 @@
             self.userDataConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
             [self.userDataConnection start];
 			
-			//Save the account token (used for account verification)
+			//Save the account token (used for account verification) and set the user as a backer
+			[LNDataFramework setUserBacker:YES];
             [LNDataFramework setUserToken:[jsonResult objectForKey:@"token"]];
         }
         else{
@@ -130,6 +135,9 @@
                                                       otherButtonTitles:nil];
                 [alert show];
             }
+			self.checkcodeButton.enabled = YES;
+			self.checkcodeButton.backgroundColor = [UIColor darkGrayColor];
+			[self.descriptionLabel setText:NSLocalizedString(@"enter_details", nil)];
         }
     }
     else{
@@ -156,7 +164,7 @@
 		
 		//Set the check code button as disabled and enable the user to login :)
 		[UIView animateWithDuration:0.4f animations:^{
-			UIColor *lightGrayColour = [UIColor colorWithRed:0.81 green:0.81 blue:0.81 alpha:1.0];;
+			UIColor *lightGrayColour = [UIColor colorWithRed:0.81 green:0.81 blue:0.81 alpha:1.0];
 			self.checkcodeButton.backgroundColor = lightGrayColour;
 			self.checkcodeButton.layer.borderColor = lightGrayColour.CGColor;
 			self.checkcodeButton.enabled = NO;
@@ -265,31 +273,36 @@
 	self.accessButton.layer.borderColor = self.accessButton.backgroundColor.CGColor;
 	[self.rootView addSubview:self.accessButton];
 	
+	//Reset account
 	self.resetButton = [[UIButton alloc]initWithFrame:CGRectMake(10, check_frame.origin.y + check_frame.size.height + 22, self.view.frame.size.width - 20, 20)];
-	self.resetButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:14.0f];
+	self.resetButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:14.0f];
 	self.resetButton.titleLabel.numberOfLines = 0;
 	self.resetButton.titleLabel.textAlignment = NSTextAlignmentCenter;
 	[self.resetButton addTarget:self action:@selector(resetCodeLinkHit:) forControlEvents:UIControlEventTouchUpInside];
-	[self.resetButton setTitleColor:[UIColor colorWithRed:0.00 green:0.64 blue:1.00 alpha:1.0] forState:UIControlStateNormal];
+	[self.resetButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
 	[self.rootView addSubview:self.resetButton];
 	
 	CGRect reset_frame = self.resetButton.frame;
-	self.noAccountButton = [[UIButton alloc]initWithFrame:CGRectMake(10, reset_frame.origin.y + reset_frame.size.height + 20, self.view.frame.size.width - 20, 40)];
-	self.noAccountButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:14.0f];
-	self.noAccountButton.titleLabel.numberOfLines = 0;
-	self.noAccountButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-	[self.noAccountButton addTarget:self action:@selector(noAccountLinkHit:) forControlEvents:UIControlEventTouchUpInside];
-	[self.noAccountButton setTitleColor:[UIColor colorWithRed:0.00 green:0.64 blue:1.00 alpha:1.0] forState:UIControlStateNormal];
-	[self.rootView addSubview:self.noAccountButton];
-	
-	CGRect no_account_frame = self.noAccountButton.frame;
-	self.findAccountButton = [[UIButton alloc]initWithFrame:CGRectMake(no_account_frame.origin.x, no_account_frame.origin.y + no_account_frame.size.height, no_account_frame.size.width, 40)];
-	self.findAccountButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:14.0f];
+	//Find account
+	self.findAccountButton = [[UIButton alloc]initWithFrame:CGRectMake(10, reset_frame.origin.y + reset_frame.size.height, self.view.frame.size.width - 20, 40)];
+	self.findAccountButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:14.0f];
 	self.findAccountButton.titleLabel.numberOfLines = 0;
 	self.findAccountButton.titleLabel.textAlignment = NSTextAlignmentCenter;
 	[self.findAccountButton addTarget:self action:@selector(forgotPasswordLinkHit:) forControlEvents:UIControlEventTouchUpInside];
-	[self.findAccountButton setTitleColor:[UIColor colorWithRed:0.00 green:0.64 blue:1.00 alpha:1.0] forState:UIControlStateNormal];
+	[self.findAccountButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
 	[self.rootView addSubview:self.findAccountButton];
+	
+	CGRect findFrame = self.findAccountButton.frame;
+	//No account
+	self.noAccountButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/3, findFrame.origin.y + findFrame.size.height + 20, self.view.frame.size.width/3, 30)];
+	self.noAccountButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18.0f];
+	self.noAccountButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+	self.noAccountButton.backgroundColor = [UIColor grayColor];
+	self.noAccountButton.layer.masksToBounds = YES;
+	self.noAccountButton.layer.cornerRadius = 4.0f;
+	[self.noAccountButton addTarget:self action:@selector(noAccountLinkHit:) forControlEvents:UIControlEventTouchUpInside];
+	[self.noAccountButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	[self.rootView addSubview:self.noAccountButton];
 	
 	//Localize everything
     [self.checkcodeButton setTitle:NSLocalizedString(@"check", "check code") forState:UIControlStateNormal];
@@ -303,9 +316,11 @@
 	//If the user is logged in for some weird reason, set up the view to be ready for them
     if([LNDataFramework isUserLoggedIn]){
         NSDictionary *userData = [LNDataFramework getUserData];
-        if(!userData){
+		if(!userData || ![LNDataFramework getEmail]){
             NSLog(@"User data is nil! Returning...");
             self.descriptionLabel.text = @"Weird issue parsing your data :/";
+			[LNDataFramework setUserLoggedIn:nil :NO];
+			[self pushMainWindow];
             return;
         }
         NSLog(@"Got %@", userData);

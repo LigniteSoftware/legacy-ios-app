@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## PebbleKit
 
-© 2014 Pebble Technology Corp. All rights reserved.
+© 2015 Pebble Technology Corp. All rights reserved.
 
 
 ## UICKeyChainStore

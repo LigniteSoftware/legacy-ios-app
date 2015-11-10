@@ -1,0 +1,30 @@
+{
+	"name":"Equalizer",
+	"sku":"ind_face_equalizer",
+	"appstore_location":"55d13e160f995067ae000065",
+	"uuid":"13738de7-03bc-45bd-a3fc-42943b55113c",
+	"target_platforms":[
+		"aplite", "basalt"
+	],
+	"capabilities":[
+	
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":true,
+		"internationalized":false,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":false,
+		"the_weather_bundle":false,
+		"the_animated_bundle":true,
+		"the_super_colourful_bundle":false
+	}
+}

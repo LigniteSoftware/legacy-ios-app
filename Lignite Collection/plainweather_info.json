@@ -1,0 +1,30 @@
+{
+	"name":"Plain Weather",
+	"sku":"ind_face_plainweather",
+	"appstore_location":"563448e6396cf48af1000055",
+	"uuid":"bf1411d7-0b52-4685-ab3c-d18d603a9ee0",
+	"target_platforms":[
+		"aplite", "basalt", "chalk"
+	],
+	"capabilities":[
+		"weather"
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":false,
+		"internationalized":true,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":true,
+		"kickstarter":false
+	},
+	"bundles":{
+		"the_essentials_bundle":false,
+		"the_weather_bundle":true,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":false
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"name":"Slot Machine",
+	"sku":"ind_face_slotmachine",
+	"appstore_location":"559c557e12dc3229e5000084",
+	"uuid":"1b24ca10-591c-4d20-8e12-1e526f6e3634",
+	"target_platforms":[
+		"aplite", "basalt"
+	],
+	"capabilities":[
+	
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":true,
+		"internationalized":false,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":false,
+		"the_weather_bundle":false,
+		"the_animated_bundle":true,
+		"the_super_colourful_bundle":false
+	}
+}

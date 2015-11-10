@@ -1,0 +1,30 @@
+{
+	"name":"Timezones",
+	"sku":"ind_face_timezones",
+	"appstore_location":"55992f97bec20eb7b5000038",
+	"uuid":"bf69875c-bdc7-4110-b21c-f5cd1c761c0c",
+	"target_platforms":[
+		"aplite", "basalt"
+	],
+	"capabilities":[
+		"extra_timezones"
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":false,
+		"internationalized":true,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":true,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":false
+	}
+}

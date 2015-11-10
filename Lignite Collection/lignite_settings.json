@@ -1,15 +1,9 @@
 {
-    "name":"settings",
+    "name":"Settings",
     "items": [
               {
               "title":"pref_header_alerts",
               "items":[
-                       {
-                       "type":"toggle",
-                       "label":"trial_alerts",
-                       "storage_key":"alerts-trial",
-                       "default":true
-                       },
                        {
                        "type":"toggle",
                        "label":"setting_alerts",

@@ -1,0 +1,30 @@
+{
+	"name":"Chunky",
+	"sku":"ind_face_chunky",
+	"appstore_location":"55883f2f41241abe5c0000e1",
+	"uuid":"1f626d76-38d8-4353-b930-c65a109260c7",
+	"target_platforms":[
+		"aplite", "basalt"
+	],
+	"capabilities":[
+	
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":false,
+		"internationalized":false,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":false,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":false
+	}
+}

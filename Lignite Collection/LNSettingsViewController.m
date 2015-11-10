@@ -6,9 +6,9 @@
 //
 //
 
+#import <PebbleKit/PebbleKit.h>
 #import "LNSettingsViewController.h"
 #import "SimpleTableViewController.h"
-#import "LNAppInfo.h"
 #import "LNDataFramework.h"
 #import "LNSwitch.h"
 #import "LNLabel.h"
@@ -20,7 +20,7 @@
 @interface LNSettingsViewController () <SimpleTableViewControllerDelegate, UIAlertViewDelegate>
 
 @property NSDictionary *settings_dict;
-@property AppTypeCode settings_code;
+@property (nonatomic) LNPebbleApp *watchApp;
 @property NSMutableArray *label_array, *switch_array, *colour_label_array, *slider_array, *slider_value_label_array, *text_field_array;
 @property LNTextField *textfield_to_disappear;
 @property LNLabel *timezones_label;
@@ -34,11 +34,22 @@
 int section_item_count[8];
 int last_value;
 
+- (id)initWithStyle:(UITableViewStyle)style forWatchApp:(LNPebbleApp*)watchApp {
+	self = [super initWithStyle:style];
+	if(self){
+		self.watchApp = watchApp;
+		NSLog(@"Set LNPebbleApp to %@", self.watchApp);
+	}
+	else{
+		NSLog(@"Failed to initialize LNSettingsViewController for LNPebbleApp %@", watchApp);
+	}
+	return self;
+}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSLog(@"button index %ld called", (long)buttonIndex);
     LNAlertView *alert = (LNAlertView*)alertView;
-
+//
     if(0 == buttonIndex){ //cancel button
         [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
     }
@@ -49,37 +60,36 @@ int last_value;
         
     }
     else if(buttonIndex == 2){
-        if(alert.isGuard){
-            [LNDataFramework sendLigniteGuardUnlockToPebble:alert.app settingsController:self];
-        }
-        else{
-            [LNDataFramework sendDictionaryToPebble:alert.dictionary forApp:alert.app withSettingsController:self];
-        }
+		[LNDataFramework sendDictionaryToPebble:alert.dictionary forWatchApp:alert.watchApp withSettingsController:self];
     }
 }
 
 - (void)setAsAlertSettings {
-    self.settings_code = APP_TYPE_NOTHING;
-}
-
-- (void)setPebbleApp:(AppTypeCode)app {
-    self.settings_code = app;
+    self.watchApp = nil;
 }
 
 - (void)viewDidLoad {
+	NSLog(@"View %@ did load, loading uuid %@", self, self.watchApp.uuidString);
     [super viewDidLoad];
+	
+	[[PBPebbleCentral defaultCentral] addAppUUID:[[NSUUID alloc]initWithUUIDString:self.watchApp.uuidString]];
     
     NSData *data;
-    if(self.settings_code == APP_TYPE_NOTHING){
+	//TODO: UPDATE!!!!!
+	//UPDATE!
+    if(self.watchApp == LIGNITE_SETTINGS){
+		NSLog(@"Watchapp is nil, using Lignite settings.");
         data = [[NSData alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"lignite_settings" ofType:@"json"]];
     } else {
-        data = [[NSData alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[LNAppInfo getAppNameFromType:self.settings_code] ofType:@"json"]];
+        data = [[NSData alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@_settings", self.watchApp.appName] ofType:@"json"]];
     }
     
     NSError *error;
     self.settings_dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-    
-    NSLog(@"error %@ dict %@", [error localizedDescription], self.settings_dict);
+	
+	if(error){
+		NSLog(@"error %@ dict %@", [error localizedDescription], self.settings_dict);
+	}
 
     self.switch_array = [[NSMutableArray alloc]init];
     self.label_array = [[NSMutableArray alloc]init];
@@ -100,7 +110,8 @@ int last_value;
     self.tableView.allowsSelection = false;
     self.tableView.allowsSelectionDuringEditing = false;
     self.title = [[self.settings_dict objectForKey:@"name"] capitalizedString];
-	if(self.settings_code == APP_TYPE_NOTHING){
+
+	if(self.watchApp == LIGNITE_SETTINGS){
 		self.title = NSLocalizedString(@"settings", nil);
 	}
 }
@@ -122,7 +133,7 @@ int last_value;
 - (void)setUpColourPicker:(LNLabel*)label {
     LNColourPicker *picker = [[LNColourPicker alloc]init];
     picker.sourceLabel = label;
-    picker.appType = self.settings_code;
+    picker.watchApp = self.watchApp;
     picker.loadColour = [self hexStringForColor:label.backgroundColor];
     [self showViewController:picker sender:self];
 }
@@ -130,11 +141,12 @@ int last_value;
 - (void)changeSwitch:(id)sender{
     LNSwitch *changed_switch = sender;
     NSDictionary *item = changed_switch.json_object;
-    if(self.settings_code != APP_TYPE_NOTHING){
-        [LNDataFramework sendBooleanToPebble:changed_switch.on pebbleKey:[[item objectForKey:@"pebble_key"] integerValue] storageKey:[item objectForKey:@"storage_key"] appUUID:[LNAppInfo getAppUUID:self.settings_code] fromController:self];
+	
+    if(self.watchApp != LIGNITE_SETTINGS){
+        [LNDataFramework sendBooleanToPebble:changed_switch.on pebbleKey:[[item objectForKey:@"pebble_key"] integerValue] storageKey:[item objectForKey:@"storage_key"] forWatchApp:self.watchApp fromController:self];
     }
     else{
-        [LNDataFramework updateBooleanSetting:APP_TYPE_NOTHING boolean:changed_switch.on key:[item objectForKey:@"storage_key"]];
+        [LNDataFramework updateBooleanSetting:LIGNITE_SETTINGS boolean:changed_switch.on key:[item objectForKey:@"storage_key"]];
     }
 }
 
@@ -145,7 +157,7 @@ int last_value;
     
     if(last_value != (int)floor(changed_slider.value)){
         NSDictionary *item = changed_slider.json_object;
-        [LNDataFramework sendNumberToPebble:[NSNumber numberWithInt:(int)floor(changed_slider.value)] pebbleKey:[[item objectForKey:@"pebble_key"] integerValue] storageKey:[item objectForKey:@"storage_key"] appUUID:[LNAppInfo getAppUUID:self.settings_code] fromController:self];
+        [LNDataFramework sendNumberToPebble:[NSNumber numberWithInt:(int)floor(changed_slider.value)] pebbleKey:[[item objectForKey:@"pebble_key"] integerValue] storageKey:[item objectForKey:@"storage_key"] forWatchApp:self.watchApp fromController:self];
         last_value = floor(changed_slider.value);
     }
 }
@@ -171,7 +183,7 @@ int last_value;
 }
 
 - (void)itemSelectedatRow:(NSInteger)row {
-    if(self.settings_code == APP_TYPE_TIMEZONES){
+    if(self.watchApp.watchApp == WATCH_APP_TIMEZONES){
         NSString *name = [[NSTimeZone knownTimeZoneNames] objectAtIndex:row];
         [self.timezones_label setText:[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"timezone", nil), name]];
         
@@ -187,23 +199,23 @@ int last_value;
         
         NSDictionary *item = self.timezones_label.json_object;
 
-        [LNDataFramework sendNumberToPebble:[NSNumber numberWithLong:difference] pebbleKey:[[item objectForKey:@"pebble_key"] integerValue] storageKey:[item objectForKey:@"storage_key"] appUUID:[LNAppInfo getAppUUID:self.settings_code] fromController:self];
+        [LNDataFramework sendNumberToPebble:[NSNumber numberWithLong:difference] pebbleKey:[[item objectForKey:@"pebble_key"] integerValue] storageKey:[item objectForKey:@"storage_key"] forWatchApp:self.watchApp fromController:self];
         
-        [LNDataFramework updateStringSetting:self.settings_code string:(NSString*)name key:[item objectForKey:@"storage_key"]];
+        [LNDataFramework updateStringSetting:self.watchApp string:(NSString*)name key:[item objectForKey:@"storage_key"]];
     }
-	else if(self.settings_code == APP_TYPE_NOTHING){
+	else if(self.watchApp == LIGNITE_SETTINGS){
 		LNLabel *label = self.tapped_label;
 		NSString *name = [[label.json_object objectForKey:@"list"] objectAtIndex:row];
 		[self.tapped_label setText:NSLocalizedString(name, nil)];
 		
-		[LNDataFramework updateNumberSetting:APP_TYPE_NOTHING number:[NSNumber numberWithInt:(int)row] key:[label.json_object objectForKey:@"storage_key"]];
+		[LNDataFramework updateNumberSetting:LIGNITE_SETTINGS number:[NSNumber numberWithInt:(int)row] key:[label.json_object objectForKey:@"storage_key"]];
 	}
     else{
         LNLabel *label = self.tapped_label;
         NSString *name = [[label.json_object objectForKey:@"list"] objectAtIndex:row];
         [self.tapped_label setText:NSLocalizedString(name, nil)];
         
-        [LNDataFramework sendNumberToPebble:[NSNumber numberWithInteger:row] pebbleKey:[[label.json_object objectForKey:@"pebble_key"] integerValue] storageKey:[label.json_object objectForKey:@"storage_key"] appUUID:[LNAppInfo getAppUUID:self.settings_code] fromController:self];
+        [LNDataFramework sendNumberToPebble:[NSNumber numberWithInteger:row] pebbleKey:[[label.json_object objectForKey:@"pebble_key"] integerValue] storageKey:[label.json_object objectForKey:@"storage_key"] forWatchApp:self.watchApp fromController:self];
     }
 }
 
@@ -257,7 +269,7 @@ int last_value;
     for(int i = 0; i < [self.text_field_array count]; i++){
         LNTextField *field = [self.text_field_array objectAtIndex:i];
         NSLog(@"sending %@ to key %d %@", field.text, [[field.json_object objectForKey:@"pebble_key"] intValue], [field.json_object objectForKey:@"storage_key"]);
-        [LNDataFramework sendStringToPebble:field.text pebbleKey:[[field.json_object objectForKey:@"pebble_key"] integerValue] storageKey:[field.json_object objectForKey:@"storage_key"] appUUID:[LNAppInfo getAppUUID:self.settings_code] fromController:self];
+        [LNDataFramework sendStringToPebble:field.text pebbleKey:[[field.json_object objectForKey:@"pebble_key"] integerValue] storageKey:[field.json_object objectForKey:@"storage_key"] forWatchApp:self.watchApp fromController:self];
     }
 }
 
@@ -272,13 +284,15 @@ int last_value;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	
     UITableViewCell *cell = [[UITableViewCell alloc]init];
     
     NSDictionary *items = [[self.settings_dict objectForKey:@"items"] objectAtIndex:[indexPath section]];
     NSArray *itemsArray = [items objectForKey:@"items"];
     NSDictionary *item = [itemsArray objectAtIndex:[indexPath item]];
     
-    NSMutableDictionary *settings = [LNDataFramework getSettingsDictionaryForAppType:self.settings_code];
+    NSMutableDictionary *settings = [LNDataFramework getSettingsDictionaryForWatchApp:self.watchApp];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     

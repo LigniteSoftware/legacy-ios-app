@@ -1,0 +1,30 @@
+{
+	"name":"TimeDock",
+	"sku":"ind_face_donate",
+	"appstore_location":"552d9637ceb7830ea000007b",
+	"uuid":"7f1c3fc2-bddd-4845-8737-b167454d276b",
+	"target_platforms":[
+		"aplite", "basalt"
+	],
+	"capabilities":[
+	
+	],
+	"tags":{
+		"free":true,
+		"custom_colours":false,
+		"animations":true,
+		"internationalized":true,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":true,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":false,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":false
+	}
+}

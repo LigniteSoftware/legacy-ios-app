@@ -1,0 +1,30 @@
+{
+	"name":"Tree of Colours",
+	"sku":"ind_face_treeofcolours",
+	"appstore_location":"5595d996308fd768f30000b7",
+	"uuid":"234e1842-d715-481c-9e04-7846d2c5b20c",
+	"target_platforms":[
+		"aplite", "basalt"
+	],
+	"capabilities":[
+	
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":false,
+		"internationalized":false,
+		"watch_battery":false,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":false,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":true
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"name":"Colours",
+	"sku":"ind_face_colours",
+	"appstore_location":"55882b0c0021370a4b0000dc",
+	"uuid":"3fabfdff-5f74-4bfb-8cfd-ac7a28df9aca",
+	"target_platforms":[
+		"basalt"
+	],
+	"capabilities":[
+	
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":true,
+		"internationalized":false,
+		"watch_battery":false,
+		"phone_battery":false,
+		"date":false,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":false,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":true
+	}
+}

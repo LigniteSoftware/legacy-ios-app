@@ -1,0 +1,30 @@
+{
+	"name":"RightNighter",
+	"sku":"ind_face_rightnighter",
+	"appstore_location":"55883dc841241a5db40000f0",
+	"uuid":"03a9a405-ba98-44ad-bca3-bab151d81975",
+	"target_platforms":[
+		"aplite", "basalt", "chalk"
+	],
+	"capabilities":[
+	
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":false,
+		"animations":true,
+		"internationalized":false,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":true,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":false
+	}
+}

@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1C42CF2E7819604EFFE9C5C8A5734346 /* PBXContainerItemProxy */ = {
+		424A072CE475EB2FD5D70887AC9A33D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -27,9 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02CEA3CC71D37E2954C03C8CE58C2E4F /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleVendor.framework; sourceTree = "<group>"; };
 		1D67223D530F2829297031BB409B54D4 /* Pods-Lignite-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Lignite-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2AA2C12F392BB76566249B8ED48601B4 /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleKit.framework; sourceTree = "<group>"; };
 		2D9A792B039DCD89048ECF34FB6A1D44 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		3536D7C10DFEC6299BD47D21AAE3B974 /* UICKeyChainStore-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UICKeyChainStore-Private.xcconfig"; sourceTree = "<group>"; };
 		4BC2BC0B72C6ACE2178F9A759F3BD719 /* Pods-Lignite-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lignite-dummy.m"; sourceTree = "<group>"; };
@@ -38,6 +36,7 @@
 		8F8AE1D0931A2F8C7737A9E7291F7649 /* libPods-Lignite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lignite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4DA487AAB446FD04B25FD89205D86B /* UICKeyChainStore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UICKeyChainStore.xcconfig; sourceTree = "<group>"; };
 		A8246CBCE7A1F747C659ECA077CCCDB7 /* Pods-Lignite-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Lignite-acknowledgements.plist"; sourceTree = "<group>"; };
+		AD6C77782EBA58F1A76A33F713B7A1D2 /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleKit.framework; sourceTree = "<group>"; };
 		AE71480EF312A1D2BBA6256DDA2BBE2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BA1C33657329104CBB43683AE5C2475A /* UICKeyChainStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UICKeyChainStore.m; path = Lib/UICKeyChainStore/UICKeyChainStore.m; sourceTree = "<group>"; };
 		BA2B5AF5A76568FA388CFB5ADCE6F17B /* libUICKeyChainStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUICKeyChainStore.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,14 +82,6 @@
 			path = "Target Support Files/Pods-Lignite";
 			sourceTree = "<group>";
 		};
-		0934079DACB7D619C41EBB3BD548EC96 /* PebbleKit */ = {
-			isa = PBXGroup;
-			children = (
-				6C7AE0ADF0BEFEB14EAF4AD905962BC3 /* Frameworks */,
-			);
-			path = PebbleKit;
-			sourceTree = "<group>";
-		};
 		2D40AA1F598D37E0FB45746EBB609C4F /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,19 +100,18 @@
 			path = UICKeyChainStore;
 			sourceTree = "<group>";
 		};
-		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+		3D602D252F73BFA2275CD2E5B078CC6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B7DC042EB208E60004AB32538B40FA79 /* iOS */,
+				AD6C77782EBA58F1A76A33F713B7A1D2 /* PebbleKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6C7AE0ADF0BEFEB14EAF4AD905962BC3 /* Frameworks */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2AA2C12F392BB76566249B8ED48601B4 /* PebbleKit.framework */,
-				02CEA3CC71D37E2954C03C8CE58C2E4F /* PebbleVendor.framework */,
+				B7DC042EB208E60004AB32538B40FA79 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,6 +125,14 @@
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
 				2D40AA1F598D37E0FB45746EBB609C4F /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		9181A69ABDDAD9B483D89D4F43D1DA8E /* PebbleKit */ = {
+			isa = PBXGroup;
+			children = (
+				3D602D252F73BFA2275CD2E5B078CC6F /* Frameworks */,
+			);
+			path = PebbleKit;
 			sourceTree = "<group>";
 		};
 		B7DC042EB208E60004AB32538B40FA79 /* iOS */ = {
@@ -158,7 +156,7 @@
 		CE008DBE0CDDAB7974ADE9271F480976 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0934079DACB7D619C41EBB3BD548EC96 /* PebbleKit */,
+				9181A69ABDDAD9B483D89D4F43D1DA8E /* PebbleKit */,
 				2E262B20030B7E39E94C50603F492E80 /* UICKeyChainStore */,
 			);
 			name = Pods;
@@ -217,7 +215,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				01AB08A5BC3211BD3A967CAFC82D6A55 /* PBXTargetDependency */,
+				6D15CCBC79B69242B3761AB1FCCEA885 /* PBXTargetDependency */,
 			);
 			name = "Pods-Lignite";
 			productName = "Pods-Lignite";
@@ -272,11 +270,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		01AB08A5BC3211BD3A967CAFC82D6A55 /* PBXTargetDependency */ = {
+		6D15CCBC79B69242B3761AB1FCCEA885 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = UICKeyChainStore;
 			target = 4C86CDCFBDD7B951618F544A8E2CC0D2 /* UICKeyChainStore */;
-			targetProxy = 1C42CF2E7819604EFFE9C5C8A5734346 /* PBXContainerItemProxy */;
+			targetProxy = 424A072CE475EB2FD5D70887AC9A33D1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

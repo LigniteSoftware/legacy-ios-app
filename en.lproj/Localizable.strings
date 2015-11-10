@@ -116,6 +116,25 @@
 
 "battery_bar_colour" = "Battery bar";
 
+//Worldmap
+"manage_timezones" = "Manage your timezones";
+
+/*
+ Services
+ */
+
+"service_disconnected" = "Connect service";
+"service_waiting" = "Waiting on watch...";
+"service_connected" = "Disconnect service";
+
+/*
+ Weather
+ */
+
+"pref_header_weather" = "Weather";
+"temperature_format_celcius" = "Use celsius";
+"use_coordinates" = "Use coordinates";
+
 /*
  Colour Picker
  */
@@ -161,6 +180,24 @@
 "animation_expand_and_slam" = "Expand and slam";
 
 /*
+ Possible Tags
+ */
+"free" = "Free";
+"custom_colours" = "Custom colours";
+"animations" = "Animated";
+"internationalized" = "Internationalized"; //Ring a bell? ;)
+"watch_battery" = "Watch battery level";
+"phone_battery" = "Phone battery level";
+"bluetooth_alerts" = "Bluetooth alerts";
+"weather" = "Weather";
+
+"features" = "Features";
+"platforms" = "Platforms";
+"aplite" = "Original Pebble & Pebble Steel";
+"basalt" = "Pebble Time & Time Steel";
+"chalk" = "Pebble Time Round";
+
+/*
  App Descriptions
  */
 
@@ -176,21 +213,27 @@
 
 "timedock_description" = "Official watchface for TimeDock by Engineerable! Available on the appstore. \n\nSettings include being able to open the face when plugged in, animations, and more. Check it out, it's free.";
 
-"tree of colours_description" = "This one will truly live on the colour screen! Every minute a 'branch' grows randomly emulating a growing branch of a tree (hence the name).\n\nEvery hour it resets itself and since the growing and coloring happens randomly it always looks different.";
+"treeofcolours_description" = "This one will truly live on the colour screen! Every minute a 'branch' grows randomly emulating a growing branch of a tree (hence the name).\n\nEvery hour it resets itself and since the growing and coloring happens randomly it always looks different.";
 
 "timezones_description" = "Our take on a watch face with two timezones giving you many personalizing options too!\n\nThe inner circle shows the time for the first timezone (in the above example for Philipp’s timezone) and the outer one stands for the second timezone (Edwin, in the above example).";
 
-"slot machine_description" = "A unique designed based around an actual slot machine. Watch the numbers shrink in and out of view as time passes by!\n\nSlot Machine comes with a few other handy features, such as battery bar and shake to animate, just in case.";
+"slotmachine_description" = "A unique designed based around an actual slot machine. Watch the numbers shrink in and out of view as time passes by!\n\nSlot Machine comes with a few other handy features, such as battery bar and shake to animate, just in case.";
 
 "pulse_description" = "This is another face living through its animations. We could either let the circle grow every minute or have a pulse animation every minute changing the background color.\n\nThis will really make the Pebble Time’s colour display shine!";
 
-"simplified analogue_description" = "Simplicity meets class with Simplified Analogue. \n\nWe listened to user requests and created this face: it features the digital time but with a minimal and awesome looking analogue display. Customize about every colour and turn on/off anything you don't like.";
+"simplifiedanalogue_description" = "Simplicity meets class with Simplified Analogue. \n\nWe listened to user requests and created this face: it features the digital time but with a minimal and awesome looking analogue display. Customize about every colour and turn on/off anything you don't like.";
 
 "personal_description" = "Personal is what it says it is: Personal.\n\nCustomize Personal to show your name and see it greet you across the day. Beautifully optimized for Pebble Time's display, it truly looks amazing.";
 
 "beat_description" = "Beat is an attractive watchface with more than enough animations which uses it's unique \"beatline\" to show information such as the battery level or bluetooth status (or if you want, have it completely random).\n\nThere are some damn cool animations that catch the eye and make it look as if your wrist is actually monitoring your heartbeat! Not to mention, you can find settings for customizing colours and other features in the Lignite companion app.";
 
 "equalizer_description" = "Another one making your color display go wild! \n\nThe bars have many different animation modes such as roll, wave, music, and more! You can choose how often you want these to animate and more. The battery bar acts as a divider. Sports the time, weekday, and date as well.";
+
+"upsidedown_description" = "Upside down is a funky face which is sure to make your head turn upside down as well!\n\nDisplays the hours on top along with the weather (updated every 30 minutes), and the bottom contains the minutes inverted and the date.";
+
+"plainweather_description" = "Plain Weather, although \"plain\", brings a simple and clean interface to your Pebble Time Round that you'll love.\n\nIt updates the weather every half an hour, and is battery efficient.";
+
+"essentially_description" = "Essentially is essentially all you'll need in a watchface. It's simple and clean, containing just the time.";
 
 /*
  Login Screen
@@ -201,7 +244,7 @@
 "check" = "Check";
 "login" = "Login";
 "cant_login" = "Can't login? Reset your acccount here.";
-"no_account" = "No account? Click to continue without one.\n(Go back)";
+"no_account" = "Go back";
 "no_password" = "Forgot your password? Click here to find it again.";
 "welcome_back" = "Welcome back, %@!";
 
@@ -224,39 +267,62 @@
 "logout" = "Logout";
 "send_feedback" = "Send feedback";
 "send" = "Send";
+"apply" = "Apply Filter";
+"cancel" = "Cancel";
+"success" = "Success!";
+"awesome" = "Awesome.";
 "logging_out" = "Logging you out...";
 "pick_an_app" = "Pick an app";
+"bundles" = "Bundles";
+"the_essentials_bundle" = "The Essentials Bundle";
+"the_weather_bundle" = "The Weather Bundle";
+"the_animated_bundle" = "The Animated Bundle";
+"the_super_colourful_bundle" = "The Super Colourful Bundle";
+"would_you_like_bundle_the_essentials_bundle" = "Would you like to purchase 'The Essentials Bundle' instead?\n\nIt includes 6 faces: RightNighter, Lines, Timezones, Personal, UpsideDown, and Essentially, all for a better bang for your buck.";
+"would_you_like_bundle_the_animated_bundle" = "Would you like to purchase 'The Animated Bundle' instead?\n\nIt includes 3 faces: Slot Machine, Beat, and Equalizer, all for a better bang for your buck.";
+"would_you_like_bundle_the_super_colourful_bundle" = "Would you like to purchase 'The Super Colourful Bundle' instead?\n\nIt includes 5 faces: Speedometer, Colours, Tree of Colours, Pulse, and Simplified Analogue, all for a better bang for your buck.";
+"no_thanks" = "No, just this app";
+"sure" = "Yes, please!";
+"kickstarter" = "Kickstarter";
+"filter_failed" = "Your filter didn't match any watchfaces, sorry :(\n\nTry being less specific.";
+"set_pebble" = "Set Pebble";
+"apply_filter" = "Apply Filter";
+"modify_filter" = "Filter this view";
+"reset_filter" = "Reset Filter";
+"filter_title" = "What would you like to see?";
+"filter_subtitle" = "Click list items to modify what's applied.";
+"watchfaces_and_watchapps" = "Watchfaces and Watchapps";
+"all_available" = "Showing all available watchfaces/apps";
+"custom_filter" = "Custom filter applied";
+"pebble" = "Set your Pebble";
+"would_you_like_to_set_pebble" = "Would you like to set your default Pebble? You can change this any time by clicking the top right menu button and clicking 'Set Pebble'";
 
 /*
  Tutorial
  */
 
 "tutorial" = "Tutorial";
-"would_you_like_tutorial" = "Would you like to take a quick tutorial of the app?";
-
-"tutorial_main_0" = "Swipe left and right to go between apps and watchfaces";
-"tutorial_main_1" = "Nice job! Now try tapping on the Pebble...";
-"tutorial_main_2" = "Pretty cool, eh? You can use this button to install the currently shown watchface or app";
-"tutorial_main_3" = "Like something we've made? To unlock that watchface and its settings forever, purchase it using this button!";
-"tutorial_main_4" = "Sweet. Here's where you can restore any purchases you may have made in the past";
-"tutorial_main_5" = "Tap here to access: Kickstarter backer login (you know who you are...), and other various actions.";
-"tutorial_main_6" = "That's it for now! We hope you enjoy Lignite.";
-
-"tutorial_preview_0" = "The preview builder allows you to see some more screenshots of the watchface or app you're on. It also lets you set your default Pebble which will be displayed across the rest of the app.";
-"tutorial_preview_1" = "Swipe left or right on the preview Pebble to switch between all 9 models, from Pebble Time Steel to original Pebble.";
-"tutorial_preview_2" = "Favourite Pebble model? Click here to set it as default.";
-"tutorial_preview_3" = "Swipe left or right on the screenshot to scroll through all provided screenshots.";
-
 "replay_tutorial" = "Replay tutorial";
-"awesome" = "Awesome!";
-"nice" = "Nice";
-"alright_thanks" = "Alright, thanks!";
-"ok" = "Okay";
-"thanks" = "Thanks!";
-"alright" = "Alright";
-"cool_bye_bye" = "Cool, bye bye!";
-"show_me" = "Cool, show me!";
-"end_tutorial" = "Skip tutorial";
+"would_you_like_tutorial" = "Would you like to take a quick tutorial of the app?";
+"tutorial_alright_done" = "Finish tutorial";
+
+"tutorial_general_list" = "List of watchapps";
+"tutorial_filter_view" = "Filter what you want";
+"tutorial_detail_view_swipe" = "Detail view of watchapp";
+"tutorial_detail_actions" = "Detail view actions";
+"tutorial_settings_screen" = "Change any setting";
+"tutorial_other_actions" = "Other actions";
+"tutorial_backer_login" = "Kickstarter backer login";
+"tutorial_thanks" = "That's it!";
+
+"tutorial_general_list_description" = "This is the list of watchfaces and watchapps.\n\nHere you can find everything we've ever made, all previewed on your favourite Pebble.";
+"tutorial_filter_view_description" = "You want to see what you want to see.\n\nNow you can filter from lots of features and bundles easily by clicking the 'Filter this view' button.";
+"tutorial_detail_view_swipe_description" = "Like a watchapp?\n\nClick on its preview in the watchapp list to find details about this watchface, access settings, and swipe left/right to switch between screenshots.";
+"tutorial_detail_actions_description" = "Here's where the action happens.\n\nClick on the left button to install the app to your Pebble. To purchase settings, simply click the icon on the right. Don't worry, you'll get the best bang for your buck.";
+"tutorial_settings_screen_description" = "Once you've purchased settings, you can customize the watchapp to your liking.\n\nHere you can change aspects such as colours, timezones, features, and more. All within one screen.";
+"tutorial_other_actions_description" = "At the top left corner you'll find an action icon.\n\nClick it to access other general options, such as: credits, Lignite settings, or the Kickstarter backer Login.";
+"tutorial_backer_login_description" = "Were you a Kickstarter backer?\n\nThanks for your support! We've made it easy for you to login. Just go to this window and enter in your account details. It's that easy.";
+"tutorial_thanks_description" = "You've reached the end of the tutorial, good job!\n\nWe hope you love our app just as much as we do.\n\nHave fun and best regards from us!";
 
 /*
  Preview Builder
@@ -265,6 +331,9 @@
 "build_a_preview" = "Build a Preview";
 "screenshot" = "Screenshot";
 "set_as_default_pebble" = "Set as default Pebble";
+"pick_a_pebble" = "Pick a Pebble";
+"choose_your_pebble_title" = "Choose your Pebble";
+"choose_your_pebble_description" = "This watch will be used all through Lignite.";
 
 "bianca-black" = "Pebble Steel - Black";
 "bianca-silver" = "Pebble Steel - Silver";
@@ -277,6 +346,11 @@
 "tintin-black" = "Pebble - Black";
 "tintin-red" = "Pebble - Red";
 "tintin-white" = "Pebble - White";
+"chalk-20mm-silver" = "Round 20mm - Silver";
+"chalk-20mm-black" = "Round 20mm - Black";
+"chalk-14mm-silver" = "Round 14mm - Silver";
+"chalk-14mm-rose-gold" = "Round 14mm - Rose Gold";
+"chalk-14mm-black" = "Round 14mm - Black";
 
 /*
  Feedback Submitter

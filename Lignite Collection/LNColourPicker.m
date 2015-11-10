@@ -9,7 +9,6 @@
 #import "LNColourPicker.h"
 #import "LNDataFramework.h"
 #import "LNLabel.h"
-#import "LNAppInfo.h"
 #import "LNAlertView.h"
 
 @interface LNColourPicker () <UIAlertViewDelegate>
@@ -40,7 +39,7 @@
         
     }
     else if(buttonIndex == 2){
-        [LNDataFramework sendDictionaryToPebble:alert.dictionary forApp:alert.app withSettingsController:self];
+        [LNDataFramework sendDictionaryToPebble:alert.dictionary forWatchApp:alert.watchApp withSettingsController:self];
     }
 }
 
@@ -76,7 +75,7 @@
 	
     LNLabel *sourceLabel = self.sourceLabel;
 	NSLog(@"label2 %p", sourceLabel);
-    [LNDataFramework sendStringToPebble:[[label.json_object objectForKey:@"hex_value"] substringFromIndex:1] pebbleKey:[[sourceLabel.json_object objectForKey:@"pebble_key"] integerValue] storageKey:[sourceLabel.json_object objectForKey:@"storage_key"] appUUID:[LNAppInfo getAppUUID:self.appType] fromController:self];
+    [LNDataFramework sendStringToPebble:[[label.json_object objectForKey:@"hex_value"] substringFromIndex:1] pebbleKey:[[sourceLabel.json_object objectForKey:@"pebble_key"] integerValue] storageKey:[sourceLabel.json_object objectForKey:@"storage_key"] forWatchApp:self.watchApp fromController:self];
     self.sourceLabel.backgroundColor = self.currentLabel.backgroundColor;
 }
 

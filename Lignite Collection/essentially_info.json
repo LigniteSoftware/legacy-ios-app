@@ -1,0 +1,30 @@
+{
+	"name":"Essentially",
+	"sku":"ind_face_essentially",
+	"appstore_location":"56345c26396cf4f1bf00004c",
+	"uuid":"62435f82-8693-4572-b8cf-2638f9343f8c",
+	"target_platforms":[
+		"aplite", "basalt", "chalk"
+	],
+	"capabilities":[
+		"weather"
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":false,
+		"internationalized":false,
+		"watch_battery":false,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":false
+	},
+	"bundles":{
+		"the_essentials_bundle":true,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":false
+	}
+}

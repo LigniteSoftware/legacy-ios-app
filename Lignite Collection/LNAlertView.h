@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LNAppInfo.h"
+#import "LNPebbleApp.h"
 
 @interface LNAlertView : UIAlertView
 
@@ -19,6 +19,6 @@
 @property NSDictionary *dictionary;
 @property BOOL isGuard;
 @property NSError *error;
-@property AppTypeCode app;
+@property LNPebbleApp *watchApp;
 
 @end

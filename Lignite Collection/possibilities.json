@@ -1,0 +1,12 @@
+{
+	"possible_tags":[
+		"custom_colours", "animations", "internationalized", "watch_battery",
+		"date", "bluetooth_alerts", "weather", "kickstarter"
+	],
+	"possible_platforms":[
+		"aplite", "basalt", "chalk"
+	],
+	"possible_bundles":[
+		"the_essentials_bundle", "the_animated_bundle", "the_super_colourful_bundle"
+	]
+}

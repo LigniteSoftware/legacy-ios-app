@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LNAppInfo.h"
-#import "LNAppListController.h"
+#import <PebbleKit/PebbleKit.h>
+#import "LNPebbleApp.h"
 
 @interface LNAppListViewController : UIViewController
 
 @property IBOutlet UILabel *label;
 
-@property AppTypeCode currentType;
+@property LNPebbleApp *watchApp;
 @property UIPageViewController *sourcePageViewController;
 @property UIViewController *sourceViewController;
+@property PBWatch *connectedWatch;
 
 @property UIImageView *imageView, *leftArrow, *rightArrow;
 @property UILabel *appTitleLabel, *nextButton, *previousButton;
@@ -26,8 +27,6 @@
 
 - (void)updatePebblePreview;
 - (void)updateContentBasedOnType;
-- (IBAction)actionButtonPushed:(id)sender;
 - (IBAction)logoutButtonPushed:(id)sender;
-- (IBAction)tutorialEnd:(id)sender;
 
 @end

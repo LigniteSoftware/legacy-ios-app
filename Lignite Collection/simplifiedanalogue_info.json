@@ -1,0 +1,30 @@
+{
+	"name":"Simplified Analogue",
+	"sku":"ind_face_simplified",
+	"appstore_location":"55b517ee46a407265f00007b",
+	"uuid":"b32c5bbc-57d1-4f6c-91f1-13777fac283a",
+	"target_platforms":[
+		"aplite", "basalt"
+	],
+	"capabilities":[
+	
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":false,
+		"internationalized":true,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":false,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":true
+	}
+}

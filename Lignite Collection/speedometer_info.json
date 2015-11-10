@@ -1,0 +1,30 @@
+{
+	"name":"Speedometer",
+	"sku":"ind_face_speedometer",
+	"appstore_location":"556dcfbc354a41c220000011",
+	"uuid":"e1c75a76-27fc-4f9c-85b3-73920ffdb3b7",
+	"target_platforms":[
+		"aplite", "basalt", "chalk"
+	],
+	"capabilities":[
+		"phone_battery"
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":true,
+		"internationalized":true,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":false,
+		"the_weather_bundle":false,
+		"the_animated_bundle":false,
+		"the_super_colourful_bundle":true
+	}
+}

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LNAppInfo.h"
+#import "LNPebbleApp.h"
 #import "LNDataFramework.h"
 #import "LoginViewController.h"
 #import "SimpleTableViewController.h"
@@ -20,10 +20,21 @@
  It is able to handle quick app selection and more.
  */
 
+typedef enum {
+	LIGNITE_SERVICE_STATUS_DISCONNECTED = 0,
+	LIGNITE_SERVICE_STATUS_WAITING_ON_CONNECTION,
+	LIGNITE_SERVICE_STATUS_CONNECTED
+} LigniteServiceStatus;
+
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property NSInteger currentIndex;
+@property LNPebbleApp *purchasingWatchapp;
 
-- (void)selectAnApp:(AppTypeCode)app;
-//- (UIViewController *)viewControllerAtIndex:(NSUInteger)index;
+- (void)reloadContentView;
+- (void)selectAnApp:(WatchApp)app;
+- (void)purchaseApp:(LNPebbleApp*)watchApp;
+- (void)restorePurchases;
++ (BOOL)userOwnsApp:(LNPebbleApp*)pebbleApp;
+- (void)askTutorialQuestion;
 
 @end

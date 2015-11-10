@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LNAppInfo.h"
+#import "LNPebbleApp.h"
 
 @interface LNSettingsViewController : UITableViewController <UIAlertViewDelegate>
 
+#define LIGNITE_SETTINGS nil
+
+- (id)initWithStyle:(UITableViewStyle)style forWatchApp:(LNPebbleApp*)watchApp;
 - (void)setAsAlertSettings;
-- (void)setPebbleApp:(AppTypeCode)app;
 
 @end

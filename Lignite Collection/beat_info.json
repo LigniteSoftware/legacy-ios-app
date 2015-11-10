@@ -1,0 +1,30 @@
+{
+	"name":"Beat",
+	"sku":"ind_face_beat",
+	"appstore_location":"55c8cf1c7fde01b16d000003",
+	"uuid":"44067cdd-a10d-4e83-ba81-b886ceedb2b7",
+	"target_platforms":[
+		"aplite", "basalt"
+	],
+	"capabilities":[
+	
+	],
+	"tags":{
+		"free":false,
+		"custom_colours":true,
+		"animations":true,
+		"internationalized":false,
+		"watch_battery":true,
+		"phone_battery":false,
+		"date":true,
+		"bluetooth_alerts":true,
+		"weather":false,
+		"kickstarter":true
+	},
+	"bundles":{
+		"the_essentials_bundle":false,
+		"the_weather_bundle":false,
+		"the_animated_bundle":true,
+		"the_super_colourful_bundle":false
+	}
+}
